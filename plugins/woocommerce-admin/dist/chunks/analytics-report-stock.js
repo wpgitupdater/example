@@ -1,6 +1,6 @@
-(window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[21],{
+(window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[20],{
 
-/***/ 742:
+/***/ 551:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ stock_StockReport; });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(17);
+var classCallCheck = __webpack_require__(20);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
@@ -19,15 +19,15 @@ var createClass = __webpack_require__(15);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inherits.js
-var inherits = __webpack_require__(18);
+var inherits = __webpack_require__(22);
 var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(19);
+var possibleConstructorReturn = __webpack_require__(23);
 var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/getPrototypeOf.js
-var getPrototypeOf = __webpack_require__(9);
+var getPrototypeOf = __webpack_require__(10);
 var getPrototypeOf_default = /*#__PURE__*/__webpack_require__.n(getPrototypeOf);
 
 // EXTERNAL MODULE: external {"this":["wp","element"]}
@@ -41,7 +41,7 @@ var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 var external_this_wp_i18n_ = __webpack_require__(3);
 
 // EXTERNAL MODULE: external {"this":["wp","hooks"]}
-var external_this_wp_hooks_ = __webpack_require__(55);
+var external_this_wp_hooks_ = __webpack_require__(51);
 
 // CONCATENATED MODULE: ./client/analytics/report/stock/config.js
 /**
@@ -78,26 +78,26 @@ var config_filters = Object(external_this_wp_hooks_["applyFilters"])(STOCK_REPOR
 }]);
 var config_advancedFilters = Object(external_this_wp_hooks_["applyFilters"])(STOCK_REPORT_ADVANCED_FILTERS_FILTER, {});
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/assertThisInitialized.js
-var assertThisInitialized = __webpack_require__(11);
+var assertThisInitialized = __webpack_require__(13);
 var assertThisInitialized_default = /*#__PURE__*/__webpack_require__.n(assertThisInitialized);
 
 // EXTERNAL MODULE: external {"this":["wp","htmlEntities"]}
-var external_this_wp_htmlEntities_ = __webpack_require__(81);
+var external_this_wp_htmlEntities_ = __webpack_require__(76);
 
 // EXTERNAL MODULE: external {"this":["wc","components"]}
-var external_this_wc_components_ = __webpack_require__(77);
+var external_this_wc_components_ = __webpack_require__(74);
 
 // EXTERNAL MODULE: external {"this":["wc","navigation"]}
-var external_this_wc_navigation_ = __webpack_require__(32);
+var external_this_wc_navigation_ = __webpack_require__(29);
 
 // EXTERNAL MODULE: external {"this":["wc","number"]}
-var external_this_wc_number_ = __webpack_require__(298);
+var external_this_wc_number_ = __webpack_require__(199);
 
 // EXTERNAL MODULE: ./client/settings/index.js
-var settings = __webpack_require__(36);
+var settings = __webpack_require__(35);
 
 // EXTERNAL MODULE: ./client/analytics/components/report-table/index.js + 2 modules
-var report_table = __webpack_require__(771);
+var report_table = __webpack_require__(583);
 
 // CONCATENATED MODULE: ./client/analytics/report/stock/utils.js
 /**
@@ -115,7 +115,7 @@ function isLowStock(status, quantity, threshold) {
   return status && quantity <= threshold === 'instock';
 }
 // EXTERNAL MODULE: ./client/lib/currency-context.js
-var currency_context = __webpack_require__(762);
+var currency_context = __webpack_require__(574);
 
 // CONCATENATED MODULE: ./client/analytics/report/stock/table.js
 
@@ -301,7 +301,7 @@ var table_StockReportTable = /*#__PURE__*/function (_Component) {
 table_StockReportTable.contextType = currency_context["a" /* CurrencyContext */];
 /* harmony default export */ var table = (table_StockReportTable);
 // EXTERNAL MODULE: ./client/analytics/components/report-filters/index.js
-var report_filters = __webpack_require__(770);
+var report_filters = __webpack_require__(582);
 
 // CONCATENATED MODULE: ./client/analytics/report/stock/index.js
 

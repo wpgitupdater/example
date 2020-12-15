@@ -367,7 +367,14 @@ class Loader {
 		wp_register_script(
 			'wc-customer-effort-score',
 			self::get_url( 'customer-effort-score/index', 'js' ),
-			array(),
+			array(
+				'wp-components',
+				'wp-compose',
+				'wp-data',
+				'wp-element',
+				'wp-i18n',
+				'wp-notices',
+			),
 			$js_file_version,
 			true
 		);
@@ -375,10 +382,20 @@ class Loader {
 		wp_register_script(
 			'wc-navigation',
 			self::get_url( 'navigation/index', 'js' ),
-			array( 'wp-url', 'wp-hooks' ),
+			array( 'wp-url', 'wp-hooks', 'wp-element', 'wp-data', 'moment' ),
 			$js_file_version,
 			true
 		);
+
+			// NOTE: This should be removed when Gutenberg is updated and
+			// the notices package is removed from WooCommerce Admin.
+			wp_register_script(
+				'wc-notices',
+				self::get_url( 'notices/index', 'js' ),
+				array(),
+				$js_file_version,
+				true
+			);
 
 		wp_register_script(
 			'wc-number',
@@ -407,7 +424,7 @@ class Loader {
 		wp_register_script(
 			'wc-store-data',
 			self::get_url( 'data/index', 'js' ),
-			array(),
+			array( 'wp-data' ),
 			$js_file_version,
 			true
 		);
@@ -432,6 +449,9 @@ class Loader {
 				'wc-customer-effort-score',
 				'wc-date',
 				'wc-navigation',
+				// NOTE: This should be removed when Gutenberg is updated and
+				// the notices package is removed from WooCommerce Admin.
+				'wc-notices',
 				'wc-number',
 				'wc-store-data',
 			),
@@ -1373,6 +1393,9 @@ class Loader {
 				'wc-currency',
 				'wc-customer-effort-score',
 				'wc-navigation',
+				// NOTE: This should be removed when Gutenberg is updated and
+				// the notices package is removed from WooCommerce Admin.
+				'wc-notices',
 				'wc-number',
 				'wc-date',
 				'wc-components',

@@ -82,60 +82,19 @@ this["wc"] = this["wc"] || {}; this["wc"]["date"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 717);
+/******/ 	return __webpack_require__(__webpack_require__.s = 525);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 115:
+/***/ 136:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var replace = String.prototype.replace;
-var percentTwenties = /%20/g;
-
-var util = __webpack_require__(92);
-
-var Format = {
-    RFC1738: 'RFC1738',
-    RFC3986: 'RFC3986'
-};
-
-module.exports = util.assign(
-    {
-        'default': Format.RFC3986,
-        formatters: {
-            RFC1738: function (value) {
-                return replace.call(value, percentTwenties, '+');
-            },
-            RFC3986: function (value) {
-                return String(value);
-            }
-        }
-    },
-    Format
-);
-
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["moment"]; }());
-
-/***/ }),
-
-/***/ 163:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var utils = __webpack_require__(92);
-var formats = __webpack_require__(115);
+var utils = __webpack_require__(87);
+var formats = __webpack_require__(96);
 var has = Object.prototype.hasOwnProperty;
 
 var arrayPrefixGenerators = {
@@ -407,13 +366,13 @@ module.exports = function (object, opts) {
 
 /***/ }),
 
-/***/ 164:
+/***/ 137:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(92);
+var utils = __webpack_require__(87);
 
 var has = Object.prototype.hasOwnProperty;
 var isArray = Array.isArray;
@@ -672,6 +631,13 @@ module.exports = function (str, opts) {
 
 /***/ }),
 
+/***/ 19:
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["moment"]; }());
+
+/***/ }),
+
 /***/ 2:
 /***/ (function(module, exports) {
 
@@ -686,7 +652,7 @@ module.exports = function (str, opts) {
 
 /***/ }),
 
-/***/ 717:
+/***/ 525:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -713,13 +679,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadLocaleData", function() { return loadLocaleData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dateValidationMessages", function() { return dateValidationMessages; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateDateInputForRange", function() { return validateDateInputForRange; });
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(87);
+/* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(82);
 /* harmony import */ var qs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(qs__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * External dependencies
@@ -1385,15 +1351,15 @@ function validateDateInputForRange(type, value, before, after, format) {
 
 /***/ }),
 
-/***/ 87:
+/***/ 82:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var stringify = __webpack_require__(163);
-var parse = __webpack_require__(164);
-var formats = __webpack_require__(115);
+var stringify = __webpack_require__(136);
+var parse = __webpack_require__(137);
+var formats = __webpack_require__(96);
 
 module.exports = {
     formats: formats,
@@ -1404,7 +1370,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 92:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1656,6 +1622,40 @@ module.exports = {
     maybeMap: maybeMap,
     merge: merge
 };
+
+
+/***/ }),
+
+/***/ 96:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var replace = String.prototype.replace;
+var percentTwenties = /%20/g;
+
+var util = __webpack_require__(87);
+
+var Format = {
+    RFC1738: 'RFC1738',
+    RFC3986: 'RFC3986'
+};
+
+module.exports = util.assign(
+    {
+        'default': Format.RFC3986,
+        formatters: {
+            RFC1738: function (value) {
+                return replace.call(value, percentTwenties, '+');
+            },
+            RFC3986: function (value) {
+                return String(value);
+            }
+        }
+    },
+    Format
+);
 
 
 /***/ })

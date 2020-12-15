@@ -82,12 +82,12 @@ this["wc"] = this["wc"] || {}; this["wc"]["onboardingHomepageNotice"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 726);
+/******/ 	return __webpack_require__(__webpack_require__.s = 534);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 20:
+/***/ 25:
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["data"]; }());
@@ -101,7 +101,7 @@ this["wc"] = this["wc"] || {}; this["wc"]["onboardingHomepageNotice"] =
 
 /***/ }),
 
-/***/ 36:
+/***/ 35:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -115,7 +115,7 @@ this["wc"] = this["wc"] || {}; this["wc"]["onboardingHomepageNotice"] =
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getSetting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return setSetting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return getAdminLink; });
-/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48);
+/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
 /* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
@@ -212,7 +212,14 @@ function getAdminLink(path) {
 
 /***/ }),
 
-/***/ 48:
+/***/ 50:
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wc"]["tracks"]; }());
+
+/***/ }),
+
+/***/ 52:
 /***/ (function(module, exports) {
 
 function _typeof(obj) {
@@ -235,25 +242,18 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ 64:
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wc"]["tracks"]; }());
-
-/***/ }),
-
-/***/ 726:
+/***/ 534:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(86);
-/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(36);
-/* harmony import */ var _woocommerce_tracks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(64);
+/* harmony import */ var _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(81);
+/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(35);
+/* harmony import */ var _woocommerce_tracks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(50);
 /* harmony import */ var _woocommerce_tracks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_tracks__WEBPACK_IMPORTED_MODULE_4__);
 /**
  * External dependencies
@@ -346,7 +346,7 @@ Object(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(fun
 
 /***/ }),
 
-/***/ 86:
+/***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

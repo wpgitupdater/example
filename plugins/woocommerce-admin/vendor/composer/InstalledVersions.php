@@ -14,8 +14,8 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.7.2',
-    'version' => '1.7.2.0',
+    'pretty_version' => '1.8.1',
+    'version' => '1.8.1.0',
     'aliases' => 
     array (
     ),
@@ -58,8 +58,8 @@ private static $installed = array (
     ),
     'woocommerce/woocommerce-admin' => 
     array (
-      'pretty_version' => '1.7.2',
-      'version' => '1.7.2.0',
+      'pretty_version' => '1.8.1',
+      'version' => '1.8.1.0',
       'aliases' => 
       array (
       ),
