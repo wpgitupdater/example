@@ -1,1126 +1,393 @@
 (window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[7],{
 
-/***/ 738:
+/***/ 248:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _extends=Object.assign||function(a){for(var c,b=1;b<arguments.length;b++)for(var d in c=arguments[b],c)Object.prototype.hasOwnProperty.call(c,d)&&(a[d]=c[d]);return a};Object.defineProperty(exports,'__esModule',{value:!0});exports.default=function(a){var b=a.size,c=b===void 0?24:b,d=a.onClick,e=a.icon,f=a.className,g=_objectWithoutProperties(a,['size','onClick','icon','className']),j=['gridicon','gridicons-notice-outline',f,!!function h(k){return 0==k%18}(c)&&'needs-offset',!1,!1].filter(Boolean).join(' ');return _react2.default.createElement('svg',_extends({className:j,height:c,width:c,onClick:d},g,{xmlns:'http://www.w3.org/2000/svg',viewBox:'0 0 24 24'}),_react2.default.createElement('g',null,_react2.default.createElement('path',{d:'M12 4c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8m0-2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 13h-2v2h2v-2zm-2-2h2l.5-6h-3l.5 6z'})))};var _react=__webpack_require__(8),_react2=_interopRequireDefault(_react);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}function _objectWithoutProperties(a,b){var d={};for(var c in a)0<=b.indexOf(c)||Object.prototype.hasOwnProperty.call(a,c)&&(d[c]=a[c]);return d}module.exports=exports['default'];
+
+
+/***/ }),
+
+/***/ 353:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Spinner; });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_create_higher_order_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(77);
+/* harmony import */ var _hooks_use_instance_id__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(147);
 
-function Spinner() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
-    className: "components-spinner"
-  });
-}
+
+
+/**
+ * Internal dependencies
+ */
+
+
+/**
+ * A Higher Order Component used to be provide a unique instance ID by
+ * component.
+ *
+ * @param {WPComponent} WrappedComponent The wrapped component.
+ *
+ * @return {WPComponent} Component with an instanceId prop.
+ */
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(_utils_create_higher_order_component__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(function (WrappedComponent) {
+  return function (props) {
+    var instanceId = Object(_hooks_use_instance_id__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(WrappedComponent);
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(WrappedComponent, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, props, {
+      instanceId: instanceId
+    }));
+  };
+}, 'withInstanceId'));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 764:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return getRequestByIdString; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getCategoryLabels; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getCouponLabels; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return getCustomerLabels; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return getProductLabels; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return getTaxRateLabels; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return getVariationName; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return getVariationLabels; });
-/* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
-/* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(32);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(35);
-/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_data__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(36);
-/* harmony import */ var _analytics_report_taxes_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(765);
-/**
- * External dependencies
- */
-
-
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-/**
- * Get a function that accepts ids as they are found in url parameter and
- * returns a promise with an optional method applied to results
- *
- * @param {string|Function} path - api path string or a function of the query returning api path string
- * @param {Function} [handleData] - function applied to each iteration of data
- * @return {Function} - a function of ids returning a promise
- */
-
-function getRequestByIdString(path) {
-  var handleData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : lodash__WEBPACK_IMPORTED_MODULE_2__["identity"];
-  return function () {
-    var queryString = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-    var query = arguments.length > 1 ? arguments[1] : undefined;
-    var pathString = typeof path === 'function' ? path(query) : path;
-    var idList = Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3__["getIdsFromQuery"])(queryString);
-
-    if (idList.length < 1) {
-      return Promise.resolve([]);
-    }
-
-    var payload = {
-      include: idList.join(','),
-      per_page: idList.length
-    };
-    return _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
-      path: Object(_wordpress_url__WEBPACK_IMPORTED_MODULE_0__["addQueryArgs"])(pathString, payload)
-    }).then(function (data) {
-      return data.map(handleData);
-    });
-  };
-}
-var getCategoryLabels = getRequestByIdString(_woocommerce_data__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"] + '/products/categories', function (category) {
-  return {
-    key: category.id,
-    label: category.name
-  };
-});
-var getCouponLabels = getRequestByIdString(_woocommerce_data__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"] + '/coupons', function (coupon) {
-  return {
-    key: coupon.id,
-    label: coupon.code
-  };
-});
-var getCustomerLabels = getRequestByIdString(_woocommerce_data__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"] + '/customers', function (customer) {
-  return {
-    key: customer.id,
-    label: customer.name
-  };
-});
-var getProductLabels = getRequestByIdString(_woocommerce_data__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"] + '/products', function (product) {
-  return {
-    key: product.id,
-    label: product.name
-  };
-});
-var getTaxRateLabels = getRequestByIdString(_woocommerce_data__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"] + '/taxes', function (taxRate) {
-  return {
-    key: taxRate.id,
-    label: Object(_analytics_report_taxes_utils__WEBPACK_IMPORTED_MODULE_6__[/* getTaxCode */ "a"])(taxRate)
-  };
-});
-/**
- * Create a variation name by concatenating each of the variation's
- * attribute option strings.
- *
- * @param {Object} variation - variation returned by the api
- * @param {Array} variation.attributes - attribute objects, with option property.
- * @param {string} variation.name - name of variation.
- * @return {string} - formatted variation name
- */
-
-function getVariationName(_ref) {
-  var attributes = _ref.attributes,
-      name = _ref.name;
-  var separator = Object(_woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_5__[/* getSetting */ "g"])('variationTitleAttributesSeparator', ' - ');
-
-  if (name.indexOf(separator) > -1) {
-    return name;
-  }
-
-  var attributeList = attributes.map(function (_ref2) {
-    var option = _ref2.option;
-    return option;
-  }).join(', ');
-  return attributeList ? name + separator + attributeList : name;
-}
-var getVariationLabels = getRequestByIdString(function (_ref3) {
-  var products = _ref3.products;
-
-  // If a product was specified, get just its variations.
-  if (products) {
-    return _woocommerce_data__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"] + "/products/".concat(products, "/variations");
-  }
-
-  return _woocommerce_data__WEBPACK_IMPORTED_MODULE_4__["NAMESPACE"] + '/variations';
-}, function (variation) {
-  return {
-    key: variation.id,
-    label: getVariationName(variation)
-  };
-});
-
-/***/ }),
-
-/***/ 765:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getTaxCode; });
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * External dependencies
- */
-
-function getTaxCode(tax) {
-  return [tax.country, tax.state, tax.name || Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__["__"])('TAX', 'woocommerce-admin'), tax.priority].map(function (item) {
-    return item.toString().toUpperCase().trim();
-  }).filter(Boolean).join('-');
-}
-
-/***/ }),
-
-/***/ 766:
+/***/ 546:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
-// UNUSED EXPORTS: ReportChart
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(7);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(5);
-var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__(11);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(17);
-var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+var classCallCheck = __webpack_require__(16);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
-var createClass = __webpack_require__(15);
-var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+var createClass = __webpack_require__(17);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inherits.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js + 1 modules
 var inherits = __webpack_require__(18);
-var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(19);
-var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
+var possibleConstructorReturn = __webpack_require__(21);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/getPrototypeOf.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
 var getPrototypeOf = __webpack_require__(9);
-var getPrototypeOf_default = /*#__PURE__*/__webpack_require__.n(getPrototypeOf);
 
 // EXTERNAL MODULE: external {"this":["wp","element"]}
 var external_this_wp_element_ = __webpack_require__(0);
 
+// EXTERNAL MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/with-instance-id/index.js
+var with_instance_id = __webpack_require__(353);
+
+// EXTERNAL MODULE: ./node_modules/@wordpress/deprecated/build-module/index.js
+var build_module = __webpack_require__(47);
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+var assertThisInitialized = __webpack_require__(12);
+
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__(4);
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
+// EXTERNAL MODULE: ./node_modules/@wordpress/components/node_modules/@wordpress/keycodes/build-module/index.js + 1 modules
+var keycodes_build_module = __webpack_require__(57);
+
+// EXTERNAL MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/compose.js
+var compose = __webpack_require__(181);
+
+// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/isolated-event-container/index.js
+var isolated_event_container = __webpack_require__(111);
+
+// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/higher-order/with-focus-outside/index.js
+var with_focus_outside = __webpack_require__(110);
+
+// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/higher-order/with-focus-return/index.js + 1 modules
+var with_focus_return = __webpack_require__(113);
+
+// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/higher-order/with-constrained-tabbing/index.js
+var with_constrained_tabbing = __webpack_require__(109);
+
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/frame.js
+
+
+
+
+
+
+
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Object(getPrototypeOf["a" /* default */])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(getPrototypeOf["a" /* default */])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(possibleConstructorReturn["a" /* default */])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+/**
+ * External dependencies
+ */
+
+/**
+ * WordPress dependencies
+ */
+
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+
+
+
+var frame_ModalFrame = /*#__PURE__*/function (_Component) {
+  Object(inherits["a" /* default */])(ModalFrame, _Component);
+
+  var _super = _createSuper(ModalFrame);
+
+  function ModalFrame() {
+    var _this;
+
+    Object(classCallCheck["a" /* default */])(this, ModalFrame);
+
+    _this = _super.apply(this, arguments);
+    _this.containerRef = Object(external_this_wp_element_["createRef"])();
+    _this.handleKeyDown = _this.handleKeyDown.bind(Object(assertThisInitialized["a" /* default */])(_this));
+    _this.handleFocusOutside = _this.handleFocusOutside.bind(Object(assertThisInitialized["a" /* default */])(_this));
+    return _this;
+  }
+  /**
+   * Focuses the first tabbable element when props.focusOnMount is true.
+   */
+
+
+  Object(createClass["a" /* default */])(ModalFrame, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // Focus on mount
+      if (this.props.focusOnMount) {
+        this.containerRef.current.focus();
+      }
+    }
+    /**
+     * Callback function called when clicked outside the modal.
+     *
+     * @param {Object} event Mouse click event.
+     */
+
+  }, {
+    key: "handleFocusOutside",
+    value: function handleFocusOutside(event) {
+      if (this.props.shouldCloseOnClickOutside) {
+        this.onRequestClose(event);
+      }
+    }
+    /**
+     * Callback function called when a key is pressed.
+     *
+     * @param {KeyboardEvent} event Key down event.
+     */
+
+  }, {
+    key: "handleKeyDown",
+    value: function handleKeyDown(event) {
+      if (event.keyCode === keycodes_build_module["b" /* ESCAPE */]) {
+        this.handleEscapeKeyDown(event);
+      }
+    }
+    /**
+     * Handles a escape key down event.
+     *
+     * Calls onRequestClose and prevents propagation of the event outside the modal.
+     *
+     * @param {Object} event Key down event.
+     */
+
+  }, {
+    key: "handleEscapeKeyDown",
+    value: function handleEscapeKeyDown(event) {
+      if (this.props.shouldCloseOnEsc) {
+        event.stopPropagation();
+        this.onRequestClose(event);
+      }
+    }
+    /**
+     * Calls the onRequestClose callback props when it is available.
+     *
+     * @param {Object} event Event object.
+     */
+
+  }, {
+    key: "onRequestClose",
+    value: function onRequestClose(event) {
+      var onRequestClose = this.props.onRequestClose;
+
+      if (onRequestClose) {
+        onRequestClose(event);
+      }
+    }
+    /**
+     * Renders the modal frame element.
+     *
+     * @return {WPElement} The modal frame element.
+     */
+
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          overlayClassName = _this$props.overlayClassName,
+          contentLabel = _this$props.contentLabel,
+          _this$props$aria = _this$props.aria,
+          describedby = _this$props$aria.describedby,
+          labelledby = _this$props$aria.labelledby,
+          children = _this$props.children,
+          className = _this$props.className,
+          role = _this$props.role,
+          style = _this$props.style;
+      return Object(external_this_wp_element_["createElement"])(isolated_event_container["a" /* default */], {
+        className: classnames_default()('components-modal__screen-overlay', overlayClassName),
+        onKeyDown: this.handleKeyDown
+      }, Object(external_this_wp_element_["createElement"])("div", {
+        className: classnames_default()('components-modal__frame', className),
+        style: style,
+        ref: this.containerRef,
+        role: role,
+        "aria-label": contentLabel,
+        "aria-labelledby": contentLabel ? null : labelledby,
+        "aria-describedby": describedby,
+        tabIndex: "-1"
+      }, children));
+    }
+  }]);
+
+  return ModalFrame;
+}(external_this_wp_element_["Component"]);
+
+/* harmony default export */ var modal_frame = (Object(compose["a" /* default */])([with_focus_return["a" /* default */], with_constrained_tabbing["a" /* default */], with_focus_outside["a" /* default */]])(frame_ModalFrame));
+//# sourceMappingURL=frame.js.map
 // EXTERNAL MODULE: external {"this":["wp","i18n"]}
 var external_this_wp_i18n_ = __webpack_require__(3);
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/compose.js
-var compose = __webpack_require__(277);
+// EXTERNAL MODULE: ./node_modules/@wordpress/components/node_modules/@wordpress/icons/build-module/library/close.js
+var library_close = __webpack_require__(257);
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/date/build-module/index.js
-var build_module = __webpack_require__(154);
+// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/button/index.js
+var build_module_button = __webpack_require__(67);
 
-// EXTERNAL MODULE: external {"this":["wp","data"]}
-var external_this_wp_data_ = __webpack_require__(20);
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/header.js
 
+
+/**
+ * WordPress dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var header_ModalHeader = function ModalHeader(_ref) {
+  var icon = _ref.icon,
+      title = _ref.title,
+      onClose = _ref.onClose,
+      closeLabel = _ref.closeLabel,
+      headingId = _ref.headingId,
+      isDismissible = _ref.isDismissible;
+  var label = closeLabel ? closeLabel : Object(external_this_wp_i18n_["__"])('Close dialog');
+  return Object(external_this_wp_element_["createElement"])("div", {
+    className: "components-modal__header"
+  }, Object(external_this_wp_element_["createElement"])("div", {
+    className: "components-modal__header-heading-container"
+  }, icon && Object(external_this_wp_element_["createElement"])("span", {
+    className: "components-modal__icon-container",
+    "aria-hidden": true
+  }, icon), title && Object(external_this_wp_element_["createElement"])("h1", {
+    id: headingId,
+    className: "components-modal__header-heading"
+  }, title)), isDismissible && Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+    onClick: onClose,
+    icon: library_close["a" /* default */],
+    label: label
+  }));
+};
+
+/* harmony default export */ var header = (header_ModalHeader);
+//# sourceMappingURL=header.js.map
 // EXTERNAL MODULE: external "lodash"
 var external_lodash_ = __webpack_require__(2);
 
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(1);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
-// EXTERNAL MODULE: external {"this":["wc","components"]}
-var external_this_wc_components_ = __webpack_require__(77);
-
-// EXTERNAL MODULE: external {"this":["wc","data"]}
-var external_this_wc_data_ = __webpack_require__(35);
-
-// EXTERNAL MODULE: external {"this":["wc","date"]}
-var external_this_wc_date_ = __webpack_require__(40);
-
-// EXTERNAL MODULE: ./client/lib/currency-context.js
-var currency_context = __webpack_require__(762);
-
-// EXTERNAL MODULE: ./client/analytics/components/report-error/index.js
-var report_error = __webpack_require__(763);
-
-// EXTERNAL MODULE: external {"this":["wc","navigation"]}
-var external_this_wc_navigation_ = __webpack_require__(32);
-
-// CONCATENATED MODULE: ./client/analytics/components/report-chart/utils.js
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/aria-helper.js
 /**
  * External dependencies
  */
 
-
-var DEFAULT_FILTER = 'all';
-function getSelectedFilter(filters, query) {
-  var selectedFilterArgs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-  if (!filters || filters.length === 0) {
-    return null;
-  }
-
-  var clonedFilters = filters.slice(0);
-  var filterConfig = clonedFilters.pop();
-
-  if (filterConfig.showFilters(query, selectedFilterArgs)) {
-    var allFilters = Object(external_this_wc_navigation_["flattenFilters"])(filterConfig.filters);
-    var value = query[filterConfig.param] || filterConfig.defaultValue || DEFAULT_FILTER;
-    return Object(external_lodash_["find"])(allFilters, {
-      value: value
-    });
-  }
-
-  return getSelectedFilter(clonedFilters, query, selectedFilterArgs);
-}
-function getChartMode(selectedFilter, query) {
-  if (selectedFilter && query) {
-    var selectedFilterParam = Object(external_lodash_["get"])(selectedFilter, ['settings', 'param']);
-
-    if (!selectedFilterParam || Object.keys(query).includes(selectedFilterParam)) {
-      return Object(external_lodash_["get"])(selectedFilter, ['chartMode']);
-    }
-  }
-
-  return null;
-}
-// CONCATENATED MODULE: ./client/analytics/components/report-chart/index.js
-
-
-
-
-
-
-
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf_default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf_default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn_default()(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
+var LIVE_REGION_ARIA_ROLES = new Set(['alert', 'status', 'log', 'marquee', 'timer']);
+var hiddenElements = [],
+    isHidden = false;
 /**
- * External dependencies
- */
-
-
-
-
-
-
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-/**
- * Component that renders the chart in reports.
- */
-
-var report_chart_ReportChart = /*#__PURE__*/function (_Component) {
-  inherits_default()(ReportChart, _Component);
-
-  var _super = _createSuper(ReportChart);
-
-  function ReportChart() {
-    classCallCheck_default()(this, ReportChart);
-
-    return _super.apply(this, arguments);
-  }
-
-  createClass_default()(ReportChart, [{
-    key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(nextProps) {
-      if (nextProps.isRequesting !== this.props.isRequesting || nextProps.primaryData.isRequesting !== this.props.primaryData.isRequesting || nextProps.secondaryData.isRequesting !== this.props.secondaryData.isRequesting || !Object(external_lodash_["isEqual"])(nextProps.query, this.props.query)) {
-        return true;
-      }
-
-      return false;
-    }
-  }, {
-    key: "getItemChartData",
-    value: function getItemChartData() {
-      var _this$props = this.props,
-          primaryData = _this$props.primaryData,
-          selectedChart = _this$props.selectedChart;
-      var chartData = primaryData.data.intervals.map(function (interval) {
-        var intervalData = {};
-        interval.subtotals.segments.forEach(function (segment) {
-          if (segment.segment_label) {
-            var label = intervalData[segment.segment_label] ? segment.segment_label + ' (#' + segment.segment_id + ')' : segment.segment_label;
-            intervalData[segment.segment_id] = {
-              label: label,
-              value: segment.subtotals[selectedChart.key] || 0
-            };
-          }
-        });
-        return _objectSpread({
-          date: Object(build_module["a" /* format */])('Y-m-d\\TH:i:s', interval.date_start)
-        }, intervalData);
-      });
-      return chartData;
-    }
-  }, {
-    key: "getTimeChartData",
-    value: function getTimeChartData() {
-      var _this$props2 = this.props,
-          query = _this$props2.query,
-          primaryData = _this$props2.primaryData,
-          secondaryData = _this$props2.secondaryData,
-          selectedChart = _this$props2.selectedChart,
-          defaultDateRange = _this$props2.defaultDateRange;
-      var currentInterval = Object(external_this_wc_date_["getIntervalForQuery"])(query);
-
-      var _getCurrentDates = Object(external_this_wc_date_["getCurrentDates"])(query, defaultDateRange),
-          primary = _getCurrentDates.primary,
-          secondary = _getCurrentDates.secondary;
-
-      var chartData = primaryData.data.intervals.map(function (interval, index) {
-        var secondaryDate = Object(external_this_wc_date_["getPreviousDate"])(interval.date_start, primary.after, secondary.after, query.compare, currentInterval);
-        var secondaryInterval = secondaryData.data.intervals[index];
-        return {
-          date: Object(build_module["a" /* format */])('Y-m-d\\TH:i:s', interval.date_start),
-          primary: {
-            label: "".concat(primary.label, " (").concat(primary.range, ")"),
-            labelDate: interval.date_start,
-            value: interval.subtotals[selectedChart.key] || 0
-          },
-          secondary: {
-            label: "".concat(secondary.label, " (").concat(secondary.range, ")"),
-            labelDate: secondaryDate.format('YYYY-MM-DD HH:mm:ss'),
-            value: secondaryInterval && secondaryInterval.subtotals[selectedChart.key] || 0
-          }
-        };
-      });
-      return chartData;
-    }
-  }, {
-    key: "getTimeChartTotals",
-    value: function getTimeChartTotals() {
-      var _this$props3 = this.props,
-          primaryData = _this$props3.primaryData,
-          secondaryData = _this$props3.secondaryData,
-          selectedChart = _this$props3.selectedChart;
-      return {
-        primary: Object(external_lodash_["get"])(primaryData, ['data', 'totals', selectedChart.key], null),
-        secondary: Object(external_lodash_["get"])(secondaryData, ['data', 'totals', selectedChart.key], null)
-      };
-    }
-  }, {
-    key: "renderChart",
-    value: function renderChart(mode, isRequesting, chartData, legendTotals) {
-      var _this$props4 = this.props,
-          emptySearchResults = _this$props4.emptySearchResults,
-          filterParam = _this$props4.filterParam,
-          interactiveLegend = _this$props4.interactiveLegend,
-          itemsLabel = _this$props4.itemsLabel,
-          legendPosition = _this$props4.legendPosition,
-          path = _this$props4.path,
-          query = _this$props4.query,
-          selectedChart = _this$props4.selectedChart,
-          showHeaderControls = _this$props4.showHeaderControls,
-          primaryData = _this$props4.primaryData;
-      var currentInterval = Object(external_this_wc_date_["getIntervalForQuery"])(query);
-      var allowedIntervals = Object(external_this_wc_date_["getAllowedIntervalsForQuery"])(query);
-      var formats = Object(external_this_wc_date_["getDateFormatsForInterval"])(currentInterval, primaryData.data.intervals.length);
-      var emptyMessage = emptySearchResults ? Object(external_this_wp_i18n_["__"])('No data for the current search', 'woocommerce-admin') : Object(external_this_wp_i18n_["__"])('No data for the selected date range', 'woocommerce-admin');
-      var _this$context = this.context,
-          formatAmount = _this$context.formatAmount,
-          getCurrencyConfig = _this$context.getCurrencyConfig;
-      return Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Chart"], {
-        allowedIntervals: allowedIntervals,
-        data: chartData,
-        dateParser: '%Y-%m-%dT%H:%M:%S',
-        emptyMessage: emptyMessage,
-        filterParam: filterParam,
-        interactiveLegend: interactiveLegend,
-        interval: currentInterval,
-        isRequesting: isRequesting,
-        itemsLabel: itemsLabel,
-        legendPosition: legendPosition,
-        legendTotals: legendTotals,
-        mode: mode,
-        path: path,
-        query: query,
-        screenReaderFormat: formats.screenReaderFormat,
-        showHeaderControls: showHeaderControls,
-        title: selectedChart.label,
-        tooltipLabelFormat: formats.tooltipLabelFormat,
-        tooltipTitle: mode === 'time-comparison' && selectedChart.label || null,
-        tooltipValueFormat: Object(external_this_wc_data_["getTooltipValueFormat"])(selectedChart.type, formatAmount),
-        chartType: Object(external_this_wc_date_["getChartTypeForQuery"])(query),
-        valueType: selectedChart.type,
-        xFormat: formats.xFormat,
-        x2Format: formats.x2Format,
-        currency: getCurrencyConfig()
-      });
-    }
-  }, {
-    key: "renderItemComparison",
-    value: function renderItemComparison() {
-      var _this$props5 = this.props,
-          isRequesting = _this$props5.isRequesting,
-          primaryData = _this$props5.primaryData;
-
-      if (primaryData.isError) {
-        return Object(external_this_wp_element_["createElement"])(report_error["a" /* default */], {
-          isError: true
-        });
-      }
-
-      var isChartRequesting = isRequesting || primaryData.isRequesting;
-      var chartData = this.getItemChartData();
-      return this.renderChart('item-comparison', isChartRequesting, chartData);
-    }
-  }, {
-    key: "renderTimeComparison",
-    value: function renderTimeComparison() {
-      var _this$props6 = this.props,
-          isRequesting = _this$props6.isRequesting,
-          primaryData = _this$props6.primaryData,
-          secondaryData = _this$props6.secondaryData;
-
-      if (!primaryData || primaryData.isError || secondaryData.isError) {
-        return Object(external_this_wp_element_["createElement"])(report_error["a" /* default */], {
-          isError: true
-        });
-      }
-
-      var isChartRequesting = isRequesting || primaryData.isRequesting || secondaryData.isRequesting;
-      var chartData = this.getTimeChartData();
-      var legendTotals = this.getTimeChartTotals();
-      return this.renderChart('time-comparison', isChartRequesting, chartData, legendTotals);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var mode = this.props.mode;
-
-      if (mode === 'item-comparison') {
-        return this.renderItemComparison();
-      }
-
-      return this.renderTimeComparison();
-    }
-  }]);
-
-  return ReportChart;
-}(external_this_wp_element_["Component"]);
-report_chart_ReportChart.contextType = currency_context["a" /* CurrencyContext */];
-report_chart_ReportChart.propTypes = {
-  /**
-   * Filters available for that report.
-   */
-  filters: prop_types_default.a.array,
-
-  /**
-   * Whether there is an API call running.
-   */
-  isRequesting: prop_types_default.a.bool,
-
-  /**
-   * Label describing the legend items.
-   */
-  itemsLabel: prop_types_default.a.string,
-
-  /**
-   * Allows specifying properties different from the `endpoint` that will be used
-   * to limit the items when there is an active search.
-   */
-  limitProperties: prop_types_default.a.array,
-
-  /**
-   * `items-comparison` (default) or `time-comparison`, this is used to generate correct
-   * ARIA properties.
-   */
-  mode: prop_types_default.a.string,
-
-  /**
-   * Current path
-   */
-  path: prop_types_default.a.string.isRequired,
-
-  /**
-   * Primary data to display in the chart.
-   */
-  primaryData: prop_types_default.a.object,
-
-  /**
-   * The query string represented in object form.
-   */
-  query: prop_types_default.a.object.isRequired,
-
-  /**
-   * Secondary data to display in the chart.
-   */
-  secondaryData: prop_types_default.a.object,
-
-  /**
-   * Properties of the selected chart.
-   */
-  selectedChart: prop_types_default.a.shape({
-    /**
-     * Key of the selected chart.
-     */
-    key: prop_types_default.a.string.isRequired,
-
-    /**
-     * Chart label.
-     */
-    label: prop_types_default.a.string.isRequired,
-
-    /**
-     * Order query argument.
-     */
-    order: prop_types_default.a.oneOf(['asc', 'desc']),
-
-    /**
-     * Order by query argument.
-     */
-    orderby: prop_types_default.a.string,
-
-    /**
-     * Number type for formatting.
-     */
-    type: prop_types_default.a.oneOf(['average', 'number', 'currency']).isRequired
-  }).isRequired
-};
-report_chart_ReportChart.defaultProps = {
-  isRequesting: false,
-  primaryData: {
-    data: {
-      intervals: []
-    },
-    isError: false,
-    isRequesting: false
-  },
-  secondaryData: {
-    data: {
-      intervals: []
-    },
-    isError: false,
-    isRequesting: false
-  }
-};
-/* harmony default export */ var report_chart = __webpack_exports__["a"] = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select, props) {
-  var charts = props.charts,
-      endpoint = props.endpoint,
-      filters = props.filters,
-      isRequesting = props.isRequesting,
-      limitProperties = props.limitProperties,
-      query = props.query,
-      advancedFilters = props.advancedFilters;
-  var limitBy = limitProperties || [endpoint];
-  var selectedFilter = getSelectedFilter(filters, query);
-  var filterParam = Object(external_lodash_["get"])(selectedFilter, ['settings', 'param']);
-  var chartMode = props.mode || getChartMode(selectedFilter, query) || 'time-comparison';
-
-  var _select$getSetting = select(external_this_wc_data_["SETTINGS_STORE_NAME"]).getSetting('wc_admin', 'wcAdminSettings'),
-      defaultDateRange = _select$getSetting.woocommerce_default_date_range;
-
-  var newProps = {
-    mode: chartMode,
-    filterParam: filterParam,
-    defaultDateRange: defaultDateRange
-  };
-
-  if (isRequesting) {
-    return newProps;
-  }
-
-  var hasLimitByParam = limitBy.some(function (item) {
-    return query[item] && query[item].length;
-  });
-
-  if (query.search && !hasLimitByParam) {
-    return _objectSpread(_objectSpread({}, newProps), {}, {
-      emptySearchResults: true
-    });
-  }
-
-  var fields = charts && charts.map(function (chart) {
-    return chart.key;
-  });
-  var primaryData = Object(external_this_wc_data_["getReportChartData"])({
-    endpoint: endpoint,
-    dataType: 'primary',
-    query: query,
-    select: select,
-    limitBy: limitBy,
-    filters: filters,
-    advancedFilters: advancedFilters,
-    defaultDateRange: defaultDateRange,
-    fields: fields
-  });
-
-  if (chartMode === 'item-comparison') {
-    return _objectSpread(_objectSpread({}, newProps), {}, {
-      primaryData: primaryData
-    });
-  }
-
-  var secondaryData = Object(external_this_wc_data_["getReportChartData"])({
-    endpoint: endpoint,
-    dataType: 'secondary',
-    query: query,
-    select: select,
-    limitBy: limitBy,
-    filters: filters,
-    advancedFilters: advancedFilters,
-    defaultDateRange: defaultDateRange,
-    fields: fields
-  });
-  return _objectSpread(_objectSpread({}, newProps), {}, {
-    primaryData: primaryData,
-    secondaryData: secondaryData
-  });
-}))(report_chart_ReportChart));
-
-/***/ }),
-
-/***/ 768:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getSelectedChart; });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * External dependencies
- */
-
-/**
- * Takes a chart name returns the configuration for that chart from and array
- * of charts. If the chart is not found it will return the first chart.
+ * Hides all elements in the body element from screen-readers except
+ * the provided element and elements that should not be hidden from
+ * screen-readers.
  *
- * @param {string} chartName - the name of the chart to get configuration for
- * @param {Array} charts - list of charts for a particular report
- * @return {Object} - chart configuration object
- */
-
-function getSelectedChart(chartName) {
-  var charts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  var chart = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["find"])(charts, {
-    key: chartName
-  });
-
-  if (chart) {
-    return chart;
-  }
-
-  return charts[0];
-}
-
-/***/ }),
-
-/***/ 769:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export ReportSummary */
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(277);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(20);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(32);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(77);
-/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_components__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(298);
-/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_number__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(35);
-/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_data__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _woocommerce_date__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(40);
-/* harmony import */ var _woocommerce_date__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_date__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _woocommerce_tracks__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(64);
-/* harmony import */ var _woocommerce_tracks__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_tracks__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _report_error__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(763);
-/* harmony import */ var _lib_currency_context__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(762);
-
-
-
-
-
-
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-/**
- * External dependencies
- */
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-/**
- * Component to render summary numbers in reports.
- */
-
-var ReportSummary = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(ReportSummary, _Component);
-
-  var _super = _createSuper(ReportSummary);
-
-  function ReportSummary() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ReportSummary);
-
-    return _super.apply(this, arguments);
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ReportSummary, [{
-    key: "formatVal",
-    value: function formatVal(val, type) {
-      var _this$context = this.context,
-          formatAmount = _this$context.formatAmount,
-          getCurrencyConfig = _this$context.getCurrencyConfig;
-      return type === 'currency' ? formatAmount(val) : Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_12__["formatValue"])(getCurrencyConfig(), type, val);
-    }
-  }, {
-    key: "getValues",
-    value: function getValues(key, type) {
-      var _this$props = this.props,
-          emptySearchResults = _this$props.emptySearchResults,
-          summaryData = _this$props.summaryData;
-      var totals = summaryData.totals;
-      var primaryTotal = totals.primary ? totals.primary[key] : 0;
-      var secondaryTotal = totals.secondary ? totals.secondary[key] : 0;
-      var primaryValue = emptySearchResults ? 0 : primaryTotal;
-      var secondaryValue = emptySearchResults ? 0 : secondaryTotal;
-      return {
-        delta: Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_12__["calculateDelta"])(primaryValue, secondaryValue),
-        prevValue: this.formatVal(secondaryValue, type),
-        value: this.formatVal(primaryValue, type)
-      };
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      var _this$props2 = this.props,
-          charts = _this$props2.charts,
-          query = _this$props2.query,
-          selectedChart = _this$props2.selectedChart,
-          summaryData = _this$props2.summaryData,
-          endpoint = _this$props2.endpoint,
-          report = _this$props2.report,
-          defaultDateRange = _this$props2.defaultDateRange;
-      var isError = summaryData.isError,
-          isRequesting = summaryData.isRequesting;
-
-      if (isError) {
-        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_report_error__WEBPACK_IMPORTED_MODULE_16__[/* default */ "a"], {
-          isError: true
-        });
-      }
-
-      if (isRequesting) {
-        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_11__["SummaryListPlaceholder"], {
-          numberOfItems: charts.length
-        });
-      }
-
-      var _getDateParamsFromQue = Object(_woocommerce_date__WEBPACK_IMPORTED_MODULE_14__["getDateParamsFromQuery"])(query, defaultDateRange),
-          compare = _getDateParamsFromQue.compare;
-
-      var renderSummaryNumbers = function renderSummaryNumbers(_ref) {
-        var onToggle = _ref.onToggle;
-        return charts.map(function (chart) {
-          var key = chart.key,
-              order = chart.order,
-              orderby = chart.orderby,
-              label = chart.label,
-              type = chart.type;
-          var newPath = {
-            chart: key
-          };
-
-          if (orderby) {
-            newPath.orderby = orderby;
-          }
-
-          if (order) {
-            newPath.order = order;
-          }
-
-          var href = Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_10__["getNewPath"])(newPath);
-          var isSelected = selectedChart.key === key;
-
-          var _this$getValues = _this.getValues(key, type),
-              delta = _this$getValues.delta,
-              prevValue = _this$getValues.prevValue,
-              value = _this$getValues.value;
-
-          return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_11__["SummaryNumber"], {
-            key: key,
-            delta: delta,
-            href: href,
-            label: label,
-            prevLabel: compare === 'previous_period' ? Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Previous Period:', 'woocommerce-admin') : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Previous Year:', 'woocommerce-admin'),
-            prevValue: prevValue,
-            selected: isSelected,
-            value: value,
-            onLinkClickCallback: function onLinkClickCallback() {
-              // Wider than a certain breakpoint, there is no dropdown so avoid calling onToggle.
-              if (onToggle) {
-                onToggle();
-              }
-
-              Object(_woocommerce_tracks__WEBPACK_IMPORTED_MODULE_15__["recordEvent"])('analytics_chart_tab_click', {
-                report: report || endpoint,
-                key: key
-              });
-            }
-          });
-        });
-      };
-
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_11__["SummaryList"], null, renderSummaryNumbers);
-    }
-  }]);
-
-  return ReportSummary;
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Component"]);
-ReportSummary.propTypes = {
-  /**
-   * Properties of all the charts available for that report.
-   */
-  charts: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array.isRequired,
-
-  /**
-   * The endpoint to use in API calls to populate the Summary Numbers.
-   * For example, if `taxes` is provided, data will be fetched from the report
-   * `taxes` endpoint (ie: `/wc-analytics/reports/taxes/stats`). If the provided endpoint
-   * doesn't exist, an error will be shown to the user with `ReportError`.
-   */
-  endpoint: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string.isRequired,
-
-  /**
-   * Allows specifying properties different from the `endpoint` that will be used
-   * to limit the items when there is an active search.
-   */
-  limitProperties: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.array,
-
-  /**
-   * The query string represented in object form.
-   */
-  query: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.object.isRequired,
-
-  /**
-   * Properties of the selected chart.
-   */
-  selectedChart: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.shape({
-    /**
-     * Key of the selected chart.
-     */
-    key: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string.isRequired,
-
-    /**
-     * Chart label.
-     */
-    label: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string.isRequired,
-
-    /**
-     * Order query argument.
-     */
-    order: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.oneOf(['asc', 'desc']),
-
-    /**
-     * Order by query argument.
-     */
-    orderby: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string,
-
-    /**
-     * Number type for formatting.
-     */
-    type: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.oneOf(['average', 'number', 'currency']).isRequired
-  }).isRequired,
-
-  /**
-   * Data to display in the SummaryNumbers.
-   */
-  summaryData: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.object,
-
-  /**
-   * Report name, if different than the endpoint.
-   */
-  report: prop_types__WEBPACK_IMPORTED_MODULE_9___default.a.string
-};
-ReportSummary.defaultProps = {
-  summaryData: {
-    totals: {
-      primary: {},
-      secondary: {}
-    },
-    isError: false
-  }
-};
-ReportSummary.contextType = _lib_currency_context__WEBPACK_IMPORTED_MODULE_17__[/* CurrencyContext */ "a"];
-/* harmony default export */ __webpack_exports__["a"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__["withSelect"])(function (select, props) {
-  var charts = props.charts,
-      endpoint = props.endpoint,
-      limitProperties = props.limitProperties,
-      query = props.query,
-      filters = props.filters,
-      advancedFilters = props.advancedFilters;
-  var limitBy = limitProperties || [endpoint];
-  var hasLimitByParam = limitBy.some(function (item) {
-    return query[item] && query[item].length;
-  });
-
-  if (query.search && !hasLimitByParam) {
-    return {
-      emptySearchResults: true
-    };
-  }
-
-  var fields = charts && charts.map(function (chart) {
-    return chart.key;
-  });
-
-  var _select$getSetting = select(_woocommerce_data__WEBPACK_IMPORTED_MODULE_13__["SETTINGS_STORE_NAME"]).getSetting('wc_admin', 'wcAdminSettings'),
-      defaultDateRange = _select$getSetting.woocommerce_default_date_range;
-
-  var summaryData = Object(_woocommerce_data__WEBPACK_IMPORTED_MODULE_13__["getSummaryNumbers"])({
-    endpoint: endpoint,
-    query: query,
-    select: select,
-    limitBy: limitBy,
-    filters: filters,
-    advancedFilters: advancedFilters,
-    defaultDateRange: defaultDateRange,
-    fields: fields
-  });
-  return {
-    summaryData: summaryData,
-    defaultDateRange: defaultDateRange
-  };
-}))(ReportSummary));
-
-/***/ }),
-
-/***/ 781:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isLowStock; });
-/**
- * Determine if a product or variation is in low stock.
+ * The reason we do this is because `aria-modal="true"` currently is bugged
+ * in Safari, and support is spotty in other browsers overall. In the future
+ * we should consider removing these helper functions in favor of
+ * `aria-modal="true"`.
  *
- * @param {number} threshold - The number at which stock is determined to be low.
- * @return {boolean} - Whether or not the stock is low.
+ * @param {Element} unhiddenElement The element that should not be hidden.
  */
-function isLowStock(status, quantity, threshold) {
-  if (!quantity) {
-    // Sites that don't do inventory tracking will always return false.
-    return false;
+
+function hideApp(unhiddenElement) {
+  if (isHidden) {
+    return;
   }
 
-  return status && quantity <= threshold === 'instock';
+  var elements = document.body.children;
+  Object(external_lodash_["forEach"])(elements, function (element) {
+    if (element === unhiddenElement) {
+      return;
+    }
+
+    if (elementShouldBeHidden(element)) {
+      element.setAttribute('aria-hidden', 'true');
+      hiddenElements.push(element);
+    }
+  });
+  isHidden = true;
 }
-
-/***/ }),
-
-/***/ 795:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(18);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(277);
-/* harmony import */ var _wordpress_html_entities__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(81);
-/* harmony import */ var _wordpress_html_entities__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_wordpress_html_entities__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(20);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(32);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(77);
-/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_components__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(298);
-/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_number__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(36);
-/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(35);
-/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_data__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _categories_breadcrumbs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(796);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(781);
-/* harmony import */ var _components_report_table__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(771);
-/* harmony import */ var _lib_currency_context__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(762);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(828);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_21__);
-
-
-
-
-
-
-
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default()(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
 /**
- * External dependencies
+ * Determines if the passed element should not be hidden from screen readers.
+ *
+ * @param {HTMLElement} element The element that should be checked.
+ *
+ * @return {boolean} Whether the element should not be hidden from screen-readers.
  */
 
+function elementShouldBeHidden(element) {
+  var role = element.getAttribute('role');
+  return !(element.tagName === 'SCRIPT' || element.hasAttribute('aria-hidden') || element.hasAttribute('aria-live') || LIVE_REGION_ARIA_ROLES.has(role));
+}
+/**
+ * Makes all elements in the body that have been hidden by `hideApp`
+ * visible again to screen-readers.
+ */
+
+function showApp() {
+  if (!isHidden) {
+    return;
+  }
+
+  Object(external_lodash_["forEach"])(hiddenElements, function (element) {
+    element.removeAttribute('aria-hidden');
+  });
+  hiddenElements = [];
+  isHidden = false;
+}
+//# sourceMappingURL=aria-helper.js.map
+// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/modal/index.js
 
 
 
@@ -1128,6 +395,15 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+
+
+function modal_createSuper(Derived) { var hasNativeReflectConstruct = modal_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = Object(getPrototypeOf["a" /* default */])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(getPrototypeOf["a" /* default */])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(possibleConstructorReturn["a" /* default */])(this, result); }; }
+
+function modal_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+/**
+ * WordPress dependencies
+ */
 
 
 
@@ -1137,395 +413,781 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+ // Used to count the number of open modals.
 
+var parentElement,
+    openModalCount = 0;
 
+var modal_Modal = /*#__PURE__*/function (_Component) {
+  Object(inherits["a" /* default */])(Modal, _Component);
 
-var manageStock = Object(_woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_15__[/* getSetting */ "g"])('manageStock', 'no');
-var stockStatuses = Object(_woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_15__[/* getSetting */ "g"])('stockStatuses', {});
+  var _super = modal_createSuper(Modal);
 
-var ProductsReportTable = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3___default()(ProductsReportTable, _Component);
-
-  var _super = _createSuper(ProductsReportTable);
-
-  function ProductsReportTable() {
+  function Modal(props) {
     var _this;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ProductsReportTable);
+    Object(classCallCheck["a" /* default */])(this, Modal);
 
-    _this = _super.call(this);
-    _this.getHeadersContent = _this.getHeadersContent.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this));
-    _this.getRowsContent = _this.getRowsContent.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this));
-    _this.getSummary = _this.getSummary.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this));
+    _this = _super.call(this, props);
+
+    _this.prepareDOM();
+
     return _this;
   }
+  /**
+   * Appends the modal's node to the DOM, so the portal can render the
+   * modal in it. Also calls the openFirstModal when this is the first modal to be
+   * opened.
+   */
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ProductsReportTable, [{
-    key: "getHeadersContent",
-    value: function getHeadersContent() {
-      return [{
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Product Title', 'woocommerce-admin'),
-        key: 'product_name',
-        required: true,
-        isLeftAligned: true,
-        isSortable: true
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('SKU', 'woocommerce-admin'),
-        key: 'sku',
-        hiddenByDefault: true,
-        isSortable: true
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Items Sold', 'woocommerce-admin'),
-        key: 'items_sold',
-        required: true,
-        defaultSort: true,
-        isSortable: true,
-        isNumeric: true
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Net Sales', 'woocommerce-admin'),
-        screenReaderLabel: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Net Sales', 'woocommerce-admin'),
-        key: 'net_revenue',
-        required: true,
-        isSortable: true,
-        isNumeric: true
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Orders', 'woocommerce-admin'),
-        key: 'orders_count',
-        isSortable: true,
-        isNumeric: true
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Category', 'woocommerce-admin'),
-        key: 'product_cat'
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Variations', 'woocommerce-admin'),
-        key: 'variations',
-        isSortable: true
-      }, manageStock === 'yes' ? {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Status', 'woocommerce-admin'),
-        key: 'stock_status'
-      } : null, manageStock === 'yes' ? {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Stock', 'woocommerce-admin'),
-        key: 'stock',
-        isNumeric: true
-      } : null].filter(Boolean);
-    }
-  }, {
-    key: "getRowsContent",
-    value: function getRowsContent() {
-      var _this2 = this;
 
-      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-      var query = this.props.query;
-      var persistedQuery = Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_12__["getPersistedQuery"])(query);
-      var _this$context = this.context,
-          renderCurrency = _this$context.render,
-          getCurrencyFormatDecimal = _this$context.formatDecimal,
-          getCurrencyConfig = _this$context.getCurrencyConfig;
-      var currency = getCurrencyConfig();
-      return Object(lodash__WEBPACK_IMPORTED_MODULE_11__["map"])(data, function (row) {
-        var productId = row.product_id,
-            itemsSold = row.items_sold,
-            netRevenue = row.net_revenue,
-            ordersCount = row.orders_count;
-        var extendedInfo = row.extended_info || {};
-        var categoryIds = extendedInfo.category_ids,
-            lowStockAmount = extendedInfo.low_stock_amount,
-            extendedInfoManageStock = extendedInfo.manage_stock,
-            sku = extendedInfo.sku,
-            extendedInfoStockStatus = extendedInfo.stock_status,
-            stockQuantity = extendedInfo.stock_quantity,
-            _extendedInfo$variati = extendedInfo.variations,
-            variations = _extendedInfo$variati === void 0 ? [] : _extendedInfo$variati;
-        var name = Object(_wordpress_html_entities__WEBPACK_IMPORTED_MODULE_9__["decodeEntities"])(extendedInfo.name);
-        var ordersLink = Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_12__["getNewPath"])(persistedQuery, '/analytics/orders', {
-          filter: 'advanced',
-          product_includes: productId
-        });
-        var productDetailLink = Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_12__["getNewPath"])(persistedQuery, '/analytics/products', {
-          filter: 'single_product',
-          products: productId
-        });
-        var categories = _this2.props.categories;
-        var productCategories = categoryIds && categoryIds.map(function (categoryId) {
-          return categories.get(categoryId);
-        }).filter(Boolean) || [];
-        var stockStatus = Object(_utils__WEBPACK_IMPORTED_MODULE_18__[/* isLowStock */ "a"])(extendedInfoStockStatus, stockQuantity, lowStockAmount) ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_13__["Link"], {
-          href: Object(_woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_15__[/* getAdminLink */ "f"])('post.php?action=edit&post=' + productId),
-          type: "wp-admin"
-        }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["_x"])('Low', 'Indication of a low quantity', 'woocommerce-admin')) : stockStatuses[extendedInfoStockStatus];
-        return [{
-          display: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_13__["Link"], {
-            href: productDetailLink,
-            type: "wc-admin"
-          }, name),
-          value: name
-        }, {
-          display: sku,
-          value: sku
-        }, {
-          display: Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_14__["formatValue"])(currency, 'number', itemsSold),
-          value: itemsSold
-        }, {
-          display: renderCurrency(netRevenue),
-          value: getCurrencyFormatDecimal(netRevenue)
-        }, {
-          display: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_13__["Link"], {
-            href: ordersLink,
-            type: "wc-admin"
-          }, ordersCount),
-          value: ordersCount
-        }, {
-          display: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
-            className: "woocommerce-table__product-categories"
-          }, productCategories[0] && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_categories_breadcrumbs__WEBPACK_IMPORTED_MODULE_17__[/* default */ "a"], {
-            category: productCategories[0],
-            categories: categories
-          }), productCategories.length > 1 && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_13__["Tag"], {
-            label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["sprintf"])(Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["_x"])('+%d more', 'categories', 'woocommerce-admin'), productCategories.length - 1),
-            popoverContents: productCategories.map(function (category) {
-              return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_categories_breadcrumbs__WEBPACK_IMPORTED_MODULE_17__[/* default */ "a"], {
-                category: category,
-                categories: categories,
-                key: category.id,
-                query: query
-              });
-            })
-          })),
-          value: productCategories.map(function (category) {
-            return category.name;
-          }).join(', ')
-        }, {
-          display: Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_14__["formatValue"])(currency, 'number', variations.length),
-          value: variations.length
-        }, manageStock === 'yes' ? {
-          display: extendedInfoManageStock ? stockStatus : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('N/A', 'woocommerce-admin'),
-          value: extendedInfoManageStock ? stockStatuses[extendedInfoStockStatus] : null
-        } : null, manageStock === 'yes' ? {
-          display: extendedInfoManageStock ? Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_14__["formatValue"])(currency, 'number', stockQuantity) : Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('N/A', 'woocommerce-admin'),
-          value: stockQuantity
-        } : null].filter(Boolean);
-      });
+  Object(createClass["a" /* default */])(Modal, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      openModalCount++;
+
+      if (openModalCount === 1) {
+        this.openFirstModal();
+      }
     }
+    /**
+     * Removes the modal's node from the DOM. Also calls closeLastModal when this is
+     * the last modal to be closed.
+     */
+
   }, {
-    key: "getSummary",
-    value: function getSummary(totals) {
-      var _totals$products_coun = totals.products_count,
-          productsCount = _totals$products_coun === void 0 ? 0 : _totals$products_coun,
-          _totals$items_sold = totals.items_sold,
-          itemsSold = _totals$items_sold === void 0 ? 0 : _totals$items_sold,
-          _totals$net_revenue = totals.net_revenue,
-          netRevenue = _totals$net_revenue === void 0 ? 0 : _totals$net_revenue,
-          _totals$orders_count = totals.orders_count,
-          ordersCount = _totals$orders_count === void 0 ? 0 : _totals$orders_count;
-      var _this$context2 = this.context,
-          formatAmount = _this$context2.formatAmount,
-          getCurrencyConfig = _this$context2.getCurrencyConfig;
-      var currency = getCurrencyConfig();
-      return [{
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["_n"])('product', 'products', productsCount, 'woocommerce-admin'),
-        value: Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_14__["formatValue"])(currency, 'number', productsCount)
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["_n"])('item sold', 'items sold', itemsSold, 'woocommerce-admin'),
-        value: Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_14__["formatValue"])(currency, 'number', itemsSold)
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('net sales', 'woocommerce-admin'),
-        value: formatAmount(netRevenue)
-      }, {
-        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["_n"])('orders', 'orders', ordersCount, 'woocommerce-admin'),
-        value: Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_14__["formatValue"])(currency, 'number', ordersCount)
-      }];
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      openModalCount--;
+
+      if (openModalCount === 0) {
+        this.closeLastModal();
+      }
+
+      this.cleanDOM();
     }
+    /**
+     * Prepares the DOM for the modals to be rendered.
+     *
+     * Every modal is mounted in a separate div appended to a parent div
+     * that is appended to the document body.
+     *
+     * The parent div will be created if it does not yet exist, and the
+     * separate div for this specific modal will be appended to that.
+     */
+
+  }, {
+    key: "prepareDOM",
+    value: function prepareDOM() {
+      if (!parentElement) {
+        parentElement = document.createElement('div');
+        document.body.appendChild(parentElement);
+      }
+
+      this.node = document.createElement('div');
+      parentElement.appendChild(this.node);
+    }
+    /**
+     * Removes the specific mounting point for this modal from the DOM.
+     */
+
+  }, {
+    key: "cleanDOM",
+    value: function cleanDOM() {
+      parentElement.removeChild(this.node);
+    }
+    /**
+     * Prepares the DOM for this modal and any additional modal to be mounted.
+     *
+     * It appends an additional div to the body for the modals to be rendered in,
+     * it hides any other elements from screen-readers and adds an additional class
+     * to the body to prevent scrolling while the modal is open.
+     */
+
+  }, {
+    key: "openFirstModal",
+    value: function openFirstModal() {
+      hideApp(parentElement);
+      document.body.classList.add(this.props.bodyOpenClassName);
+    }
+    /**
+     * Cleans up the DOM after the last modal is closed and makes the app available
+     * for screen-readers again.
+     */
+
+  }, {
+    key: "closeLastModal",
+    value: function closeLastModal() {
+      document.body.classList.remove(this.props.bodyOpenClassName);
+      showApp();
+    }
+    /**
+     * Renders the modal.
+     *
+     * @return {WPElement} The modal element.
+     */
+
   }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
-          advancedFilters = _this$props.advancedFilters,
-          baseSearchQuery = _this$props.baseSearchQuery,
-          filters = _this$props.filters,
-          hideCompare = _this$props.hideCompare,
-          isRequesting = _this$props.isRequesting,
-          query = _this$props.query;
-      var labels = {
-        helpText: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Check at least two products below to compare', 'woocommerce-admin'),
-        placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Search by product name or SKU', 'woocommerce-admin')
-      };
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(_components_report_table__WEBPACK_IMPORTED_MODULE_19__[/* default */ "a"], {
-        compareBy: hideCompare ? undefined : 'products',
-        endpoint: "products",
-        getHeadersContent: this.getHeadersContent,
-        getRowsContent: this.getRowsContent,
-        getSummary: this.getSummary,
-        summaryFields: ['products_count', 'items_sold', 'net_revenue', 'orders_count'],
-        itemIdField: "product_id",
-        isRequesting: isRequesting,
-        labels: labels,
-        query: query,
-        searchBy: "products",
-        baseSearchQuery: baseSearchQuery,
-        tableQuery: {
-          orderby: query.orderby || 'items_sold',
-          order: query.order || 'desc',
-          extended_info: true,
-          segmentby: query.segmentby
-        },
-        title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Products', 'woocommerce-admin'),
-        columnPrefsKey: "products_report_columns",
-        filters: filters,
-        advancedFilters: advancedFilters
-      });
+          onRequestClose = _this$props.onRequestClose,
+          title = _this$props.title,
+          icon = _this$props.icon,
+          closeButtonLabel = _this$props.closeButtonLabel,
+          children = _this$props.children,
+          aria = _this$props.aria,
+          instanceId = _this$props.instanceId,
+          isDismissible = _this$props.isDismissible,
+          isDismissable = _this$props.isDismissable,
+          otherProps = Object(objectWithoutProperties["a" /* default */])(_this$props, ["onRequestClose", "title", "icon", "closeButtonLabel", "children", "aria", "instanceId", "isDismissible", "isDismissable"]);
+
+      var headingId = aria.labelledby || "components-modal-header-".concat(instanceId);
+
+      if (isDismissable) {
+        Object(build_module["a" /* default */])('isDismissable prop of the Modal component', {
+          alternative: 'isDismissible prop (renamed) of the Modal component'
+        });
+      } // Disable reason: this stops mouse events from triggering tooltips and
+      // other elements underneath the modal overlay.
+
+
+      return Object(external_this_wp_element_["createPortal"])(Object(external_this_wp_element_["createElement"])(modal_frame, Object(esm_extends["a" /* default */])({
+        onRequestClose: onRequestClose,
+        aria: {
+          labelledby: title ? headingId : null,
+          describedby: aria.describedby
+        }
+      }, otherProps), Object(external_this_wp_element_["createElement"])("div", {
+        className: 'components-modal__content',
+        role: "document"
+      }, Object(external_this_wp_element_["createElement"])(header, {
+        closeLabel: closeButtonLabel,
+        headingId: headingId,
+        icon: icon,
+        isDismissible: isDismissible || isDismissable,
+        onClose: onRequestClose,
+        title: title
+      }), children)), this.node);
     }
   }]);
 
-  return ProductsReportTable;
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+  return Modal;
+}(external_this_wp_element_["Component"]);
 
-ProductsReportTable.contextType = _lib_currency_context__WEBPACK_IMPORTED_MODULE_20__[/* CurrencyContext */ "a"];
-/* harmony default export */ __webpack_exports__["a"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_8__[/* default */ "a"])(Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__["withSelect"])(function (select, props) {
-  var query = props.query,
-      isRequesting = props.isRequesting;
+modal_Modal.defaultProps = {
+  bodyOpenClassName: 'modal-open',
+  role: 'dialog',
+  title: null,
+  focusOnMount: true,
+  shouldCloseOnEsc: true,
+  shouldCloseOnClickOutside: true,
+  isDismissible: true,
 
-  if (isRequesting || query.search && !(query.products && query.products.length)) {
-    return {};
+  /* accessibility */
+  aria: {
+    labelledby: null,
+    describedby: null
   }
-
-  var _select = select(_woocommerce_data__WEBPACK_IMPORTED_MODULE_16__["ITEMS_STORE_NAME"]),
-      getItems = _select.getItems,
-      getItemsError = _select.getItemsError,
-      isResolving = _select.isResolving;
-
-  var tableQuery = {
-    per_page: -1
-  };
-  var categories = getItems('categories', tableQuery);
-  var isError = Boolean(getItemsError('categories', tableQuery));
-  var isLoading = isResolving('getItems', ['categories', tableQuery]);
-  return {
-    categories: categories,
-    isError: isError,
-    isRequesting: isLoading
-  };
-}))(ProductsReportTable));
+};
+/* harmony default export */ var modal = __webpack_exports__["a"] = (Object(with_instance_id["a" /* default */])(modal_Modal));
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ 796:
+/***/ 608:
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory(__webpack_require__(8), __webpack_require__(90));
+	else {}
+})(this, function(__WEBPACK_EXTERNAL_MODULE__1__, __WEBPACK_EXTERNAL_MODULE__2__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (false) { var throwOnDirectAccess, ReactIs; } else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(5)();
+}
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__1__;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__2__;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// Tell whether the rect is visible, given an offset
+//
+// return: boolean
+module.exports = function (offset, rect, containmentRect) {
+  var offsetDir = offset.direction;
+  var offsetVal = offset.value; // Rules for checking different kind of offsets. In example if the element is
+  // 90px below viewport and offsetTop is 100, it is considered visible.
+
+  switch (offsetDir) {
+    case 'top':
+      return containmentRect.top + offsetVal < rect.top && containmentRect.bottom > rect.bottom && containmentRect.left < rect.left && containmentRect.right > rect.right;
+
+    case 'left':
+      return containmentRect.left + offsetVal < rect.left && containmentRect.bottom > rect.bottom && containmentRect.top < rect.top && containmentRect.right > rect.right;
+
+    case 'bottom':
+      return containmentRect.bottom - offsetVal > rect.bottom && containmentRect.left < rect.left && containmentRect.right > rect.right && containmentRect.top < rect.top;
+
+    case 'right':
+      return containmentRect.right - offsetVal > rect.right && containmentRect.left < rect.left && containmentRect.top < rect.top && containmentRect.bottom > rect.bottom;
+  }
+};
+
+/***/ }),
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryBreadcrumbs; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(738);
-/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(77);
-/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_components__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(32);
-/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_9__);
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return VisibilitySensor; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib_is_visible_with_offset__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _lib_is_visible_with_offset__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_is_visible_with_offset__WEBPACK_IMPORTED_MODULE_3__);
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
 
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-/**
- * External dependencies
- */
-
-
-
-
-
-
-var CategoryBreadcrumbs = /*#__PURE__*/function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(CategoryBreadcrumbs, _Component);
-
-  var _super = _createSuper(CategoryBreadcrumbs);
-
-  function CategoryBreadcrumbs() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, CategoryBreadcrumbs);
-
-    return _super.apply(this, arguments);
+function normalizeRect(rect) {
+  if (rect.width === undefined) {
+    rect.width = rect.right - rect.left;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(CategoryBreadcrumbs, [{
-    key: "getCategoryAncestorIds",
-    value: function getCategoryAncestorIds(category, categories) {
-      var ancestors = [];
-      var parent = category.parent;
+  if (rect.height === undefined) {
+    rect.height = rect.bottom - rect.top;
+  }
 
-      while (parent) {
-        ancestors.unshift(parent);
-        parent = categories.get(parent).parent;
+  return rect;
+}
+
+var VisibilitySensor =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(VisibilitySensor, _React$Component);
+
+  function VisibilitySensor(props) {
+    var _this;
+
+    _classCallCheck(this, VisibilitySensor);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(VisibilitySensor).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "getContainer", function () {
+      return _this.props.containment || window;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "addEventListener", function (target, event, delay, throttle) {
+      if (!_this.debounceCheck) {
+        _this.debounceCheck = {};
       }
 
-      return ancestors;
-    }
-  }, {
-    key: "getCategoryAncestors",
-    value: function getCategoryAncestors(category, categories) {
-      var ancestorIds = this.getCategoryAncestorIds(category, categories);
+      var timeout;
+      var func;
 
-      if (!ancestorIds.length) {
+      var later = function later() {
+        timeout = null;
+
+        _this.check();
+      };
+
+      if (throttle > -1) {
+        func = function func() {
+          if (!timeout) {
+            timeout = setTimeout(later, throttle || 0);
+          }
+        };
+      } else {
+        func = function func() {
+          clearTimeout(timeout);
+          timeout = setTimeout(later, delay || 0);
+        };
+      }
+
+      var info = {
+        target: target,
+        fn: func,
+        getLastTimeout: function getLastTimeout() {
+          return timeout;
+        }
+      };
+      target.addEventListener(event, info.fn);
+      _this.debounceCheck[event] = info;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "startWatching", function () {
+      if (_this.debounceCheck || _this.interval) {
         return;
       }
 
-      if (ancestorIds.length === 1) {
-        return categories.get(Object(lodash__WEBPACK_IMPORTED_MODULE_6__["first"])(ancestorIds)).name + ' › ';
+      if (_this.props.intervalCheck) {
+        _this.interval = setInterval(_this.check, _this.props.intervalDelay);
       }
 
-      if (ancestorIds.length === 2) {
-        return categories.get(Object(lodash__WEBPACK_IMPORTED_MODULE_6__["first"])(ancestorIds)).name + ' › ' + categories.get(Object(lodash__WEBPACK_IMPORTED_MODULE_6__["last"])(ancestorIds)).name + ' › ';
+      if (_this.props.scrollCheck) {
+        _this.addEventListener(_this.getContainer(), "scroll", _this.props.scrollDelay, _this.props.scrollThrottle);
       }
 
-      return categories.get(Object(lodash__WEBPACK_IMPORTED_MODULE_6__["first"])(ancestorIds)).name + ' … ' + categories.get(Object(lodash__WEBPACK_IMPORTED_MODULE_6__["last"])(ancestorIds)).name + ' › ';
+      if (_this.props.resizeCheck) {
+        _this.addEventListener(window, "resize", _this.props.resizeDelay, _this.props.resizeThrottle);
+      } // if dont need delayed call, check on load ( before the first interval fires )
+
+
+      !_this.props.delayedCall && _this.check();
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "stopWatching", function () {
+      if (_this.debounceCheck) {
+        // clean up event listeners and their debounce callers
+        for (var debounceEvent in _this.debounceCheck) {
+          if (_this.debounceCheck.hasOwnProperty(debounceEvent)) {
+            var debounceInfo = _this.debounceCheck[debounceEvent];
+            clearTimeout(debounceInfo.getLastTimeout());
+            debounceInfo.target.removeEventListener(debounceEvent, debounceInfo.fn);
+            _this.debounceCheck[debounceEvent] = null;
+          }
+        }
+      }
+
+      _this.debounceCheck = null;
+
+      if (_this.interval) {
+        _this.interval = clearInterval(_this.interval);
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "check", function () {
+      var el = _this.node;
+      var rect;
+      var containmentRect; // if the component has rendered to null, dont update visibility
+
+      if (!el) {
+        return _this.state;
+      }
+
+      rect = normalizeRect(_this.roundRectDown(el.getBoundingClientRect()));
+
+      if (_this.props.containment) {
+        var containmentDOMRect = _this.props.containment.getBoundingClientRect();
+
+        containmentRect = {
+          top: containmentDOMRect.top,
+          left: containmentDOMRect.left,
+          bottom: containmentDOMRect.bottom,
+          right: containmentDOMRect.right
+        };
+      } else {
+        containmentRect = {
+          top: 0,
+          left: 0,
+          bottom: window.innerHeight || document.documentElement.clientHeight,
+          right: window.innerWidth || document.documentElement.clientWidth
+        };
+      } // Check if visibility is wanted via offset?
+
+
+      var offset = _this.props.offset || {};
+      var hasValidOffset = _typeof(offset) === "object";
+
+      if (hasValidOffset) {
+        containmentRect.top += offset.top || 0;
+        containmentRect.left += offset.left || 0;
+        containmentRect.bottom -= offset.bottom || 0;
+        containmentRect.right -= offset.right || 0;
+      }
+
+      var visibilityRect = {
+        top: rect.top >= containmentRect.top,
+        left: rect.left >= containmentRect.left,
+        bottom: rect.bottom <= containmentRect.bottom,
+        right: rect.right <= containmentRect.right
+      }; // https://github.com/joshwnj/react-visibility-sensor/pull/114
+
+      var hasSize = rect.height > 0 && rect.width > 0;
+      var isVisible = hasSize && visibilityRect.top && visibilityRect.left && visibilityRect.bottom && visibilityRect.right; // check for partial visibility
+
+      if (hasSize && _this.props.partialVisibility) {
+        var partialVisible = rect.top <= containmentRect.bottom && rect.bottom >= containmentRect.top && rect.left <= containmentRect.right && rect.right >= containmentRect.left; // account for partial visibility on a single edge
+
+        if (typeof _this.props.partialVisibility === "string") {
+          partialVisible = visibilityRect[_this.props.partialVisibility];
+        } // if we have minimum top visibility set by props, lets check, if it meets the passed value
+        // so if for instance element is at least 200px in viewport, then show it.
+
+
+        isVisible = _this.props.minTopValue ? partialVisible && rect.top <= containmentRect.bottom - _this.props.minTopValue : partialVisible;
+      } // Deprecated options for calculating offset.
+
+
+      if (typeof offset.direction === "string" && typeof offset.value === "number") {
+        console.warn("[notice] offset.direction and offset.value have been deprecated. They still work for now, but will be removed in next major version. Please upgrade to the new syntax: { %s: %d }", offset.direction, offset.value);
+        isVisible = _lib_is_visible_with_offset__WEBPACK_IMPORTED_MODULE_3___default()(offset, rect, containmentRect);
+      }
+
+      var state = _this.state; // notify the parent when the value changes
+
+      if (_this.state.isVisible !== isVisible) {
+        state = {
+          isVisible: isVisible,
+          visibilityRect: visibilityRect
+        };
+
+        _this.setState(state);
+
+        if (_this.props.onChange) _this.props.onChange(isVisible);
+      }
+
+      return state;
+    });
+
+    _this.state = {
+      isVisible: null,
+      visibilityRect: {}
+    };
+    return _this;
+  }
+
+  _createClass(VisibilitySensor, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.node = react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.findDOMNode(this);
+
+      if (this.props.active) {
+        this.startWatching();
+      }
     }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.stopWatching();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      // re-register node in componentDidUpdate if children diffs [#103]
+      this.node = react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.findDOMNode(this);
+
+      if (this.props.active && !prevProps.active) {
+        this.setState({
+          isVisible: null,
+          visibilityRect: {}
+        });
+        this.startWatching();
+      } else if (!this.props.active) {
+        this.stopWatching();
+      }
+    }
+  }, {
+    key: "roundRectDown",
+    value: function roundRectDown(rect) {
+      return {
+        top: Math.floor(rect.top),
+        left: Math.floor(rect.left),
+        bottom: Math.floor(rect.bottom),
+        right: Math.floor(rect.right)
+      };
+    }
+    /**
+     * Check if the element is within the visible viewport
+     */
+
   }, {
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          categories = _this$props.categories,
-          category = _this$props.category,
-          query = _this$props.query;
-      var persistedQuery = Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_9__["getPersistedQuery"])(query);
-      return category ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])("div", {
-        className: "woocommerce-table__breadcrumbs"
-      }, this.getCategoryAncestors(category, categories), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_8__["Link"], {
-        href: Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_9__["getNewPath"])(persistedQuery, '/analytics/categories', {
-          filter: 'single_category',
-          categories: category.id
-        }),
-        type: "wc-admin"
-      }, category.name)) : Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"], null);
+      if (this.props.children instanceof Function) {
+        return this.props.children({
+          isVisible: this.state.isVisible,
+          visibilityRect: this.state.visibilityRect
+        });
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.Children.only(this.props.children);
     }
   }]);
 
-  return CategoryBreadcrumbs;
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+  return VisibilitySensor;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+_defineProperty(VisibilitySensor, "defaultProps", {
+  active: true,
+  partialVisibility: false,
+  minTopValue: 0,
+  scrollCheck: false,
+  scrollDelay: 250,
+  scrollThrottle: -1,
+  resizeCheck: false,
+  resizeDelay: 250,
+  resizeThrottle: -1,
+  intervalCheck: true,
+  intervalDelay: 100,
+  delayedCall: false,
+  offset: {},
+  containment: null,
+  children: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null)
+});
+
+_defineProperty(VisibilitySensor, "propTypes", {
+  onChange: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func,
+  active: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  partialVisibility: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool, prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOf(["top", "right", "bottom", "left"])]),
+  delayedCall: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  offset: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    top: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+    left: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+    bottom: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+    right: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+  }), // deprecated offset property
+  prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    direction: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOf(["top", "right", "bottom", "left"]),
+    value: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+  })]),
+  scrollCheck: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  scrollDelay: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+  scrollThrottle: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+  resizeCheck: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  resizeDelay: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+  resizeThrottle: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+  intervalCheck: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.bool,
+  intervalDelay: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number,
+  containment: typeof window !== "undefined" ? prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.instanceOf(window.Element) : prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.any,
+  children: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.element, prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.func]),
+  minTopValue: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.number
+});
 
 
 
 /***/ }),
-
-/***/ 828:
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// extracted by mini-css-extract-plugin
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = __webpack_require__(6);
+
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+module.exports = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+    var err = new Error(
+      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+      'Use PropTypes.checkPropTypes() to call them. ' +
+      'Read more at http://fb.me/use-check-prop-types'
+    );
+    err.name = 'Invariant Violation';
+    throw err;
+  };
+  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  };
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ })
+/******/ ]);
+});
 
 /***/ })
 

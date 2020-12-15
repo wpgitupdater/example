@@ -82,12 +82,12 @@ this["wc"] = this["wc"] || {}; this["wc"]["number"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 718);
+/******/ 	return __webpack_require__(__webpack_require__.s = 526);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 116:
+/***/ 100:
 /***/ (function(module, exports) {
 
 function _arrayWithHoles(arr) {
@@ -98,7 +98,7 @@ module.exports = _arrayWithHoles;
 
 /***/ }),
 
-/***/ 117:
+/***/ 101:
 /***/ (function(module, exports) {
 
 function _iterableToArrayLimit(arr, i) {
@@ -132,7 +132,7 @@ module.exports = _iterableToArrayLimit;
 
 /***/ }),
 
-/***/ 118:
+/***/ 102:
 /***/ (function(module, exports) {
 
 function _nonIterableRest() {
@@ -143,16 +143,16 @@ module.exports = _nonIterableRest;
 
 /***/ }),
 
-/***/ 34:
+/***/ 31:
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithHoles = __webpack_require__(116);
+var arrayWithHoles = __webpack_require__(100);
 
-var iterableToArrayLimit = __webpack_require__(117);
+var iterableToArrayLimit = __webpack_require__(101);
 
-var unsupportedIterableToArray = __webpack_require__(83);
+var unsupportedIterableToArray = __webpack_require__(70);
 
-var nonIterableRest = __webpack_require__(118);
+var nonIterableRest = __webpack_require__(102);
 
 function _slicedToArray(arr, i) {
   return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
@@ -184,7 +184,7 @@ module.exports = _defineProperty;
 
 /***/ }),
 
-/***/ 718:
+/***/ 526:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -194,7 +194,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calculateDelta", function() { return calculateDelta; });
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -233,7 +233,7 @@ function _objectSpread(target) {
   return target;
 }
 
-var numberFormatter = __webpack_require__(719);
+var numberFormatter = __webpack_require__(527);
 /**
  * Formats a number using site's current locale
  *
@@ -321,7 +321,7 @@ function calculateDelta(primaryValue, secondaryValue) {
 
 /***/ }),
 
-/***/ 719:
+/***/ 527:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -415,7 +415,7 @@ module.exports = function number_format(number, decimals, decPoint, thousandsSep
 
 /***/ }),
 
-/***/ 79:
+/***/ 62:
 /***/ (function(module, exports) {
 
 function _arrayLikeToArray(arr, len) {
@@ -432,10 +432,10 @@ module.exports = _arrayLikeToArray;
 
 /***/ }),
 
-/***/ 83:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeToArray = __webpack_require__(79);
+var arrayLikeToArray = __webpack_require__(62);
 
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;

@@ -1,11 +1,11 @@
 (window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[9],{
 
-/***/ 776:
+/***/ 585:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createNoticesFromResponse; });
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * External dependencies
@@ -28,7 +28,276 @@ function createNoticesFromResponse(response) {
 
 /***/ }),
 
-/***/ 792:
+/***/ 587:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(20);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(22);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(23);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(0);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(181);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(25);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var interpolate_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(43);
+/* harmony import */ var interpolate_components__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(interpolate_components__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(546);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(67);
+/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(74);
+/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_components__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(34);
+/* harmony import */ var _woocommerce_data__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_data__WEBPACK_IMPORTED_MODULE_15__);
+
+
+
+
+
+
+
+
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5___default()(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+/**
+ * External dependencies
+ */
+
+
+
+
+
+
+
+
+
+var UsageModal = /*#__PURE__*/function (_Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(UsageModal, _Component);
+
+  var _super = _createSuper(UsageModal);
+
+  function UsageModal(props) {
+    var _this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, UsageModal);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      isLoadingScripts: false,
+      isRequestStarted: false
+    };
+    return _this;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(UsageModal, [{
+    key: "componentDidUpdate",
+    value: function () {
+      var _componentDidUpdate = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(prevProps, prevState) {
+        var _this$props, hasErrors, isRequesting, onClose, onContinue, createNotice, _this$state, isLoadingScripts, isRequestStarted, isRequestSuccessful, isRequestError;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this$props = this.props, hasErrors = _this$props.hasErrors, isRequesting = _this$props.isRequesting, onClose = _this$props.onClose, onContinue = _this$props.onContinue, createNotice = _this$props.createNotice;
+                _this$state = this.state, isLoadingScripts = _this$state.isLoadingScripts, isRequestStarted = _this$state.isRequestStarted; // We can't rely on isRequesting props only because option update might be triggered by other component.
+
+                if (isRequestStarted) {
+                  _context.next = 4;
+                  break;
+                }
+
+                return _context.abrupt("return");
+
+              case 4:
+                isRequestSuccessful = !isRequesting && !isLoadingScripts && (prevProps.isRequesting || prevState.isLoadingScripts) && !hasErrors;
+                isRequestError = !isRequesting && prevProps.isRequesting && hasErrors;
+
+                if (isRequestSuccessful) {
+                  onClose();
+                  onContinue();
+                }
+
+                if (isRequestError) {
+                  createNotice('error', Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('There was a problem updating your preferences.', 'woocommerce-admin'));
+                  onClose();
+                }
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidUpdate(_x, _x2) {
+        return _componentDidUpdate.apply(this, arguments);
+      }
+
+      return componentDidUpdate;
+    }()
+  }, {
+    key: "updateTracking",
+    value: function updateTracking(_ref) {
+      var _this2 = this;
+
+      var allowTracking = _ref.allowTracking;
+      var updateOptions = this.props.updateOptions;
+
+      if (allowTracking && typeof window.wcTracks.enable === 'function') {
+        this.setState({
+          isLoadingScripts: true
+        });
+        window.wcTracks.enable(function () {
+          // Don't update state if component is unmounted already
+          if (!_this2._isMounted) {
+            return;
+          }
+
+          _this2.setState({
+            isLoadingScripts: false
+          });
+        });
+      } else if (!allowTracking) {
+        window.wcTracks.isEnabled = false;
+      }
+
+      var trackingValue = allowTracking ? 'yes' : 'no';
+      this.setState({
+        isRequestStarted: true
+      });
+      updateOptions({
+        woocommerce_allow_tracking: trackingValue
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this._isMounted = true;
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this._isMounted = false;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      // Bail if site has already opted in to tracking
+      if (this.props.allowTracking) {
+        var _this$props2 = this.props,
+            onClose = _this$props2.onClose,
+            onContinue = _this$props2.onContinue;
+        onClose();
+        onContinue();
+        return null;
+      }
+
+      var _this$props3 = this.props,
+          isRequesting = _this$props3.isRequesting,
+          _this$props3$title = _this$props3.title,
+          title = _this$props3$title === void 0 ? Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('Build a better WooCommerce', 'woocommerce-admin') : _this$props3$title,
+          _this$props3$message = _this$props3.message,
+          message = _this$props3$message === void 0 ? interpolate_components__WEBPACK_IMPORTED_MODULE_11___default()({
+        mixedString: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('Get improved features and faster fixes by sharing non-sensitive data via {{link}}usage tracking{{/link}} ' + 'that shows us how WooCommerce is used. No personal data is tracked or stored.', 'woocommerce-admin'),
+        components: {
+          link: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_14__["Link"], {
+            href: "https://woocommerce.com/usage-tracking",
+            target: "_blank",
+            type: "external"
+          })
+        }
+      }) : _this$props3$message,
+          _this$props3$dismissA = _this$props3.dismissActionText,
+          dismissActionText = _this$props3$dismissA === void 0 ? Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('No thanks', 'woocommerce-admin') : _this$props3$dismissA,
+          _this$props3$acceptAc = _this$props3.acceptActionText,
+          acceptActionText = _this$props3$acceptAc === void 0 ? Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_8__["__"])('Yes, count me in!', 'woocommerce-admin') : _this$props3$acceptAc;
+      var isRequestStarted = this.state.isRequestStarted;
+      var isBusy = isRequestStarted && isRequesting;
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_12__[/* default */ "a"], {
+        title: title,
+        isDismissible: this.props.isDismissible,
+        onRequestClose: function onRequestClose() {
+          return _this3.props.onClose();
+        },
+        className: "woocommerce-usage-modal"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])("div", {
+        className: "woocommerce-usage-modal__wrapper"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])("div", {
+        className: "woocommerce-usage-modal__message"
+      }, message), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])("div", {
+        className: "woocommerce-usage-modal__actions"
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], {
+        isSecondary: true,
+        isBusy: isBusy,
+        onClick: function onClick() {
+          return _this3.updateTracking({
+            allowTracking: false
+          });
+        }
+      }, dismissActionText), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], {
+        isPrimary: true,
+        isBusy: isBusy,
+        onClick: function onClick() {
+          return _this3.updateTracking({
+            allowTracking: true
+          });
+        }
+      }, acceptActionText))));
+    }
+  }]);
+
+  return UsageModal;
+}(_wordpress_element__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_9__[/* default */ "a"])(Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__["withSelect"])(function (select) {
+  var _select = select(_woocommerce_data__WEBPACK_IMPORTED_MODULE_15__["OPTIONS_STORE_NAME"]),
+      getOption = _select.getOption,
+      getOptionsUpdatingError = _select.getOptionsUpdatingError,
+      isOptionsUpdating = _select.isOptionsUpdating;
+
+  var allowTracking = getOption('woocommerce_allow_tracking') === 'yes';
+  var isRequesting = Boolean(isOptionsUpdating());
+  var hasErrors = Boolean(getOptionsUpdatingError());
+  return {
+    allowTracking: allowTracking,
+    isRequesting: isRequesting,
+    hasErrors: hasErrors
+  };
+}), Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_10__["withDispatch"])(function (dispatch) {
+  var _dispatch = dispatch('core/notices'),
+      createNotice = _dispatch.createNotice;
+
+  var _dispatch2 = dispatch(_woocommerce_data__WEBPACK_IMPORTED_MODULE_15__["OPTIONS_STORE_NAME"]),
+      updateOptions = _dispatch2.updateOptions;
+
+  return {
+    createNotice: createNotice,
+    updateOptions: updateOptions
+  };
+}))(UsageModal));
+
+/***/ }),
+
+/***/ 604:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44,27 +313,27 @@ var external_this_wp_element_ = __webpack_require__(0);
 var external_this_wp_i18n_ = __webpack_require__(3);
 
 // EXTERNAL MODULE: external {"this":["wp","apiFetch"]}
-var external_this_wp_apiFetch_ = __webpack_require__(43);
+var external_this_wp_apiFetch_ = __webpack_require__(44);
 var external_this_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_this_wp_apiFetch_);
 
 // EXTERNAL MODULE: external "lodash"
 var external_lodash_ = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./node_modules/interpolate-components/lib/index.js
-var lib = __webpack_require__(42);
+var lib = __webpack_require__(43);
 var lib_default = /*#__PURE__*/__webpack_require__.n(lib);
 
 // EXTERNAL MODULE: ./client/settings/index.js
-var settings = __webpack_require__(36);
+var settings = __webpack_require__(35);
 
 // EXTERNAL MODULE: external {"this":["wc","components"]}
-var external_this_wc_components_ = __webpack_require__(77);
+var external_this_wc_components_ = __webpack_require__(74);
 
 // EXTERNAL MODULE: external {"this":["wc","data"]}
-var external_this_wc_data_ = __webpack_require__(35);
+var external_this_wc_data_ = __webpack_require__(34);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/extends.js
-var helpers_extends = __webpack_require__(38);
+var helpers_extends = __webpack_require__(36);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
@@ -72,11 +341,11 @@ var regenerator = __webpack_require__(14);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(98);
+var asyncToGenerator = __webpack_require__(75);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(17);
+var classCallCheck = __webpack_require__(20);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
@@ -84,19 +353,19 @@ var createClass = __webpack_require__(15);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/assertThisInitialized.js
-var assertThisInitialized = __webpack_require__(11);
+var assertThisInitialized = __webpack_require__(13);
 var assertThisInitialized_default = /*#__PURE__*/__webpack_require__.n(assertThisInitialized);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inherits.js
-var inherits = __webpack_require__(18);
+var inherits = __webpack_require__(22);
 var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(19);
+var possibleConstructorReturn = __webpack_require__(23);
 var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/getPrototypeOf.js
-var getPrototypeOf = __webpack_require__(9);
+var getPrototypeOf = __webpack_require__(10);
 var getPrototypeOf_default = /*#__PURE__*/__webpack_require__.n(getPrototypeOf);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
@@ -104,13 +373,13 @@ var defineProperty = __webpack_require__(5);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/button/index.js
-var build_module_button = __webpack_require__(72);
+var build_module_button = __webpack_require__(67);
 
 // EXTERNAL MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/compose.js
-var compose = __webpack_require__(277);
+var compose = __webpack_require__(181);
 
 // EXTERNAL MODULE: external {"this":["wp","data"]}
-var external_this_wp_data_ = __webpack_require__(20);
+var external_this_wp_data_ = __webpack_require__(25);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/payments/bacs.js
 
@@ -450,10 +719,10 @@ var bacs_Bacs = /*#__PURE__*/function (_Component) {
   })));
 });
 // EXTERNAL MODULE: ./client/lib/notices/index.js
-var notices = __webpack_require__(776);
+var notices = __webpack_require__(585);
 
 // EXTERNAL MODULE: external {"this":["wc","navigation"]}
-var external_this_wc_navigation_ = __webpack_require__(32);
+var external_this_wc_navigation_ = __webpack_require__(29);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/payments/stripe.js
 
@@ -514,6 +783,7 @@ var stripe_Stripe = /*#__PURE__*/function (_Component) {
   createClass_default()(Stripe, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var oAuthConnectFailed = this.state.oAuthConnectFailed;
       var stripeSettings = this.props.stripeSettings;
       var query = Object(external_this_wc_navigation_["getQuery"])(); // Handle redirect back from Stripe.
 
@@ -526,7 +796,7 @@ var stripe_Stripe = /*#__PURE__*/function (_Component) {
         }
       }
 
-      if (!this.requiresManualConfig()) {
+      if (!oAuthConnectFailed) {
         this.fetchOAuthConnectURL();
       }
     }
@@ -540,20 +810,11 @@ var stripe_Stripe = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
-    key: "requiresManualConfig",
-    value: function requiresManualConfig() {
-      var _this$props = this.props,
-          activePlugins = _this$props.activePlugins,
-          isJetpackConnected = _this$props.isJetpackConnected;
-      var oAuthConnectFailed = this.state.oAuthConnectFailed;
-      return !isJetpackConnected || !activePlugins.includes('woocommerce-services') || oAuthConnectFailed;
-    }
-  }, {
     key: "completeMethod",
     value: function completeMethod() {
-      var _this$props2 = this.props,
-          createNotice = _this$props2.createNotice,
-          markConfigured = _this$props2.markConfigured;
+      var _this$props = this.props,
+          createNotice = _this$props.createNotice,
+          markConfigured = _this$props.markConfigured;
       this.setState({
         isPending: false
       });
@@ -651,13 +912,13 @@ var stripe_Stripe = /*#__PURE__*/function (_Component) {
       var _updateSettings = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee2(values) {
         var _objectSpread2;
 
-        var _this$props3, updateOptions, stripeSettings, createNotice, prefix, update;
+        var _this$props2, updateOptions, stripeSettings, createNotice, prefix, update;
 
         return regenerator_default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _this$props3 = this.props, updateOptions = _this$props3.updateOptions, stripeSettings = _this$props3.stripeSettings, createNotice = _this$props3.createNotice;
+                _this$props2 = this.props, updateOptions = _this$props2.updateOptions, stripeSettings = _this$props2.stripeSettings, createNotice = _this$props2.createNotice;
                 prefix = values.publishable_key.match(/^pk_live_/) ? '' : 'test_';
                 _context2.next = 4;
                 return updateOptions({
@@ -752,6 +1013,31 @@ var stripe_Stripe = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
+    key: "renderOauthConfig",
+    value: function renderOauthConfig() {
+      var _this2 = this;
+
+      var tosPrompt = lib_default()({
+        mixedString: Object(external_this_wp_i18n_["__"])('By clicking "Connect," you agree to the {{tosLink}}Terms of Service{{/tosLink}}. Or {{manualConfigLink}}manually enter your Stripe API details{{/manualConfigLink}} instead.', 'woocommerce-admin'),
+        components: {
+          tosLink: Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Link"], {
+            href: "https://wordpress.com/tos",
+            target: "_blank",
+            type: "external"
+          }),
+          manualConfigLink: Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+            isLink: true,
+            onClick: function onClick() {
+              _this2.setState({
+                connectURL: null
+              });
+            }
+          })
+        }
+      });
+      return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])("p", null, this.renderConnectButton()), tosPrompt);
+    }
+  }, {
     key: "getConnectStep",
     value: function getConnectStep() {
       var _this$state = this.state,
@@ -770,21 +1056,20 @@ var stripe_Stripe = /*#__PURE__*/function (_Component) {
       if (!oAuthConnectFailed && connectURL) {
         return _objectSpread(_objectSpread({}, connectStep), {}, {
           description: Object(external_this_wp_i18n_["__"])('A Stripe account is required to process payments.', 'woocommerce-admin'),
-          content: this.renderConnectButton()
+          content: this.renderOauthConfig()
         });
       }
 
       return _objectSpread(_objectSpread({}, connectStep), {}, {
-        description: Object(external_this_wp_i18n_["__"])('Connect your store to your Stripe account. Don’t have a Stripe account? Create one.', 'woocommerce-admin'),
         content: this.renderManualConfig()
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$props4 = this.props,
-          installStep = _this$props4.installStep,
-          isOptionsUpdating = _this$props4.isOptionsUpdating;
+      var _this$props3 = this.props,
+          installStep = _this$props3.installStep,
+          isOptionsUpdating = _this$props3.isOptionsUpdating;
       var isPending = this.state.isPending;
       return Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
         isVertical: true,
@@ -804,12 +1089,10 @@ var stripe_Stripe = /*#__PURE__*/function (_Component) {
       isOptionsUpdating = _select.isOptionsUpdating;
 
   var _select2 = select(external_this_wc_data_["PLUGINS_STORE_NAME"]),
-      getActivePlugins = _select2.getActivePlugins,
-      isJetpackConnected = _select2.isJetpackConnected;
+      getActivePlugins = _select2.getActivePlugins;
 
   return {
     activePlugins: getActivePlugins(),
-    isJetpackConnected: isJetpackConnected(),
     isOptionsUpdating: isOptionsUpdating(),
     stripeSettings: getOption('woocommerce_stripe_settings') || []
   };
@@ -1075,7 +1358,9 @@ var wcpay_WCPay = /*#__PURE__*/function (_Component) {
 
       if (query['wcpay-connection-success']) {
         createNotice('success', Object(external_this_wp_i18n_["__"])('WooCommerce Payments connected successfully.', 'woocommerce-admin'));
-        markConfigured('wcpay');
+        markConfigured('wcpay', {
+          'wcpay-connection-success': '1'
+        });
       }
     }
   }, {
@@ -1122,10 +1407,10 @@ var wcpay_WCPay = /*#__PURE__*/function (_Component) {
   }));
 });
 // EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/checkbox-control/index.js
-var checkbox_control = __webpack_require__(779);
+var checkbox_control = __webpack_require__(589);
 
 // EXTERNAL MODULE: external {"this":["wp","url"]}
-var external_this_wp_url_ = __webpack_require__(37);
+var external_this_wp_url_ = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/payments/paypal.js
 
@@ -1979,6 +2264,183 @@ var eway_EWay = /*#__PURE__*/function (_Component) {
     updateOptions: updateOptions
   };
 }))(eway_EWay));
+// EXTERNAL MODULE: ./client/task-list/tasks/payments/wcpay-usage-modal.js
+var wcpay_usage_modal = __webpack_require__(606);
+
+// CONCATENATED MODULE: ./client/task-list/tasks/payments/razorpay.js
+
+
+
+
+
+/**
+ * External dependencies
+ */
+
+
+
+
+
+
+var INITIAL_CONFIG = {
+  key_id: '',
+  key_secret: ''
+};
+
+var razorpay_validate = function validate(values) {
+  var errors = {};
+
+  if (!values.key_id) {
+    errors.key_id = Object(external_this_wp_i18n_["__"])('Please enter your Key ID', 'woocommerce-admin');
+  }
+
+  if (!values.key_secret) {
+    errors.key_secret = Object(external_this_wp_i18n_["__"])('Please enter your Key Secret', 'woocommerce-admin');
+  }
+
+  return errors;
+};
+
+var razorpay_updateSettings = /*#__PURE__*/function () {
+  var _ref = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee(values, createNotice, markConfigured, updateOptions) {
+    var update;
+    return regenerator_default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return updateOptions({
+              woocommerce_razorpay_settings: {
+                key_id: values.key_id,
+                key_secret: values.key_secret,
+                enabled: 'yes'
+              }
+            });
+
+          case 2:
+            update = _context.sent;
+
+            if (update.success) {
+              markConfigured('razorpay');
+              createNotice('success', Object(external_this_wp_i18n_["__"])('Razorpay connected successfully', 'woocommerce-admin'));
+            } else {
+              createNotice('error', Object(external_this_wp_i18n_["__"])('There was a problem saving your payment settings', 'woocommerce-admin'));
+            }
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function updateSettings(_x, _x2, _x3, _x4) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+var razorpay_renderConnectStep = function renderConnectStep(_ref2) {
+  var createNotice = _ref2.createNotice,
+      isOptionsRequesting = _ref2.isOptionsRequesting,
+      markConfigured = _ref2.markConfigured,
+      updateOptions = _ref2.updateOptions;
+  var helpText = lib_default()({
+    mixedString: Object(external_this_wp_i18n_["__"])('Your key details can be obtained from your {{link}}Razorpay account{{/link}}', 'woocommerce-admin'),
+    components: {
+      link: Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Link"], {
+        href: "https://dashboard.razorpay.com/#/access/signin",
+        target: "_blank",
+        type: "external"
+      })
+    }
+  });
+
+  var onSubmit = function onSubmit(values) {
+    return razorpay_updateSettings(values, createNotice, markConfigured, updateOptions);
+  };
+
+  return Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Form"], {
+    initialValues: INITIAL_CONFIG,
+    onSubmitCallback: onSubmit,
+    validate: razorpay_validate
+  }, function (_ref3) {
+    var getInputProps = _ref3.getInputProps,
+        handleSubmit = _ref3.handleSubmit;
+    return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["TextControl"], extends_default()({
+      label: Object(external_this_wp_i18n_["__"])('Key ID', 'woocommerce-admin'),
+      required: true
+    }, getInputProps('key_id'))), Object(external_this_wp_element_["createElement"])(external_this_wc_components_["TextControl"], extends_default()({
+      label: Object(external_this_wp_i18n_["__"])('Key Secret', 'woocommerce-admin'),
+      required: true
+    }, getInputProps('key_secret'))), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      isPrimary: true,
+      isBusy: isOptionsRequesting,
+      onClick: handleSubmit
+    }, Object(external_this_wp_i18n_["__"])('Proceed', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])("p", null, helpText));
+  });
+};
+
+var razorpay_Razorpay = function Razorpay(_ref4) {
+  var createNotice = _ref4.createNotice,
+      installStep = _ref4.installStep,
+      isOptionsRequesting = _ref4.isOptionsRequesting,
+      markConfigured = _ref4.markConfigured,
+      updateOptions = _ref4.updateOptions;
+  return Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
+    isVertical: true,
+    isPending: !installStep.isComplete || isOptionsRequesting,
+    currentStep: installStep.isComplete ? 'connect' : 'install',
+    steps: [installStep, {
+      key: 'connect',
+      label: Object(external_this_wp_i18n_["__"])('Connect your Razorpay account', 'woocommerce-admin'),
+      content: razorpay_renderConnectStep({
+        createNotice: createNotice,
+        isOptionsRequesting: isOptionsRequesting,
+        markConfigured: markConfigured,
+        updateOptions: updateOptions
+      })
+    }]
+  });
+};
+/* harmony default export */ var razorpay = (function (_ref5) {
+  var installStep = _ref5.installStep,
+      markConfigured = _ref5.markConfigured;
+  var isOptionsUpdating = Object(external_this_wp_data_["useSelect"])(function (select) {
+    return select(external_this_wc_data_["OPTIONS_STORE_NAME"]).isOptionsUpdating;
+  });
+  var isOptionsRequesting = isOptionsUpdating();
+
+  var _useDispatch = Object(external_this_wp_data_["useDispatch"])('core/notices'),
+      createNotice = _useDispatch.createNotice;
+
+  var _useDispatch2 = Object(external_this_wp_data_["useDispatch"])(external_this_wc_data_["OPTIONS_STORE_NAME"]),
+      updateOptions = _useDispatch2.updateOptions;
+
+  return Object(external_this_wp_element_["createElement"])(razorpay_Razorpay, {
+    createNotice: createNotice,
+    installStep: installStep,
+    isOptionsRequesting: isOptionsRequesting,
+    markConfigured: markConfigured,
+    updateOptions: updateOptions
+  });
+});
+// CONCATENATED MODULE: ./client/task-list/tasks/payments/images/razorpay.js
+
+/* harmony default export */ var images_razorpay = (function () {
+  return Object(external_this_wp_element_["createElement"])("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "100",
+    height: "24",
+    fill: "#072654",
+    viewBox: "0 0 1896 401"
+  }, Object(external_this_wp_element_["createElement"])("path", {
+    fill: "#3395FF",
+    d: "M122.63 105.7l-15.75 57.97 90.15-58.3-58.96 219.98 59.88.05L285.05.48"
+  }), Object(external_this_wp_element_["createElement"])("path", {
+    d: "M25.6 232.92L.8 325.4h122.73l50.22-188.13L25.6 232.92m426.32-81.42c-3 11.15-8.78 19.34-17.4 24.57-8.6 5.22-20.67 7.84-36.25 7.84h-49.5l17.38-64.8h49.5c15.56 0 26.25 2.6 32.05 7.9 5.8 5.3 7.2 13.4 4.22 24.6m51.25-1.4c6.3-23.4 3.7-41.4-7.82-54-11.5-12.5-31.68-18.8-60.48-18.8H324.4l-66.5 248.1h53.67l26.8-100h35.2c7.9 0 14.12 1.3 18.66 3.8 4.55 2.6 7.22 7.1 8.04 13.6l9.58 82.6h57.5l-9.32-77c-1.9-17.2-9.77-27.3-23.6-30.3 17.63-5.1 32.4-13.6 44.3-25.4a92.6 92.6 0 0 0 24.44-42.5m130.46 86.4c-4.5 16.8-11.4 29.5-20.73 38.4-9.34 8.9-20.5 13.3-33.52 13.3-13.26 0-22.25-4.3-27-13-4.76-8.7-4.92-21.3-.5-37.8 4.42-16.5 11.47-29.4 21.17-38.7 9.7-9.3 21.04-13.95 34.06-13.95 13 0 21.9 4.5 26.4 13.43 4.6 8.97 4.7 21.8.2 38.5zm23.52-87.8l-6.72 25.1c-2.9-9-8.53-16.2-16.85-21.6-8.34-5.3-18.66-8-30.97-8-15.1 0-29.6 3.9-43.5 11.7-13.9 7.8-26.1 18.8-36.5 33-10.4 14.2-18 30.3-22.9 48.4-4.8 18.2-5.8 34.1-2.9 47.9 3 13.9 9.3 24.5 19 31.9 9.8 7.5 22.3 11.2 37.6 11.2a82.4 82.4 0 0 0 35.2-7.7 82.11 82.11 0 0 0 28.4-21.2l-7 26.16h51.9L709.3 149h-52zm238.65 0H744.87l-10.55 39.4h87.82l-116.1 100.3-9.92 37h155.8l10.55-39.4h-94.1l117.88-101.8m142.4 52c-4.67 17.4-11.6 30.48-20.75 39-9.15 8.6-20.23 12.9-33.24 12.9-27.2 0-36.14-17.3-26.86-51.9 4.6-17.2 11.56-30.13 20.86-38.84 9.3-8.74 20.57-13.1 33.82-13.1 13 0 21.78 4.33 26.3 13.05 4.52 8.7 4.48 21.67-.13 38.87m30.38-80.83c-11.95-7.44-27.2-11.16-45.8-11.16-18.83 0-36.26 3.7-52.3 11.1a113.09 113.09 0 0 0-41 32.06c-11.3 13.9-19.43 30.2-24.42 48.8-4.9 18.53-5.5 34.8-1.7 48.73 3.8 13.9 11.8 24.6 23.8 32 12.1 7.46 27.5 11.17 46.4 11.17 18.6 0 35.9-3.74 51.8-11.18 15.9-7.48 29.5-18.1 40.8-32.1 11.3-13.94 19.4-30.2 24.4-48.8 5-18.6 5.6-34.84 1.8-48.8-3.8-13.9-11.7-24.6-23.6-32.05m185.1 40.8l13.3-48.1c-4.5-2.3-10.4-3.5-17.8-3.5-11.9 0-23.3 2.94-34.3 8.9-9.46 5.06-17.5 12.2-24.3 21.14l6.9-25.9-15.07.06h-37l-47.7 176.7h52.63l24.75-92.37c3.6-13.43 10.08-24 19.43-31.5 9.3-7.53 20.9-11.3 34.9-11.3 8.6 0 16.6 1.97 24.2 5.9m146.5 41.1c-4.5 16.5-11.3 29.1-20.6 37.8-9.3 8.74-20.5 13.1-33.5 13.1s-21.9-4.4-26.6-13.2c-4.8-8.85-4.9-21.6-.4-38.36 4.5-16.75 11.4-29.6 20.9-38.5 9.5-8.97 20.7-13.45 33.7-13.45 12.8 0 21.4 4.6 26 13.9 4.6 9.3 4.7 22.2.28 38.7m36.8-81.4c-9.75-7.8-22.2-11.7-37.3-11.7-13.23 0-25.84 3-37.8 9.06-11.95 6.05-21.65 14.3-29.1 24.74l.18-1.2 8.83-28.1h-51.4l-13.1 48.9-.4 1.7-54 201.44h52.7l27.2-101.4c2.7 9.02 8.2 16.1 16.6 21.22 8.4 5.1 18.77 7.63 31.1 7.63 15.3 0 29.9-3.7 43.75-11.1 13.9-7.42 25.9-18.1 36.1-31.9 10.2-13.8 17.77-29.8 22.6-47.9 4.9-18.13 5.9-34.3 3.1-48.45-2.85-14.17-9.16-25.14-18.9-32.9m174.65 80.65c-4.5 16.7-11.4 29.5-20.7 38.3-9.3 8.86-20.5 13.27-33.5 13.27-13.3 0-22.3-4.3-27-13-4.8-8.7-4.9-21.3-.5-37.8 4.4-16.5 11.42-29.4 21.12-38.7 9.7-9.3 21.05-13.94 34.07-13.94 13 0 21.8 4.5 26.4 13.4 4.6 8.93 4.63 21.76.15 38.5zm23.5-87.85l-6.73 25.1c-2.9-9.05-8.5-16.25-16.8-21.6-8.4-5.34-18.7-8-31-8-15.1 0-29.68 3.9-43.6 11.7-13.9 7.8-26.1 18.74-36.5 32.9-10.4 14.16-18 30.3-22.9 48.4-4.85 18.17-5.8 34.1-2.9 47.96 2.93 13.8 9.24 24.46 19 31.9 9.74 7.4 22.3 11.14 37.6 11.14 12.3 0 24.05-2.56 35.2-7.7a82.3 82.3 0 0 0 28.33-21.23l-7 26.18h51.9l47.38-176.7h-51.9zm269.87.06l.03-.05h-31.9c-1.02 0-1.92.05-2.85.07h-16.55l-8.5 11.8-2.1 2.8-.9 1.4-67.25 93.68-13.9-109.7h-55.08l27.9 166.7-61.6 85.3h54.9l14.9-21.13c.42-.62.8-1.14 1.3-1.8l17.4-24.7.5-.7 77.93-110.5 65.7-93 .1-.06h-.03z"
+  }));
+});
 // CONCATENATED MODULE: ./client/task-list/tasks/payments/methods.js
 
 
@@ -1996,6 +2458,9 @@ var eway_EWay = /*#__PURE__*/function (_Component) {
 /**
  * Internal dependencies
  */
+
+
+
 
 
 
@@ -2078,7 +2543,7 @@ function getPaymentMethods(_ref) {
     methods.push({
       key: 'wcpay',
       title: Object(external_this_wp_i18n_["__"])('WooCommerce Payments', 'woocommerce-admin'),
-      content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_i18n_["__"])('Accept credit card payments the easy way! No setup fees. No ' + 'monthly fees. Just 2.9% + $0.30 per transaction ' + 'on U.S. issued cards. ', 'woocommerce-admin'), wcPayIsConnected && wcPaySettingsLink, !wcPayIsConnected && Object(external_this_wp_element_["createElement"])("p", null, tosPrompt), profileItems.setup_client && Object(external_this_wp_element_["createElement"])("p", null, wcPayDocPrompt)),
+      content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_i18n_["__"])('Accept credit card payments the easy way! No setup fees. No ' + 'monthly fees. Just 2.9% + $0.30 per transaction ' + 'on U.S. issued cards. ', 'woocommerce-admin'), wcPayIsConnected && wcPaySettingsLink, !wcPayIsConnected && Object(external_this_wp_element_["createElement"])("p", null, tosPrompt), profileItems.setup_client && Object(external_this_wp_element_["createElement"])("p", null, wcPayDocPrompt), Object(external_this_wp_element_["createElement"])(wcpay_usage_modal["default"], null)),
       before: Object(external_this_wp_element_["createElement"])(images_wcpay, null),
       onClick: function onClick(resolve, reject) {
         return installActivateAndConnectWcpay(resolve, reject, createNotice, installAndActivatePlugins);
@@ -2202,6 +2667,17 @@ function getPaymentMethods(_ref) {
     isEnabled: options.woocommerce_eway_settings && options.woocommerce_eway_settings.enabled === 'yes',
     optionName: 'woocommerce_eway_settings'
   }, {
+    key: 'razorpay',
+    title: Object(external_this_wp_i18n_["__"])('Razorpay', 'woocommerce-admin'),
+    content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_i18n_["__"])('The official Razorpay extension for WooCommerce allows you to accept credit cards, debit cards, netbanking, wallet, and UPI payments.', 'woocommerce-admin')),
+    before: Object(external_this_wp_element_["createElement"])(images_razorpay, null),
+    visible: countryCode === 'IN' && !hasCbdIndustry,
+    plugins: ['woo-razorpay'],
+    container: Object(external_this_wp_element_["createElement"])(razorpay, null),
+    isConfigured: options.woocommerce_razorpay_settings && options.woocommerce_razorpay_settings.key_id && options.woocommerce_razorpay_settings.key_secret,
+    isEnabled: options.woocommerce_razorpay_settings && options.woocommerce_razorpay_settings.enabled === 'yes',
+    optionName: 'woocommerce_razorpay_settings'
+  }, {
     key: 'cod',
     title: Object(external_this_wp_i18n_["__"])('Cash on delivery', 'woocommerce-admin'),
     content: Object(external_this_wp_i18n_["__"])('Take payments in cash upon delivery.', 'woocommerce-admin'),
@@ -2224,6 +2700,88 @@ function getPaymentMethods(_ref) {
     return method.visible;
   });
 }
+
+/***/ }),
+
+/***/ 606:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
+/* harmony import */ var _woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var interpolate_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(43);
+/* harmony import */ var interpolate_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(interpolate_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74);
+/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _profile_wizard_steps_usage_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(587);
+
+
+
+/**
+ * External dependencies
+ */
+
+
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+var WCPayUsageModal = function WCPayUsageModal() {
+  var query = Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3__["getQuery"])();
+  var shouldDisplayModal = query['wcpay-connection-success'] === '1';
+
+  var _useState = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(shouldDisplayModal),
+      _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+      isOpen = _useState2[0],
+      setIsOpen = _useState2[1];
+
+  if (!isOpen) {
+    return null;
+  }
+
+  var closeModal = function closeModal() {
+    setIsOpen(false);
+    Object(_woocommerce_navigation__WEBPACK_IMPORTED_MODULE_3__["updateQueryString"])({
+      'wcpay-connection-success': undefined
+    });
+  };
+
+  var title = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Help us build a better WooCommerce Payments experience', 'woocommerce-admin');
+
+  var trackingMessage = interpolate_components__WEBPACK_IMPORTED_MODULE_4___default()({
+    mixedString: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('By agreeing to share non-sensitive {{link}}usage data{{/link}}, you’ll help us improve features and optimize the WooCommerce Payments experience. You can opt out at any time.', 'woocommerce-admin'),
+    components: {
+      link: Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_woocommerce_components__WEBPACK_IMPORTED_MODULE_5__["Link"], {
+        href: "https://woocommerce.com/usage-tracking",
+        target: "_blank",
+        type: "external"
+      })
+    }
+  });
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_profile_wizard_steps_usage_modal__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"], {
+    isDismissible: false,
+    title: title,
+    message: trackingMessage,
+    acceptActionText: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('I agree', 'woocommerce-admin'),
+    dismissActionText: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('No thanks', 'woocommerce-admin'),
+    onContinue: closeModal,
+    onClose: closeModal
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (WCPayUsageModal);
 
 /***/ })
 

@@ -1,951 +1,1175 @@
 (window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[3],{
 
-/***/ 301:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 588:
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* unused harmony export Flex */
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(441);
+/*! @license DOMPurify | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/2.0.8/LICENSE */
 
+(function (global, factory) {
+   true ? module.exports = factory() :
+  undefined;
+}(this, function () { 'use strict';
 
+  function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+  var hasOwnProperty = Object.hasOwnProperty,
+      setPrototypeOf = Object.setPrototypeOf,
+      isFrozen = Object.isFrozen;
+  var freeze = Object.freeze,
+      seal = Object.seal,
+      create = Object.create; // eslint-disable-line import/no-mutable-exports
 
-/**
- * External dependencies
- */
+  var _ref = typeof Reflect !== 'undefined' && Reflect,
+      apply = _ref.apply,
+      construct = _ref.construct;
 
-/**
- * WordPress dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-function FlexComponent(_ref, ref) {
-  var _ref$align = _ref.align,
-      align = _ref$align === void 0 ? 'center' : _ref$align,
-      className = _ref.className,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 2 : _ref$gap,
-      _ref$justify = _ref.justify,
-      justify = _ref$justify === void 0 ? 'space-between' : _ref$justify,
-      _ref$isReversed = _ref.isReversed,
-      isReversed = _ref$isReversed === void 0 ? false : _ref$isReversed,
-      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["align", "className", "gap", "justify", "isReversed"]);
-
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()('components-flex', className);
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__[/* Flex */ "a"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, props, {
-    align: align,
-    className: classes,
-    ref: ref,
-    gap: gap,
-    justify: justify,
-    isReversed: isReversed
-  }));
-}
-
-var Flex = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(FlexComponent);
-/* harmony default export */ __webpack_exports__["a"] = (Flex);
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 441:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Flex; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Item; });
-/* unused harmony export Block */
-/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67);
-
-
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
-
-/**
- * External dependencies
- */
-
-
-var alignStyle = function alignStyle(_ref2) {
-  var align = _ref2.align;
-  var aligns = {
-    top: 'flex-start',
-    bottom: 'flex-end'
-  };
-  var value = aligns[align] || align;
-  return /*#__PURE__*/Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__[/* css */ "b"])({
-    alignItems: value
-  },  true ? "" : undefined);
-};
-
-var justifyStyle = function justifyStyle(_ref3) {
-  var justify = _ref3.justify,
-      isReversed = _ref3.isReversed;
-  var justifies = {
-    left: 'flex-start',
-    right: 'flex-end'
-  };
-  var value = justifies[justify] || justify;
-
-  if (isReversed && justifies[justify]) {
-    value = justify === 'left' ? justifies.right : justifies.left;
+  if (!apply) {
+    apply = function apply(fun, thisValue, args) {
+      return fun.apply(thisValue, args);
+    };
   }
 
-  return /*#__PURE__*/Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__[/* css */ "b"])({
-    justifyContent: value
-  },  true ? "" : undefined);
-};
+  if (!freeze) {
+    freeze = function freeze(x) {
+      return x;
+    };
+  }
 
-var gapStyle = function gapStyle(_ref4) {
-  var gap = _ref4.gap,
-      isReversed = _ref4.isReversed;
-  var base = 4;
-  var value = typeof gap === 'number' ? base * gap : base;
-  var dir = isReversed ? 'left' : 'right';
-  var margin = "margin-".concat(dir);
-  return /*#__PURE__*/Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__[/* css */ "b"])("> *{", margin, ":", value, "px;&:last-child{", margin, ":0;}}" + ( true ? "" : undefined));
-};
+  if (!seal) {
+    seal = function seal(x) {
+      return x;
+    };
+  }
 
-var _ref =  true ? {
-  name: "8kj89b",
-  styles: "flex-direction:row-reverse;"
-} : undefined;
+  if (!construct) {
+    construct = function construct(Func, args) {
+      return new (Function.prototype.bind.apply(Func, [null].concat(_toConsumableArray(args))))();
+    };
+  }
 
-var reversedStyles = function reversedStyles(_ref5) {
-  var isReversed = _ref5.isReversed;
-  if (!isReversed) return '';
-  return _ref;
-};
+  var arrayForEach = unapply(Array.prototype.forEach);
+  var arrayPop = unapply(Array.prototype.pop);
+  var arrayPush = unapply(Array.prototype.push);
 
-var Flex = Object(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])("div", {
-  target: "eboqfv50",
-  label: "Flex"
-})("box-sizing:border-box;display:flex;", alignStyle, ";", justifyStyle, ";", gapStyle, ";", reversedStyles, ";" + ( true ? "" : undefined));
-var Item = Object(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])("div", {
-  target: "eboqfv51",
-  label: "Item"
-})( true ? {
-  name: "13luw5d",
-  styles: "box-sizing:border-box;min-width:0;max-width:100%;"
-} : undefined);
-var Block = /*#__PURE__*/Object(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(Item, {
-  target: "eboqfv52",
-  label: "Block"
-})( true ? {
-  name: "1rr4qq7",
-  styles: "flex:1;"
-} : undefined);
-//# sourceMappingURL=flex-styles.js.map
+  var stringToLowerCase = unapply(String.prototype.toLowerCase);
+  var stringMatch = unapply(String.prototype.match);
+  var stringReplace = unapply(String.prototype.replace);
+  var stringIndexOf = unapply(String.prototype.indexOf);
+  var stringTrim = unapply(String.prototype.trim);
 
-/***/ }),
+  var regExpTest = unapply(RegExp.prototype.test);
 
-/***/ 545:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+  var typeErrorCreate = unconstruct(TypeError);
 
-"use strict";
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(441);
+  function unapply(func) {
+    return function (thisArg) {
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      return apply(func, thisArg, args);
+    };
+  }
+
+  function unconstruct(func) {
+    return function () {
+      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      return construct(func, args);
+    };
+  }
+
+  /* Add properties to a lookup table */
+  function addToSet(set, array) {
+    if (setPrototypeOf) {
+      // Make 'in' and truthy checks like Boolean(set.constructor)
+      // independent of any properties defined on Object.prototype.
+      // Prevent prototype setters from intercepting set as a this value.
+      setPrototypeOf(set, null);
+    }
+
+    var l = array.length;
+    while (l--) {
+      var element = array[l];
+      if (typeof element === 'string') {
+        var lcElement = stringToLowerCase(element);
+        if (lcElement !== element) {
+          // Config presets (e.g. tags.js, attrs.js) are immutable.
+          if (!isFrozen(array)) {
+            array[l] = lcElement;
+          }
+
+          element = lcElement;
+        }
+      }
+
+      set[element] = true;
+    }
+
+    return set;
+  }
+
+  /* Shallow clone an object */
+  function clone(object) {
+    var newObject = create(null);
+
+    var property = void 0;
+    for (property in object) {
+      if (apply(hasOwnProperty, object, [property])) {
+        newObject[property] = object[property];
+      }
+    }
+
+    return newObject;
+  }
+
+  var html = freeze(['a', 'abbr', 'acronym', 'address', 'area', 'article', 'aside', 'audio', 'b', 'bdi', 'bdo', 'big', 'blink', 'blockquote', 'body', 'br', 'button', 'canvas', 'caption', 'center', 'cite', 'code', 'col', 'colgroup', 'content', 'data', 'datalist', 'dd', 'decorator', 'del', 'details', 'dfn', 'dialog', 'dir', 'div', 'dl', 'dt', 'element', 'em', 'fieldset', 'figcaption', 'figure', 'font', 'footer', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'i', 'img', 'input', 'ins', 'kbd', 'label', 'legend', 'li', 'main', 'map', 'mark', 'marquee', 'menu', 'menuitem', 'meter', 'nav', 'nobr', 'ol', 'optgroup', 'option', 'output', 'p', 'picture', 'pre', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'section', 'select', 'shadow', 'small', 'source', 'spacer', 'span', 'strike', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'time', 'tr', 'track', 'tt', 'u', 'ul', 'var', 'video', 'wbr']);
+
+  // SVG
+  var svg = freeze(['svg', 'a', 'altglyph', 'altglyphdef', 'altglyphitem', 'animatecolor', 'animatemotion', 'animatetransform', 'audio', 'canvas', 'circle', 'clippath', 'defs', 'desc', 'ellipse', 'filter', 'font', 'g', 'glyph', 'glyphref', 'hkern', 'image', 'line', 'lineargradient', 'marker', 'mask', 'metadata', 'mpath', 'path', 'pattern', 'polygon', 'polyline', 'radialgradient', 'rect', 'stop', 'style', 'switch', 'symbol', 'text', 'textpath', 'title', 'tref', 'tspan', 'video', 'view', 'vkern']);
+
+  var svgFilters = freeze(['feBlend', 'feColorMatrix', 'feComponentTransfer', 'feComposite', 'feConvolveMatrix', 'feDiffuseLighting', 'feDisplacementMap', 'feDistantLight', 'feFlood', 'feFuncA', 'feFuncB', 'feFuncG', 'feFuncR', 'feGaussianBlur', 'feMerge', 'feMergeNode', 'feMorphology', 'feOffset', 'fePointLight', 'feSpecularLighting', 'feSpotLight', 'feTile', 'feTurbulence']);
+
+  var mathMl = freeze(['math', 'menclose', 'merror', 'mfenced', 'mfrac', 'mglyph', 'mi', 'mlabeledtr', 'mmultiscripts', 'mn', 'mo', 'mover', 'mpadded', 'mphantom', 'mroot', 'mrow', 'ms', 'mspace', 'msqrt', 'mstyle', 'msub', 'msup', 'msubsup', 'mtable', 'mtd', 'mtext', 'mtr', 'munder', 'munderover']);
+
+  var text = freeze(['#text']);
+
+  var html$1 = freeze(['accept', 'action', 'align', 'alt', 'autocapitalize', 'autocomplete', 'autopictureinpicture', 'autoplay', 'background', 'bgcolor', 'border', 'capture', 'cellpadding', 'cellspacing', 'checked', 'cite', 'class', 'clear', 'color', 'cols', 'colspan', 'controls', 'controlslist', 'coords', 'crossorigin', 'datetime', 'decoding', 'default', 'dir', 'disabled', 'disablepictureinpicture', 'disableremoteplayback', 'download', 'draggable', 'enctype', 'enterkeyhint', 'face', 'for', 'headers', 'height', 'hidden', 'high', 'href', 'hreflang', 'id', 'inputmode', 'integrity', 'ismap', 'kind', 'label', 'lang', 'list', 'loading', 'loop', 'low', 'max', 'maxlength', 'media', 'method', 'min', 'minlength', 'multiple', 'muted', 'name', 'noshade', 'novalidate', 'nowrap', 'open', 'optimum', 'pattern', 'placeholder', 'playsinline', 'poster', 'preload', 'pubdate', 'radiogroup', 'readonly', 'rel', 'required', 'rev', 'reversed', 'role', 'rows', 'rowspan', 'spellcheck', 'scope', 'selected', 'shape', 'size', 'sizes', 'span', 'srclang', 'start', 'src', 'srcset', 'step', 'style', 'summary', 'tabindex', 'title', 'translate', 'type', 'usemap', 'valign', 'value', 'width', 'xmlns']);
+
+  var svg$1 = freeze(['accent-height', 'accumulate', 'additive', 'alignment-baseline', 'ascent', 'attributename', 'attributetype', 'azimuth', 'basefrequency', 'baseline-shift', 'begin', 'bias', 'by', 'class', 'clip', 'clippathunits', 'clip-path', 'clip-rule', 'color', 'color-interpolation', 'color-interpolation-filters', 'color-profile', 'color-rendering', 'cx', 'cy', 'd', 'dx', 'dy', 'diffuseconstant', 'direction', 'display', 'divisor', 'dur', 'edgemode', 'elevation', 'end', 'fill', 'fill-opacity', 'fill-rule', 'filter', 'filterunits', 'flood-color', 'flood-opacity', 'font-family', 'font-size', 'font-size-adjust', 'font-stretch', 'font-style', 'font-variant', 'font-weight', 'fx', 'fy', 'g1', 'g2', 'glyph-name', 'glyphref', 'gradientunits', 'gradienttransform', 'height', 'href', 'id', 'image-rendering', 'in', 'in2', 'k', 'k1', 'k2', 'k3', 'k4', 'kerning', 'keypoints', 'keysplines', 'keytimes', 'lang', 'lengthadjust', 'letter-spacing', 'kernelmatrix', 'kernelunitlength', 'lighting-color', 'local', 'marker-end', 'marker-mid', 'marker-start', 'markerheight', 'markerunits', 'markerwidth', 'maskcontentunits', 'maskunits', 'max', 'mask', 'media', 'method', 'mode', 'min', 'name', 'numoctaves', 'offset', 'operator', 'opacity', 'order', 'orient', 'orientation', 'origin', 'overflow', 'paint-order', 'path', 'pathlength', 'patterncontentunits', 'patterntransform', 'patternunits', 'points', 'preservealpha', 'preserveaspectratio', 'primitiveunits', 'r', 'rx', 'ry', 'radius', 'refx', 'refy', 'repeatcount', 'repeatdur', 'restart', 'result', 'rotate', 'scale', 'seed', 'shape-rendering', 'specularconstant', 'specularexponent', 'spreadmethod', 'startoffset', 'stddeviation', 'stitchtiles', 'stop-color', 'stop-opacity', 'stroke-dasharray', 'stroke-dashoffset', 'stroke-linecap', 'stroke-linejoin', 'stroke-miterlimit', 'stroke-opacity', 'stroke', 'stroke-width', 'style', 'surfacescale', 'systemlanguage', 'tabindex', 'targetx', 'targety', 'transform', 'text-anchor', 'text-decoration', 'text-rendering', 'textlength', 'type', 'u1', 'u2', 'unicode', 'values', 'viewbox', 'visibility', 'version', 'vert-adv-y', 'vert-origin-x', 'vert-origin-y', 'width', 'word-spacing', 'wrap', 'writing-mode', 'xchannelselector', 'ychannelselector', 'x', 'x1', 'x2', 'xmlns', 'y', 'y1', 'y2', 'z', 'zoomandpan']);
+
+  var mathMl$1 = freeze(['accent', 'accentunder', 'align', 'bevelled', 'close', 'columnsalign', 'columnlines', 'columnspan', 'denomalign', 'depth', 'dir', 'display', 'displaystyle', 'encoding', 'fence', 'frame', 'height', 'href', 'id', 'largeop', 'length', 'linethickness', 'lspace', 'lquote', 'mathbackground', 'mathcolor', 'mathsize', 'mathvariant', 'maxsize', 'minsize', 'movablelimits', 'notation', 'numalign', 'open', 'rowalign', 'rowlines', 'rowspacing', 'rowspan', 'rspace', 'rquote', 'scriptlevel', 'scriptminsize', 'scriptsizemultiplier', 'selection', 'separator', 'separators', 'stretchy', 'subscriptshift', 'supscriptshift', 'symmetric', 'voffset', 'width', 'xmlns']);
+
+  var xml = freeze(['xlink:href', 'xml:id', 'xlink:title', 'xml:space', 'xmlns:xlink']);
+
+  // eslint-disable-next-line unicorn/better-regex
+  var MUSTACHE_EXPR = seal(/\{\{[\s\S]*|[\s\S]*\}\}/gm); // Specify template detection regex for SAFE_FOR_TEMPLATES mode
+  var ERB_EXPR = seal(/<%[\s\S]*|[\s\S]*%>/gm);
+  var DATA_ATTR = seal(/^data-[\-\w.\u00B7-\uFFFF]/); // eslint-disable-line no-useless-escape
+  var ARIA_ATTR = seal(/^aria-[\-\w]+$/); // eslint-disable-line no-useless-escape
+  var IS_ALLOWED_URI = seal(/^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|xmpp):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i // eslint-disable-line no-useless-escape
+  );
+  var IS_SCRIPT_OR_DATA = seal(/^(?:\w+script|data):/i);
+  var ATTR_WHITESPACE = seal(/[\u0000-\u0020\u00A0\u1680\u180E\u2000-\u2029\u205F\u3000]/g // eslint-disable-line no-control-regex
+  );
+
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+  function _toConsumableArray$1(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+  var getGlobal = function getGlobal() {
+    return typeof window === 'undefined' ? null : window;
+  };
+
+  /**
+   * Creates a no-op policy for internal use only.
+   * Don't export this function outside this module!
+   * @param {?TrustedTypePolicyFactory} trustedTypes The policy factory.
+   * @param {Document} document The document object (to determine policy name suffix)
+   * @return {?TrustedTypePolicy} The policy created (or null, if Trusted Types
+   * are not supported).
+   */
+  var _createTrustedTypesPolicy = function _createTrustedTypesPolicy(trustedTypes, document) {
+    if ((typeof trustedTypes === 'undefined' ? 'undefined' : _typeof(trustedTypes)) !== 'object' || typeof trustedTypes.createPolicy !== 'function') {
+      return null;
+    }
+
+    // Allow the callers to control the unique policy name
+    // by adding a data-tt-policy-suffix to the script element with the DOMPurify.
+    // Policy creation with duplicate names throws in Trusted Types.
+    var suffix = null;
+    var ATTR_NAME = 'data-tt-policy-suffix';
+    if (document.currentScript && document.currentScript.hasAttribute(ATTR_NAME)) {
+      suffix = document.currentScript.getAttribute(ATTR_NAME);
+    }
+
+    var policyName = 'dompurify' + (suffix ? '#' + suffix : '');
+
+    try {
+      return trustedTypes.createPolicy(policyName, {
+        createHTML: function createHTML(html$$1) {
+          return html$$1;
+        }
+      });
+    } catch (_) {
+      // Policy creation failed (most likely another DOMPurify script has
+      // already run). Skip creating the policy, as this will only cause errors
+      // if TT are enforced.
+      console.warn('TrustedTypes policy ' + policyName + ' could not be created.');
+      return null;
+    }
+  };
+
+  function createDOMPurify() {
+    var window = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getGlobal();
+
+    var DOMPurify = function DOMPurify(root) {
+      return createDOMPurify(root);
+    };
+
+    /**
+     * Version label, exposed for easier checks
+     * if DOMPurify is up to date or not
+     */
+    DOMPurify.version = '2.2.2';
+
+    /**
+     * Array of elements that DOMPurify removed during sanitation.
+     * Empty if nothing was removed.
+     */
+    DOMPurify.removed = [];
+
+    if (!window || !window.document || window.document.nodeType !== 9) {
+      // Not running in a browser, provide a factory function
+      // so that you can pass your own Window
+      DOMPurify.isSupported = false;
+
+      return DOMPurify;
+    }
+
+    var originalDocument = window.document;
+
+    var document = window.document;
+    var DocumentFragment = window.DocumentFragment,
+        HTMLTemplateElement = window.HTMLTemplateElement,
+        Node = window.Node,
+        NodeFilter = window.NodeFilter,
+        _window$NamedNodeMap = window.NamedNodeMap,
+        NamedNodeMap = _window$NamedNodeMap === undefined ? window.NamedNodeMap || window.MozNamedAttrMap : _window$NamedNodeMap,
+        Text = window.Text,
+        Comment = window.Comment,
+        DOMParser = window.DOMParser,
+        trustedTypes = window.trustedTypes;
+
+    // As per issue #47, the web-components registry is inherited by a
+    // new document created via createHTMLDocument. As per the spec
+    // (http://w3c.github.io/webcomponents/spec/custom/#creating-and-passing-registries)
+    // a new empty registry is used when creating a template contents owner
+    // document, so we use that as our parent document to ensure nothing
+    // is inherited.
+
+    if (typeof HTMLTemplateElement === 'function') {
+      var template = document.createElement('template');
+      if (template.content && template.content.ownerDocument) {
+        document = template.content.ownerDocument;
+      }
+    }
+
+    var trustedTypesPolicy = _createTrustedTypesPolicy(trustedTypes, originalDocument);
+    var emptyHTML = trustedTypesPolicy && RETURN_TRUSTED_TYPE ? trustedTypesPolicy.createHTML('') : '';
+
+    var _document = document,
+        implementation = _document.implementation,
+        createNodeIterator = _document.createNodeIterator,
+        getElementsByTagName = _document.getElementsByTagName,
+        createDocumentFragment = _document.createDocumentFragment;
+    var importNode = originalDocument.importNode;
 
 
+    var documentMode = {};
+    try {
+      documentMode = clone(document).documentMode ? document.documentMode : {};
+    } catch (_) {}
 
+    var hooks = {};
 
-/**
- * External dependencies
- */
+    /**
+     * Expose whether this browser supports running the full DOMPurify.
+     */
+    DOMPurify.isSupported = implementation && typeof implementation.createHTMLDocument !== 'undefined' && documentMode !== 9;
 
-/**
- * Internal dependencies
- */
+    var MUSTACHE_EXPR$$1 = MUSTACHE_EXPR,
+        ERB_EXPR$$1 = ERB_EXPR,
+        DATA_ATTR$$1 = DATA_ATTR,
+        ARIA_ATTR$$1 = ARIA_ATTR,
+        IS_SCRIPT_OR_DATA$$1 = IS_SCRIPT_OR_DATA,
+        ATTR_WHITESPACE$$1 = ATTR_WHITESPACE;
+    var IS_ALLOWED_URI$$1 = IS_ALLOWED_URI;
 
+    /**
+     * We consider the elements and attributes below to be safe. Ideally
+     * don't add any new ones but feel free to remove unwanted ones.
+     */
 
-/**
- * WordPress dependencies
- */
+    /* allowed element names */
 
+    var ALLOWED_TAGS = null;
+    var DEFAULT_ALLOWED_TAGS = addToSet({}, [].concat(_toConsumableArray$1(html), _toConsumableArray$1(svg), _toConsumableArray$1(svgFilters), _toConsumableArray$1(mathMl), _toConsumableArray$1(text)));
 
+    /* Allowed attribute names */
+    var ALLOWED_ATTR = null;
+    var DEFAULT_ALLOWED_ATTR = addToSet({}, [].concat(_toConsumableArray$1(html$1), _toConsumableArray$1(svg$1), _toConsumableArray$1(mathMl$1), _toConsumableArray$1(xml)));
 
-function FlexItem(_ref, ref) {
-  var className = _ref.className,
-      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["className"]);
+    /* Explicitly forbidden tags (overrides ALLOWED_TAGS/ADD_TAGS) */
+    var FORBID_TAGS = null;
 
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()('components-flex__item', className);
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__[/* Item */ "b"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, props, {
-    className: classes,
-    ref: ref
-  }));
-}
+    /* Explicitly forbidden attributes (overrides ALLOWED_ATTR/ADD_ATTR) */
+    var FORBID_ATTR = null;
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(FlexItem));
-//# sourceMappingURL=item.js.map
+    /* Decide if ARIA attributes are okay */
+    var ALLOW_ARIA_ATTR = true;
 
-/***/ }),
+    /* Decide if custom data attributes are okay */
+    var ALLOW_DATA_ATTR = true;
 
-/***/ 851:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+    /* Decide if unknown protocols are okay */
+    var ALLOW_UNKNOWN_PROTOCOLS = false;
 
-"use strict";
+    /* Output should be safe for common template engines.
+     * This means, DOMPurify removes data attributes, mustaches and ERB
+     */
+    var SAFE_FOR_TEMPLATES = false;
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(7);
+    /* Decide if document with <html>... should be returned */
+    var WHOLE_DOCUMENT = false;
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 3 modules
-var toConsumableArray = __webpack_require__(27);
+    /* Track whether config is already set on this instance of DOMPurify. */
+    var SET_CONFIG = false;
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
-var slicedToArray = __webpack_require__(26);
+    /* Decide if all elements (e.g. style, script) must be children of
+     * document.body. By default, browsers might move them to document.head */
+    var FORCE_BODY = false;
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
-var objectWithoutProperties = __webpack_require__(12);
+    /* Decide if a DOM `HTMLBodyElement` should be returned, instead of a html
+     * string (or a TrustedHTML object if Trusted Types are supported).
+     * If `WHOLE_DOCUMENT` is enabled a `HTMLHtmlElement` will be returned instead
+     */
+    var RETURN_DOM = false;
 
-// EXTERNAL MODULE: external {"this":["wp","element"]}
-var external_this_wp_element_ = __webpack_require__(0);
+    /* Decide if a DOM `DocumentFragment` should be returned, instead of a html
+     * string  (or a TrustedHTML object if Trusted Types are supported) */
+    var RETURN_DOM_FRAGMENT = false;
 
-// EXTERNAL MODULE: external "lodash"
-var external_lodash_ = __webpack_require__(2);
+    /* If `RETURN_DOM` or `RETURN_DOM_FRAGMENT` is enabled, decide if the returned DOM
+     * `Node` is imported into the current `Document`. If this flag is not enabled the
+     * `Node` will belong (its ownerDocument) to a fresh `HTMLDocument`, created by
+     * DOMPurify.
+     *
+     * This defaults to `true` starting DOMPurify 2.2.0. Note that setting it to `false`
+     * might cause XSS from attacks hidden in closed shadowroots in case the browser
+     * supports Declarative Shadow: DOM https://web.dev/declarative-shadow-dom/
+     */
+    var RETURN_DOM_IMPORT = true;
 
-// EXTERNAL MODULE: ./node_modules/classnames/index.js
-var classnames = __webpack_require__(4);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+    /* Try to return a Trusted Type object instead of a string, return a string in
+     * case Trusted Types are not supported  */
+    var RETURN_TRUSTED_TYPE = false;
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-instance-id/index.js
-var use_instance_id = __webpack_require__(300);
+    /* Output should be free from DOM clobbering attacks? */
+    var SANITIZE_DOM = true;
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/node_modules/@wordpress/icons/build-module/icon/index.js
-var icon = __webpack_require__(575);
+    /* Keep element content when removing element? */
+    var KEEP_CONTENT = true;
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/primitives/build-module/svg/index.js
-var svg = __webpack_require__(88);
+    /* If a `Node` is passed to sanitize(), then performs sanitization in-place instead
+     * of importing it into a new Document and returning a sanitized copy */
+    var IN_PLACE = false;
 
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/node_modules/@wordpress/icons/build-module/library/chevron-down.js
+    /* Allow usage of profiles like html, svg and mathMl */
+    var USE_PROFILES = {};
 
+    /* Tags to ignore content of when KEEP_CONTENT is true */
+    var FORBID_CONTENTS = addToSet({}, ['annotation-xml', 'audio', 'colgroup', 'desc', 'foreignobject', 'head', 'iframe', 'math', 'mi', 'mn', 'mo', 'ms', 'mtext', 'noembed', 'noframes', 'plaintext', 'script', 'style', 'svg', 'template', 'thead', 'title', 'video', 'xmp']);
 
-/**
- * WordPress dependencies
- */
+    /* Tags that are safe for data: URIs */
+    var DATA_URI_TAGS = null;
+    var DEFAULT_DATA_URI_TAGS = addToSet({}, ['audio', 'video', 'img', 'source', 'image', 'track']);
 
-var chevronDown = Object(external_this_wp_element_["createElement"])(svg["c" /* SVG */], {
-  viewBox: "0 0 24 24",
-  xmlns: "http://www.w3.org/2000/svg"
-}, Object(external_this_wp_element_["createElement"])(svg["b" /* Path */], {
-  d: "M17.5 11.6L12 16l-5.5-4.4.9-1.2L12 14l4.5-3.6 1 1.2z"
+    /* Attributes safe for values like "javascript:" */
+    var URI_SAFE_ATTRIBUTES = null;
+    var DEFAULT_URI_SAFE_ATTRIBUTES = addToSet({}, ['alt', 'class', 'for', 'id', 'label', 'name', 'pattern', 'placeholder', 'summary', 'title', 'value', 'style', 'xmlns']);
+
+    /* Keep a reference to config to pass to hooks */
+    var CONFIG = null;
+
+    /* Ideally, do not touch anything below this line */
+    /* ______________________________________________ */
+
+    var formElement = document.createElement('form');
+
+    /**
+     * _parseConfig
+     *
+     * @param  {Object} cfg optional config literal
+     */
+    // eslint-disable-next-line complexity
+    var _parseConfig = function _parseConfig(cfg) {
+      if (CONFIG && CONFIG === cfg) {
+        return;
+      }
+
+      /* Shield configuration object from tampering */
+      if (!cfg || (typeof cfg === 'undefined' ? 'undefined' : _typeof(cfg)) !== 'object') {
+        cfg = {};
+      }
+
+      /* Shield configuration object from prototype pollution */
+      cfg = clone(cfg);
+
+      /* Set configuration parameters */
+      ALLOWED_TAGS = 'ALLOWED_TAGS' in cfg ? addToSet({}, cfg.ALLOWED_TAGS) : DEFAULT_ALLOWED_TAGS;
+      ALLOWED_ATTR = 'ALLOWED_ATTR' in cfg ? addToSet({}, cfg.ALLOWED_ATTR) : DEFAULT_ALLOWED_ATTR;
+      URI_SAFE_ATTRIBUTES = 'ADD_URI_SAFE_ATTR' in cfg ? addToSet(clone(DEFAULT_URI_SAFE_ATTRIBUTES), cfg.ADD_URI_SAFE_ATTR) : DEFAULT_URI_SAFE_ATTRIBUTES;
+      DATA_URI_TAGS = 'ADD_DATA_URI_TAGS' in cfg ? addToSet(clone(DEFAULT_DATA_URI_TAGS), cfg.ADD_DATA_URI_TAGS) : DEFAULT_DATA_URI_TAGS;
+      FORBID_TAGS = 'FORBID_TAGS' in cfg ? addToSet({}, cfg.FORBID_TAGS) : {};
+      FORBID_ATTR = 'FORBID_ATTR' in cfg ? addToSet({}, cfg.FORBID_ATTR) : {};
+      USE_PROFILES = 'USE_PROFILES' in cfg ? cfg.USE_PROFILES : false;
+      ALLOW_ARIA_ATTR = cfg.ALLOW_ARIA_ATTR !== false; // Default true
+      ALLOW_DATA_ATTR = cfg.ALLOW_DATA_ATTR !== false; // Default true
+      ALLOW_UNKNOWN_PROTOCOLS = cfg.ALLOW_UNKNOWN_PROTOCOLS || false; // Default false
+      SAFE_FOR_TEMPLATES = cfg.SAFE_FOR_TEMPLATES || false; // Default false
+      WHOLE_DOCUMENT = cfg.WHOLE_DOCUMENT || false; // Default false
+      RETURN_DOM = cfg.RETURN_DOM || false; // Default false
+      RETURN_DOM_FRAGMENT = cfg.RETURN_DOM_FRAGMENT || false; // Default false
+      RETURN_DOM_IMPORT = cfg.RETURN_DOM_IMPORT !== false; // Default true
+      RETURN_TRUSTED_TYPE = cfg.RETURN_TRUSTED_TYPE || false; // Default false
+      FORCE_BODY = cfg.FORCE_BODY || false; // Default false
+      SANITIZE_DOM = cfg.SANITIZE_DOM !== false; // Default true
+      KEEP_CONTENT = cfg.KEEP_CONTENT !== false; // Default true
+      IN_PLACE = cfg.IN_PLACE || false; // Default false
+      IS_ALLOWED_URI$$1 = cfg.ALLOWED_URI_REGEXP || IS_ALLOWED_URI$$1;
+      if (SAFE_FOR_TEMPLATES) {
+        ALLOW_DATA_ATTR = false;
+      }
+
+      if (RETURN_DOM_FRAGMENT) {
+        RETURN_DOM = true;
+      }
+
+      /* Parse profile info */
+      if (USE_PROFILES) {
+        ALLOWED_TAGS = addToSet({}, [].concat(_toConsumableArray$1(text)));
+        ALLOWED_ATTR = [];
+        if (USE_PROFILES.html === true) {
+          addToSet(ALLOWED_TAGS, html);
+          addToSet(ALLOWED_ATTR, html$1);
+        }
+
+        if (USE_PROFILES.svg === true) {
+          addToSet(ALLOWED_TAGS, svg);
+          addToSet(ALLOWED_ATTR, svg$1);
+          addToSet(ALLOWED_ATTR, xml);
+        }
+
+        if (USE_PROFILES.svgFilters === true) {
+          addToSet(ALLOWED_TAGS, svgFilters);
+          addToSet(ALLOWED_ATTR, svg$1);
+          addToSet(ALLOWED_ATTR, xml);
+        }
+
+        if (USE_PROFILES.mathMl === true) {
+          addToSet(ALLOWED_TAGS, mathMl);
+          addToSet(ALLOWED_ATTR, mathMl$1);
+          addToSet(ALLOWED_ATTR, xml);
+        }
+      }
+
+      /* Merge configuration parameters */
+      if (cfg.ADD_TAGS) {
+        if (ALLOWED_TAGS === DEFAULT_ALLOWED_TAGS) {
+          ALLOWED_TAGS = clone(ALLOWED_TAGS);
+        }
+
+        addToSet(ALLOWED_TAGS, cfg.ADD_TAGS);
+      }
+
+      if (cfg.ADD_ATTR) {
+        if (ALLOWED_ATTR === DEFAULT_ALLOWED_ATTR) {
+          ALLOWED_ATTR = clone(ALLOWED_ATTR);
+        }
+
+        addToSet(ALLOWED_ATTR, cfg.ADD_ATTR);
+      }
+
+      if (cfg.ADD_URI_SAFE_ATTR) {
+        addToSet(URI_SAFE_ATTRIBUTES, cfg.ADD_URI_SAFE_ATTR);
+      }
+
+      /* Add #text in case KEEP_CONTENT is set to true */
+      if (KEEP_CONTENT) {
+        ALLOWED_TAGS['#text'] = true;
+      }
+
+      /* Add html, head and body to ALLOWED_TAGS in case WHOLE_DOCUMENT is true */
+      if (WHOLE_DOCUMENT) {
+        addToSet(ALLOWED_TAGS, ['html', 'head', 'body']);
+      }
+
+      /* Add tbody to ALLOWED_TAGS in case tables are permitted, see #286, #365 */
+      if (ALLOWED_TAGS.table) {
+        addToSet(ALLOWED_TAGS, ['tbody']);
+        delete FORBID_TAGS.tbody;
+      }
+
+      // Prevent further manipulation of configuration.
+      // Not available in IE8, Safari 5, etc.
+      if (freeze) {
+        freeze(cfg);
+      }
+
+      CONFIG = cfg;
+    };
+
+    /**
+     * _forceRemove
+     *
+     * @param  {Node} node a DOM node
+     */
+    var _forceRemove = function _forceRemove(node) {
+      arrayPush(DOMPurify.removed, { element: node });
+      try {
+        node.parentNode.removeChild(node);
+      } catch (_) {
+        node.outerHTML = emptyHTML;
+      }
+    };
+
+    /**
+     * _removeAttribute
+     *
+     * @param  {String} name an Attribute name
+     * @param  {Node} node a DOM node
+     */
+    var _removeAttribute = function _removeAttribute(name, node) {
+      try {
+        arrayPush(DOMPurify.removed, {
+          attribute: node.getAttributeNode(name),
+          from: node
+        });
+      } catch (_) {
+        arrayPush(DOMPurify.removed, {
+          attribute: null,
+          from: node
+        });
+      }
+
+      node.removeAttribute(name);
+    };
+
+    /**
+     * _initDocument
+     *
+     * @param  {String} dirty a string of dirty markup
+     * @return {Document} a DOM, filled with the dirty markup
+     */
+    var _initDocument = function _initDocument(dirty) {
+      /* Create a HTML document */
+      var doc = void 0;
+      var leadingWhitespace = void 0;
+
+      if (FORCE_BODY) {
+        dirty = '<remove></remove>' + dirty;
+      } else {
+        /* If FORCE_BODY isn't used, leading whitespace needs to be preserved manually */
+        var matches = stringMatch(dirty, /^[\r\n\t ]+/);
+        leadingWhitespace = matches && matches[0];
+      }
+
+      var dirtyPayload = trustedTypesPolicy ? trustedTypesPolicy.createHTML(dirty) : dirty;
+      /* Use the DOMParser API by default, fallback later if needs be */
+      try {
+        doc = new DOMParser().parseFromString(dirtyPayload, 'text/html');
+      } catch (_) {}
+
+      /* Use createHTMLDocument in case DOMParser is not available */
+      if (!doc || !doc.documentElement) {
+        doc = implementation.createHTMLDocument('');
+        var _doc = doc,
+            body = _doc.body;
+
+        body.parentNode.removeChild(body.parentNode.firstElementChild);
+        body.outerHTML = dirtyPayload;
+      }
+
+      if (dirty && leadingWhitespace) {
+        doc.body.insertBefore(document.createTextNode(leadingWhitespace), doc.body.childNodes[0] || null);
+      }
+
+      /* Work on whole document or just its body */
+      return getElementsByTagName.call(doc, WHOLE_DOCUMENT ? 'html' : 'body')[0];
+    };
+
+    /**
+     * _createIterator
+     *
+     * @param  {Document} root document/fragment to create iterator for
+     * @return {Iterator} iterator instance
+     */
+    var _createIterator = function _createIterator(root) {
+      return createNodeIterator.call(root.ownerDocument || root, root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_TEXT, function () {
+        return NodeFilter.FILTER_ACCEPT;
+      }, false);
+    };
+
+    /**
+     * _isClobbered
+     *
+     * @param  {Node} elm element to check for clobbering attacks
+     * @return {Boolean} true if clobbered, false if safe
+     */
+    var _isClobbered = function _isClobbered(elm) {
+      if (elm instanceof Text || elm instanceof Comment) {
+        return false;
+      }
+
+      if (typeof elm.nodeName !== 'string' || typeof elm.textContent !== 'string' || typeof elm.removeChild !== 'function' || !(elm.attributes instanceof NamedNodeMap) || typeof elm.removeAttribute !== 'function' || typeof elm.setAttribute !== 'function' || typeof elm.namespaceURI !== 'string') {
+        return true;
+      }
+
+      return false;
+    };
+
+    /**
+     * _isNode
+     *
+     * @param  {Node} obj object to check whether it's a DOM node
+     * @return {Boolean} true is object is a DOM node
+     */
+    var _isNode = function _isNode(object) {
+      return (typeof Node === 'undefined' ? 'undefined' : _typeof(Node)) === 'object' ? object instanceof Node : object && (typeof object === 'undefined' ? 'undefined' : _typeof(object)) === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string';
+    };
+
+    /**
+     * _executeHook
+     * Execute user configurable hooks
+     *
+     * @param  {String} entryPoint  Name of the hook's entry point
+     * @param  {Node} currentNode node to work on with the hook
+     * @param  {Object} data additional hook parameters
+     */
+    var _executeHook = function _executeHook(entryPoint, currentNode, data) {
+      if (!hooks[entryPoint]) {
+        return;
+      }
+
+      arrayForEach(hooks[entryPoint], function (hook) {
+        hook.call(DOMPurify, currentNode, data, CONFIG);
+      });
+    };
+
+    /**
+     * _sanitizeElements
+     *
+     * @protect nodeName
+     * @protect textContent
+     * @protect removeChild
+     *
+     * @param   {Node} currentNode to check for permission to exist
+     * @return  {Boolean} true if node was killed, false if left alive
+     */
+    var _sanitizeElements = function _sanitizeElements(currentNode) {
+      var content = void 0;
+
+      /* Execute a hook if present */
+      _executeHook('beforeSanitizeElements', currentNode, null);
+
+      /* Check if element is clobbered or can clobber */
+      if (_isClobbered(currentNode)) {
+        _forceRemove(currentNode);
+        return true;
+      }
+
+      /* Check if tagname contains Unicode */
+      if (stringMatch(currentNode.nodeName, /[\u0080-\uFFFF]/)) {
+        _forceRemove(currentNode);
+        return true;
+      }
+
+      /* Now let's check the element's type and name */
+      var tagName = stringToLowerCase(currentNode.nodeName);
+
+      /* Execute a hook if present */
+      _executeHook('uponSanitizeElement', currentNode, {
+        tagName: tagName,
+        allowedTags: ALLOWED_TAGS
+      });
+
+      /* Take care of an mXSS pattern using p, br inside svg, math */
+      if ((tagName === 'svg' || tagName === 'math') && currentNode.querySelectorAll('p, br, form, table').length !== 0) {
+        _forceRemove(currentNode);
+        return true;
+      }
+
+      /* Detect mXSS attempts abusing namespace confusion */
+      if (!_isNode(currentNode.firstElementChild) && (!_isNode(currentNode.content) || !_isNode(currentNode.content.firstElementChild)) && regExpTest(/<[!/\w]/g, currentNode.innerHTML) && regExpTest(/<[!/\w]/g, currentNode.textContent)) {
+        _forceRemove(currentNode);
+        return true;
+      }
+
+      /* Remove element if anything forbids its presence */
+      if (!ALLOWED_TAGS[tagName] || FORBID_TAGS[tagName]) {
+        /* Keep content except for bad-listed elements */
+        if (KEEP_CONTENT && !FORBID_CONTENTS[tagName] && typeof currentNode.insertAdjacentHTML === 'function') {
+          try {
+            var htmlToInsert = currentNode.innerHTML;
+            currentNode.insertAdjacentHTML('AfterEnd', trustedTypesPolicy ? trustedTypesPolicy.createHTML(htmlToInsert) : htmlToInsert);
+          } catch (_) {}
+        }
+
+        _forceRemove(currentNode);
+        return true;
+      }
+
+      /* Remove in case a noscript/noembed XSS is suspected */
+      if ((tagName === 'noscript' || tagName === 'noembed') && regExpTest(/<\/no(script|embed)/i, currentNode.innerHTML)) {
+        _forceRemove(currentNode);
+        return true;
+      }
+
+      /* Sanitize element content to be template-safe */
+      if (SAFE_FOR_TEMPLATES && currentNode.nodeType === 3) {
+        /* Get the element's text content */
+        content = currentNode.textContent;
+        content = stringReplace(content, MUSTACHE_EXPR$$1, ' ');
+        content = stringReplace(content, ERB_EXPR$$1, ' ');
+        if (currentNode.textContent !== content) {
+          arrayPush(DOMPurify.removed, { element: currentNode.cloneNode() });
+          currentNode.textContent = content;
+        }
+      }
+
+      /* Execute a hook if present */
+      _executeHook('afterSanitizeElements', currentNode, null);
+
+      return false;
+    };
+
+    /**
+     * _isValidAttribute
+     *
+     * @param  {string} lcTag Lowercase tag name of containing element.
+     * @param  {string} lcName Lowercase attribute name.
+     * @param  {string} value Attribute value.
+     * @return {Boolean} Returns true if `value` is valid, otherwise false.
+     */
+    // eslint-disable-next-line complexity
+    var _isValidAttribute = function _isValidAttribute(lcTag, lcName, value) {
+      /* Make sure attribute cannot clobber */
+      if (SANITIZE_DOM && (lcName === 'id' || lcName === 'name') && (value in document || value in formElement)) {
+        return false;
+      }
+
+      /* Allow valid data-* attributes: At least one character after "-"
+          (https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes)
+          XML-compatible (https://html.spec.whatwg.org/multipage/infrastructure.html#xml-compatible and http://www.w3.org/TR/xml/#d0e804)
+          We don't need to check the value; it's always URI safe. */
+      if (ALLOW_DATA_ATTR && regExpTest(DATA_ATTR$$1, lcName)) ; else if (ALLOW_ARIA_ATTR && regExpTest(ARIA_ATTR$$1, lcName)) ; else if (!ALLOWED_ATTR[lcName] || FORBID_ATTR[lcName]) {
+        return false;
+
+        /* Check value is safe. First, is attr inert? If so, is safe */
+      } else if (URI_SAFE_ATTRIBUTES[lcName]) ; else if (regExpTest(IS_ALLOWED_URI$$1, stringReplace(value, ATTR_WHITESPACE$$1, ''))) ; else if ((lcName === 'src' || lcName === 'xlink:href' || lcName === 'href') && lcTag !== 'script' && stringIndexOf(value, 'data:') === 0 && DATA_URI_TAGS[lcTag]) ; else if (ALLOW_UNKNOWN_PROTOCOLS && !regExpTest(IS_SCRIPT_OR_DATA$$1, stringReplace(value, ATTR_WHITESPACE$$1, ''))) ; else if (!value) ; else {
+        return false;
+      }
+
+      return true;
+    };
+
+    /**
+     * _sanitizeAttributes
+     *
+     * @protect attributes
+     * @protect nodeName
+     * @protect removeAttribute
+     * @protect setAttribute
+     *
+     * @param  {Node} currentNode to sanitize
+     */
+    var _sanitizeAttributes = function _sanitizeAttributes(currentNode) {
+      var attr = void 0;
+      var value = void 0;
+      var lcName = void 0;
+      var l = void 0;
+      /* Execute a hook if present */
+      _executeHook('beforeSanitizeAttributes', currentNode, null);
+
+      var attributes = currentNode.attributes;
+
+      /* Check if we have attributes; if not we might have a text node */
+
+      if (!attributes) {
+        return;
+      }
+
+      var hookEvent = {
+        attrName: '',
+        attrValue: '',
+        keepAttr: true,
+        allowedAttributes: ALLOWED_ATTR
+      };
+      l = attributes.length;
+
+      /* Go backwards over all attributes; safely remove bad ones */
+      while (l--) {
+        attr = attributes[l];
+        var _attr = attr,
+            name = _attr.name,
+            namespaceURI = _attr.namespaceURI;
+
+        value = stringTrim(attr.value);
+        lcName = stringToLowerCase(name);
+
+        /* Execute a hook if present */
+        hookEvent.attrName = lcName;
+        hookEvent.attrValue = value;
+        hookEvent.keepAttr = true;
+        hookEvent.forceKeepAttr = undefined; // Allows developers to see this is a property they can set
+        _executeHook('uponSanitizeAttribute', currentNode, hookEvent);
+        value = hookEvent.attrValue;
+        /* Did the hooks approve of the attribute? */
+        if (hookEvent.forceKeepAttr) {
+          continue;
+        }
+
+        /* Remove attribute */
+        _removeAttribute(name, currentNode);
+
+        /* Did the hooks approve of the attribute? */
+        if (!hookEvent.keepAttr) {
+          continue;
+        }
+
+        /* Work around a security issue in jQuery 3.0 */
+        if (regExpTest(/\/>/i, value)) {
+          _removeAttribute(name, currentNode);
+          continue;
+        }
+
+        /* Sanitize attribute content to be template-safe */
+        if (SAFE_FOR_TEMPLATES) {
+          value = stringReplace(value, MUSTACHE_EXPR$$1, ' ');
+          value = stringReplace(value, ERB_EXPR$$1, ' ');
+        }
+
+        /* Is `value` valid for this attribute? */
+        var lcTag = currentNode.nodeName.toLowerCase();
+        if (!_isValidAttribute(lcTag, lcName, value)) {
+          continue;
+        }
+
+        /* Handle invalid data-* attribute set by try-catching it */
+        try {
+          if (namespaceURI) {
+            currentNode.setAttributeNS(namespaceURI, name, value);
+          } else {
+            /* Fallback to setAttribute() for browser-unrecognized namespaces e.g. "x-schema". */
+            currentNode.setAttribute(name, value);
+          }
+
+          arrayPop(DOMPurify.removed);
+        } catch (_) {}
+      }
+
+      /* Execute a hook if present */
+      _executeHook('afterSanitizeAttributes', currentNode, null);
+    };
+
+    /**
+     * _sanitizeShadowDOM
+     *
+     * @param  {DocumentFragment} fragment to iterate over recursively
+     */
+    var _sanitizeShadowDOM = function _sanitizeShadowDOM(fragment) {
+      var shadowNode = void 0;
+      var shadowIterator = _createIterator(fragment);
+
+      /* Execute a hook if present */
+      _executeHook('beforeSanitizeShadowDOM', fragment, null);
+
+      while (shadowNode = shadowIterator.nextNode()) {
+        /* Execute a hook if present */
+        _executeHook('uponSanitizeShadowNode', shadowNode, null);
+
+        /* Sanitize tags and elements */
+        if (_sanitizeElements(shadowNode)) {
+          continue;
+        }
+
+        /* Deep shadow DOM detected */
+        if (shadowNode.content instanceof DocumentFragment) {
+          _sanitizeShadowDOM(shadowNode.content);
+        }
+
+        /* Check attributes, sanitize if necessary */
+        _sanitizeAttributes(shadowNode);
+      }
+
+      /* Execute a hook if present */
+      _executeHook('afterSanitizeShadowDOM', fragment, null);
+    };
+
+    /**
+     * Sanitize
+     * Public method providing core sanitation functionality
+     *
+     * @param {String|Node} dirty string or DOM node
+     * @param {Object} configuration object
+     */
+    // eslint-disable-next-line complexity
+    DOMPurify.sanitize = function (dirty, cfg) {
+      var body = void 0;
+      var importedNode = void 0;
+      var currentNode = void 0;
+      var oldNode = void 0;
+      var returnNode = void 0;
+      /* Make sure we have a string to sanitize.
+        DO NOT return early, as this will return the wrong type if
+        the user has requested a DOM object rather than a string */
+      if (!dirty) {
+        dirty = '<!-->';
+      }
+
+      /* Stringify, in case dirty is an object */
+      if (typeof dirty !== 'string' && !_isNode(dirty)) {
+        // eslint-disable-next-line no-negated-condition
+        if (typeof dirty.toString !== 'function') {
+          throw typeErrorCreate('toString is not a function');
+        } else {
+          dirty = dirty.toString();
+          if (typeof dirty !== 'string') {
+            throw typeErrorCreate('dirty is not a string, aborting');
+          }
+        }
+      }
+
+      /* Check we can run. Otherwise fall back or ignore */
+      if (!DOMPurify.isSupported) {
+        if (_typeof(window.toStaticHTML) === 'object' || typeof window.toStaticHTML === 'function') {
+          if (typeof dirty === 'string') {
+            return window.toStaticHTML(dirty);
+          }
+
+          if (_isNode(dirty)) {
+            return window.toStaticHTML(dirty.outerHTML);
+          }
+        }
+
+        return dirty;
+      }
+
+      /* Assign config vars */
+      if (!SET_CONFIG) {
+        _parseConfig(cfg);
+      }
+
+      /* Clean up removed elements */
+      DOMPurify.removed = [];
+
+      /* Check if dirty is correctly typed for IN_PLACE */
+      if (typeof dirty === 'string') {
+        IN_PLACE = false;
+      }
+
+      if (IN_PLACE) ; else if (dirty instanceof Node) {
+        /* If dirty is a DOM element, append to an empty document to avoid
+           elements being stripped by the parser */
+        body = _initDocument('<!---->');
+        importedNode = body.ownerDocument.importNode(dirty, true);
+        if (importedNode.nodeType === 1 && importedNode.nodeName === 'BODY') {
+          /* Node is already a body, use as is */
+          body = importedNode;
+        } else if (importedNode.nodeName === 'HTML') {
+          body = importedNode;
+        } else {
+          // eslint-disable-next-line unicorn/prefer-node-append
+          body.appendChild(importedNode);
+        }
+      } else {
+        /* Exit directly if we have nothing to do */
+        if (!RETURN_DOM && !SAFE_FOR_TEMPLATES && !WHOLE_DOCUMENT &&
+        // eslint-disable-next-line unicorn/prefer-includes
+        dirty.indexOf('<') === -1) {
+          return trustedTypesPolicy && RETURN_TRUSTED_TYPE ? trustedTypesPolicy.createHTML(dirty) : dirty;
+        }
+
+        /* Initialize the document to work on */
+        body = _initDocument(dirty);
+
+        /* Check we have a DOM node from the data */
+        if (!body) {
+          return RETURN_DOM ? null : emptyHTML;
+        }
+      }
+
+      /* Remove first element node (ours) if FORCE_BODY is set */
+      if (body && FORCE_BODY) {
+        _forceRemove(body.firstChild);
+      }
+
+      /* Get node iterator */
+      var nodeIterator = _createIterator(IN_PLACE ? dirty : body);
+
+      /* Now start iterating over the created document */
+      while (currentNode = nodeIterator.nextNode()) {
+        /* Fix IE's strange behavior with manipulated textNodes #89 */
+        if (currentNode.nodeType === 3 && currentNode === oldNode) {
+          continue;
+        }
+
+        /* Sanitize tags and elements */
+        if (_sanitizeElements(currentNode)) {
+          continue;
+        }
+
+        /* Shadow DOM detected, sanitize it */
+        if (currentNode.content instanceof DocumentFragment) {
+          _sanitizeShadowDOM(currentNode.content);
+        }
+
+        /* Check attributes, sanitize if necessary */
+        _sanitizeAttributes(currentNode);
+
+        oldNode = currentNode;
+      }
+
+      oldNode = null;
+
+      /* If we sanitized `dirty` in-place, return it. */
+      if (IN_PLACE) {
+        return dirty;
+      }
+
+      /* Return sanitized string or DOM */
+      if (RETURN_DOM) {
+        if (RETURN_DOM_FRAGMENT) {
+          returnNode = createDocumentFragment.call(body.ownerDocument);
+
+          while (body.firstChild) {
+            // eslint-disable-next-line unicorn/prefer-node-append
+            returnNode.appendChild(body.firstChild);
+          }
+        } else {
+          returnNode = body;
+        }
+
+        if (RETURN_DOM_IMPORT) {
+          /*
+            AdoptNode() is not used because internal state is not reset
+            (e.g. the past names map of a HTMLFormElement), this is safe
+            in theory but we would rather not risk another attack vector.
+            The state that is cloned by importNode() is explicitly defined
+            by the specs.
+          */
+          returnNode = importNode.call(originalDocument, returnNode, true);
+        }
+
+        return returnNode;
+      }
+
+      var serializedHTML = WHOLE_DOCUMENT ? body.outerHTML : body.innerHTML;
+
+      /* Sanitize final string template-safe */
+      if (SAFE_FOR_TEMPLATES) {
+        serializedHTML = stringReplace(serializedHTML, MUSTACHE_EXPR$$1, ' ');
+        serializedHTML = stringReplace(serializedHTML, ERB_EXPR$$1, ' ');
+      }
+
+      return trustedTypesPolicy && RETURN_TRUSTED_TYPE ? trustedTypesPolicy.createHTML(serializedHTML) : serializedHTML;
+    };
+
+    /**
+     * Public method to set the configuration once
+     * setConfig
+     *
+     * @param {Object} cfg configuration object
+     */
+    DOMPurify.setConfig = function (cfg) {
+      _parseConfig(cfg);
+      SET_CONFIG = true;
+    };
+
+    /**
+     * Public method to remove the configuration
+     * clearConfig
+     *
+     */
+    DOMPurify.clearConfig = function () {
+      CONFIG = null;
+      SET_CONFIG = false;
+    };
+
+    /**
+     * Public method to check if an attribute value is valid.
+     * Uses last set config, if any. Otherwise, uses config defaults.
+     * isValidAttribute
+     *
+     * @param  {string} tag Tag name of containing element.
+     * @param  {string} attr Attribute name.
+     * @param  {string} value Attribute value.
+     * @return {Boolean} Returns true if `value` is valid. Otherwise, returns false.
+     */
+    DOMPurify.isValidAttribute = function (tag, attr, value) {
+      /* Initialize shared config vars if necessary. */
+      if (!CONFIG) {
+        _parseConfig({});
+      }
+
+      var lcTag = stringToLowerCase(tag);
+      var lcName = stringToLowerCase(attr);
+      return _isValidAttribute(lcTag, lcName, value);
+    };
+
+    /**
+     * AddHook
+     * Public method to add DOMPurify hooks
+     *
+     * @param {String} entryPoint entry point for the hook to add
+     * @param {Function} hookFunction function to execute
+     */
+    DOMPurify.addHook = function (entryPoint, hookFunction) {
+      if (typeof hookFunction !== 'function') {
+        return;
+      }
+
+      hooks[entryPoint] = hooks[entryPoint] || [];
+      arrayPush(hooks[entryPoint], hookFunction);
+    };
+
+    /**
+     * RemoveHook
+     * Public method to remove a DOMPurify hook at a given entryPoint
+     * (pops it from the stack of hooks if more are present)
+     *
+     * @param {String} entryPoint entry point for the hook to remove
+     */
+    DOMPurify.removeHook = function (entryPoint) {
+      if (hooks[entryPoint]) {
+        arrayPop(hooks[entryPoint]);
+      }
+    };
+
+    /**
+     * RemoveHooks
+     * Public method to remove all DOMPurify hooks at a given entryPoint
+     *
+     * @param  {String} entryPoint entry point for the hooks to remove
+     */
+    DOMPurify.removeHooks = function (entryPoint) {
+      if (hooks[entryPoint]) {
+        hooks[entryPoint] = [];
+      }
+    };
+
+    /**
+     * RemoveAllHooks
+     * Public method to remove all DOMPurify hooks
+     *
+     */
+    DOMPurify.removeAllHooks = function () {
+      hooks = {};
+    };
+
+    return DOMPurify;
+  }
+
+  var purify = createDOMPurify();
+
+  return purify;
+
 }));
-/* harmony default export */ var chevron_down = (chevronDown);
-//# sourceMappingURL=chevron-down.js.map
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/base-control/index.js
-var base_control = __webpack_require__(767);
+//# sourceMappingURL=purify.js.map
 
-// EXTERNAL MODULE: ./node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js + 1 modules
-var styled_base_browser_esm = __webpack_require__(41);
-
-// EXTERNAL MODULE: ./node_modules/@emotion/core/dist/core.browser.esm.js + 6 modules
-var core_browser_esm = __webpack_require__(67);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/flex/index.js
-var flex = __webpack_require__(301);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/flex/item.js
-var item = __webpack_require__(545);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/text/index.js + 3 modules
-var build_module_text = __webpack_require__(190);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/utils/colors.js
-var colors = __webpack_require__(31);
-
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/utils/rtl.js
-/**
- * External dependencies
- */
-
-
-var LOWER_LEFT_REGEXP = new RegExp(/-left/g);
-var LOWER_RIGHT_REGEXP = new RegExp(/-right/g);
-var UPPER_LEFT_REGEXP = new RegExp(/Left/g);
-var UPPER_RIGHT_REGEXP = new RegExp(/Right/g);
-/**
- * Checks to see whether the document is set to rtl.
- *
- * @return {boolean} Whether document is RTL.
- */
-
-function getRTL() {
-  return !!(document && document.documentElement.dir === 'rtl');
-}
-/**
- * Simple hook to retrieve RTL direction value
- *
- * @return {boolean} Whether document is RTL.
- */
-
-function useRTL() {
-  return getRTL();
-}
-/**
- * Flips a CSS property from left <-> right.
- *
- * @param {string} key The CSS property name.
- *
- * @return {string} The flipped CSS property name, if applicable.
- */
-
-function getConvertedKey(key) {
-  if (key === 'left') {
-    return 'right';
-  }
-
-  if (key === 'right') {
-    return 'left';
-  }
-
-  if (LOWER_LEFT_REGEXP.test(key)) {
-    return key.replace(LOWER_LEFT_REGEXP, '-right');
-  }
-
-  if (LOWER_RIGHT_REGEXP.test(key)) {
-    return key.replace(LOWER_RIGHT_REGEXP, '-left');
-  }
-
-  if (UPPER_LEFT_REGEXP.test(key)) {
-    return key.replace(UPPER_LEFT_REGEXP, 'Right');
-  }
-
-  if (UPPER_RIGHT_REGEXP.test(key)) {
-    return key.replace(UPPER_RIGHT_REGEXP, 'Left');
-  }
-
-  return key;
-}
-/**
- * An incredibly basic ltr -> rtl converter for style properties
- *
- * @param {Object} ltrStyles
- *
- * @return {Object} Converted ltr -> rtl styles
- */
-
-
-var rtl_convertLTRToRTL = function convertLTRToRTL() {
-  var ltrStyles = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(external_lodash_["mapKeys"])(ltrStyles, function (_value, key) {
-    return getConvertedKey(key);
-  });
-};
-/**
- * A higher-order function that create an incredibly basic ltr -> rtl style converter for CSS objects.
- *
- * @param {Object} ltrStyles Ltr styles. Converts and renders from ltr -> rtl styles, if applicable.
- * @param {null|Object} rtlStyles Rtl styles. Renders if provided.
- *
- * @return {Function} A function to output CSS styles for Emotion's renderer
- */
-
-function rtl() {
-  var ltrStyles = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var rtlStyles = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var isRTL = getRTL();
-
-    if (rtlStyles) {
-      return isRTL ? /*#__PURE__*/Object(core_browser_esm["b" /* css */])(rtlStyles,  true ? "" : undefined) : /*#__PURE__*/Object(core_browser_esm["b" /* css */])(ltrStyles,  true ? "" : undefined);
-    }
-
-    return isRTL ? /*#__PURE__*/Object(core_browser_esm["b" /* css */])(rtl_convertLTRToRTL(ltrStyles),  true ? "" : undefined) : /*#__PURE__*/Object(core_browser_esm["b" /* css */])(ltrStyles,  true ? "" : undefined);
-  };
-}
-//# sourceMappingURL=rtl.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/styles/input-control-styles.js
-
-
-
-
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
-
-/**
- * External dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-var input_control_styles_ref =  true ? {
-  name: "1dacand",
-  styles: "padding-top:0;"
-} : undefined;
-
-var rootFloatLabelStyles = function rootFloatLabelStyles() {
-  return input_control_styles_ref;
-};
-
-var input_control_styles_ref2 =  true ? {
-  name: "r6z5ec",
-  styles: "z-index:1;"
-} : undefined;
-
-var rootFocusedStyles = function rootFocusedStyles(_ref8) {
-  var isFocused = _ref8.isFocused;
-  if (!isFocused) return '';
-  return input_control_styles_ref2;
-};
-
-var input_control_styles_ref3 =  true ? {
-  name: "uz6002",
-  styles: "align-items:flex-start;flex-direction:column;"
-} : undefined;
-
-var _ref4 =  true ? {
-  name: "53hdd7",
-  styles: "align-items:flex-start;flex-direction:column-reverse;"
-} : undefined;
-
-var rootLabelPositionStyles = function rootLabelPositionStyles(_ref9) {
-  var labelPosition = _ref9.labelPosition;
-
-  switch (labelPosition) {
-    case 'top':
-      return input_control_styles_ref3;
-
-    case 'bottom':
-      return _ref4;
-
-    default:
-      return '';
-  }
-};
-
-var Root = /*#__PURE__*/Object(styled_base_browser_esm["a" /* default */])(flex["a" /* default */], {
-  target: "e1cr7zh10",
-  label: "Root"
-})("position:relative;border-radius:2px;", rootFloatLabelStyles, ";", rootFocusedStyles, ";", rootLabelPositionStyles, ";" + ( true ? "" : undefined));
-
-var input_control_styles_containerDisabledStyles = function containerDisabledStyles(_ref10) {
-  var disabled = _ref10.disabled;
-  var backgroundColor = disabled ? Object(colors["a" /* color */])('ui.backgroundDisabled') : Object(colors["a" /* color */])('ui.background');
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    backgroundColor: backgroundColor
-  },  true ? "" : undefined);
-};
-
-var _ref5 =  true ? {
-  name: "8atqhb",
-  styles: "width:100%;"
-} : undefined;
-
-var containerWidthStyles = function containerWidthStyles(_ref11) {
-  var labelPosition = _ref11.labelPosition;
-  if (labelPosition === 'side') return '';
-  return _ref5;
-};
-
-var Container = Object(styled_base_browser_esm["a" /* default */])("div", {
-  target: "e1cr7zh11",
-  label: "Container"
-})("align-items:center;box-sizing:border-box;border-radius:inherit;display:flex;flex:1;position:relative;", input_control_styles_containerDisabledStyles, ";", containerWidthStyles, ";" + ( true ? "" : undefined));
-
-var input_control_styles_disabledStyles = function disabledStyles(_ref12) {
-  var disabled = _ref12.disabled;
-  if (!disabled) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    color: Object(colors["a" /* color */])('ui.textDisabled')
-  },  true ? "" : undefined);
-};
-
-var input_control_styles_fontSizeStyles = function fontSizeStyles(_ref13) {
-  var size = _ref13.size;
-  var sizes = {
-    default: '13px',
-    small: '11px'
-  };
-  var fontSize = sizes[size];
-  var fontSizeMobile = '16px';
-  if (!fontSize) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])("font-size:", fontSizeMobile, ";@media ( min-width:600px ){font-size:", fontSize, ";}" + ( true ? "" : undefined));
-};
-
-var input_control_styles_sizeStyles = function sizeStyles(_ref14) {
-  var size = _ref14.size;
-  var sizes = {
-    default: {
-      height: 30,
-      lineHeight: 1,
-      minHeight: 30
-    },
-    small: {
-      height: 24,
-      lineHeight: 1,
-      minHeight: 24
-    }
-  };
-  var style = sizes[size] || sizes.default;
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])(style,  true ? "" : undefined);
-};
-
-var _ref6 =  true ? {
-  name: "103r1kr",
-  styles: "&::-webkit-input-placeholder{line-height:normal;}"
-} : undefined;
-
-var placeholderStyles = function placeholderStyles() {
-  return _ref6;
-};
-
-var input_control_styles_dragStyles = function dragStyles(_ref15) {
-  var isDragging = _ref15.isDragging,
-      dragCursor = _ref15.dragCursor;
-  var defaultArrowStyles = '';
-  var activeDragCursorStyles = '';
-
-  if (isDragging) {
-    defaultArrowStyles = /*#__PURE__*/Object(core_browser_esm["b" /* css */])("cursor:", dragCursor, ";user-select:none;&::-webkit-outer-spin-button,&::-webkit-inner-spin-button{-webkit-appearance:none !important;margin:0 !important;}" + ( true ? "" : undefined));
-  }
-
-  if (isDragging && dragCursor) {
-    activeDragCursorStyles = /*#__PURE__*/Object(core_browser_esm["b" /* css */])("&:active{cursor:", dragCursor, ";}" + ( true ? "" : undefined));
-  }
-
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])(defaultArrowStyles, ";", activeDragCursorStyles, ";" + ( true ? "" : undefined));
-}; // TODO: Resolve need to use &&& to increase specificity
-// https://github.com/WordPress/gutenberg/issues/18483
-
-
-var Input = Object(styled_base_browser_esm["a" /* default */])("input", {
-  target: "e1cr7zh12",
-  label: "Input"
-})("&&&{background-color:transparent;box-sizing:border-box;border:none;box-shadow:none !important;color:", Object(colors["a" /* color */])('black'), ";display:block;margin:0;outline:none;padding-left:8px;padding-right:8px;width:100%;", input_control_styles_dragStyles, ";", input_control_styles_disabledStyles, ";", input_control_styles_fontSizeStyles, ";", input_control_styles_sizeStyles, ";", placeholderStyles, ";}" + ( true ? "" : undefined));
-
-var _ref7 =  true ? {
-  name: "8uhtka",
-  styles: "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"
-} : undefined;
-
-var labelTruncation = function labelTruncation() {
-  return _ref7;
-};
-
-var BaseLabel = /*#__PURE__*/Object(styled_base_browser_esm["a" /* default */])(build_module_text["a" /* default */], {
-  target: "e1cr7zh13",
-  label: "BaseLabel"
-})("&&&{box-sizing:border-box;color:currentColor;display:block;margin:0;max-width:100%;padding-bottom:4px;padding-top:0;z-index:1;", labelTruncation, ";}" + ( true ? "" : undefined));
-
-var input_control_styles_Label = function Label(props) {
-  return Object(external_this_wp_element_["createElement"])(BaseLabel, Object(esm_extends["a" /* default */])({}, props, {
-    as: "label"
-  }));
-};
-var LabelWrapper = /*#__PURE__*/Object(styled_base_browser_esm["a" /* default */])(item["a" /* default */], {
-  target: "e1cr7zh14",
-  label: "LabelWrapper"
-})( true ? {
-  name: "120o8im",
-  styles: "max-width:calc( 100% - 10px );"
-} : undefined);
-
-var input_control_styles_backdropFocusedStyles = function backdropFocusedStyles(_ref16) {
-  var disabled = _ref16.disabled,
-      isFocused = _ref16.isFocused;
-  var borderColor = isFocused ? Object(colors["a" /* color */])('ui.borderFocus') : Object(colors["a" /* color */])('ui.border');
-  var boxShadow = null;
-
-  if (isFocused) {
-    boxShadow = "0 0 0 1px ".concat(Object(colors["a" /* color */])('ui.borderFocus'), " inset");
-  }
-
-  if (disabled) {
-    borderColor = Object(colors["a" /* color */])('ui.borderDisabled');
-  }
-
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    boxShadow: boxShadow,
-    borderColor: borderColor,
-    borderStyle: 'solid',
-    borderWidth: 1
-  },  true ? "" : undefined);
-};
-
-var BackdropUI = Object(styled_base_browser_esm["a" /* default */])("div", {
-  target: "e1cr7zh15",
-  label: "BackdropUI"
-})("&&&{box-sizing:border-box;border-radius:inherit;bottom:0;left:0;margin:0;padding:0;pointer-events:none;position:absolute;right:0;top:0;", input_control_styles_backdropFocusedStyles, ";", rtl({
-  paddingLeft: 2
-}), "}" + ( true ? "" : undefined));
-var Prefix = Object(styled_base_browser_esm["a" /* default */])("span", {
-  target: "e1cr7zh16",
-  label: "Prefix"
-})( true ? {
-  name: "1pxuk39",
-  styles: "box-sizing:border-box;display:block;"
-} : undefined);
-var Suffix = Object(styled_base_browser_esm["a" /* default */])("span", {
-  target: "e1cr7zh17",
-  label: "Suffix"
-})( true ? {
-  name: "1pxuk39",
-  styles: "box-sizing:border-box;display:block;"
-} : undefined);
-//# sourceMappingURL=input-control-styles.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/backdrop.js
-
-
-/**
- * WordPress dependencies
- */
-
-/**
- * Internal dependencies
- */
-
-
-
-function Backdrop(_ref) {
-  var _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      _ref$isFocused = _ref.isFocused,
-      isFocused = _ref$isFocused === void 0 ? false : _ref$isFocused;
-  return Object(external_this_wp_element_["createElement"])(BackdropUI, {
-    "aria-hidden": "true",
-    className: "components-input-control__backdrop",
-    disabled: disabled,
-    isFocused: isFocused
-  });
-}
-
-var MemoizedBackdrop = Object(external_this_wp_element_["memo"])(Backdrop);
-/* harmony default export */ var backdrop = (MemoizedBackdrop);
-//# sourceMappingURL=backdrop.js.map
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/visually-hidden/index.js + 1 modules
-var visually_hidden = __webpack_require__(439);
-
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/label.js
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-function label_Label(_ref) {
-  var children = _ref.children,
-      hideLabelFromVision = _ref.hideLabelFromVision,
-      htmlFor = _ref.htmlFor,
-      props = Object(objectWithoutProperties["a" /* default */])(_ref, ["children", "hideLabelFromVision", "htmlFor"]);
-
-  if (!children) return null;
-
-  if (hideLabelFromVision) {
-    return Object(external_this_wp_element_["createElement"])(visually_hidden["a" /* default */], {
-      as: "label",
-      htmlFor: htmlFor
-    }, children);
-  }
-
-  return Object(external_this_wp_element_["createElement"])(input_control_styles_Label, Object(esm_extends["a" /* default */])({
-    htmlFor: htmlFor
-  }, props), children);
-}
-//# sourceMappingURL=label.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/input-base.js
-
-
-
-
-/**
- * WordPress dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-function useUniqueId(idProp) {
-  var instanceId = Object(use_instance_id["a" /* default */])(InputBase);
-  var id = "input-base-control-".concat(instanceId);
-  return idProp || id;
-}
-
-function InputBase(_ref, ref) {
-  var children = _ref.children,
-      className = _ref.className,
-      _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      _ref$hideLabelFromVis = _ref.hideLabelFromVision,
-      hideLabelFromVision = _ref$hideLabelFromVis === void 0 ? false : _ref$hideLabelFromVis,
-      idProp = _ref.id,
-      _ref$isFocused = _ref.isFocused,
-      isFocused = _ref$isFocused === void 0 ? false : _ref$isFocused,
-      label = _ref.label,
-      prefix = _ref.prefix,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 'default' : _ref$size,
-      suffix = _ref.suffix,
-      props = Object(objectWithoutProperties["a" /* default */])(_ref, ["children", "className", "disabled", "hideLabelFromVision", "id", "isFocused", "label", "prefix", "size", "suffix"]);
-
-  var id = useUniqueId(idProp);
-  return Object(external_this_wp_element_["createElement"])(Root, Object(esm_extends["a" /* default */])({}, props, {
-    className: className,
-    isFocused: isFocused,
-    ref: ref
-  }), Object(external_this_wp_element_["createElement"])(LabelWrapper, null, Object(external_this_wp_element_["createElement"])(label_Label, {
-    className: "components-input-control__label",
-    hideLabelFromVision: hideLabelFromVision,
-    htmlFor: id,
-    size: size
-  }, label)), Object(external_this_wp_element_["createElement"])(Container, {
-    className: "components-input-control__container",
-    disabled: disabled,
-    isFocused: isFocused
-  }, prefix && Object(external_this_wp_element_["createElement"])(Prefix, {
-    className: "components-input-control__prefix"
-  }, prefix), children, suffix && Object(external_this_wp_element_["createElement"])(Suffix, {
-    className: "components-input-control__suffix"
-  }, suffix), Object(external_this_wp_element_["createElement"])(backdrop, {
-    "aria-hidden": "true",
-    disabled: disabled,
-    isFocused: isFocused,
-    label: label,
-    size: size
-  })));
-}
-/* harmony default export */ var input_base = (Object(external_this_wp_element_["forwardRef"])(InputBase));
-//# sourceMappingURL=input-base.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/select-control/styles/select-control-styles.js
-
-
-/**
- * External dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-var select_control_styles_disabledStyles = function disabledStyles(_ref) {
-  var disabled = _ref.disabled;
-  if (!disabled) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    color: Object(colors["a" /* color */])('ui.textDisabled')
-  },  true ? "" : undefined);
-};
-
-var select_control_styles_fontSizeStyles = function fontSizeStyles(_ref2) {
-  var size = _ref2.size;
-  var sizes = {
-    default: '13px',
-    small: '11px'
-  };
-  var fontSize = sizes[size];
-  var fontSizeMobile = '16px';
-  if (!fontSize) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])("font-size:", fontSizeMobile, ";@media ( min-width:600px ){font-size:", fontSize, ";}" + ( true ? "" : undefined));
-};
-
-var select_control_styles_sizeStyles = function sizeStyles(_ref3) {
-  var size = _ref3.size;
-  var sizes = {
-    default: {
-      height: 30,
-      lineHeight: 1,
-      minHeight: 30
-    },
-    small: {
-      height: 24,
-      lineHeight: 1,
-      minHeight: 24
-    }
-  };
-  var style = sizes[size] || sizes.default;
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])(style,  true ? "" : undefined);
-}; // TODO: Resolve need to use &&& to increase specificity
-// https://github.com/WordPress/gutenberg/issues/18483
-
-
-var Select = Object(styled_base_browser_esm["a" /* default */])("select", {
-  target: "e12x0a390",
-  label: "Select"
-})("&&&{appearance:none;background:transparent;box-sizing:border-box;border:none;box-shadow:none !important;color:", Object(colors["a" /* color */])('black'), ";display:block;margin:0;outline:none;width:100%;", select_control_styles_disabledStyles, ";", select_control_styles_fontSizeStyles, ";", select_control_styles_sizeStyles, ";", rtl({
-  paddingLeft: 8,
-  paddingRight: 24
-})(), "}" + ( true ? "" : undefined));
-var DownArrowWrapper = Object(styled_base_browser_esm["a" /* default */])("div", {
-  target: "e12x0a391",
-  label: "DownArrowWrapper"
-})("align-items:center;bottom:0;box-sizing:border-box;display:flex;padding:0 4px;pointer-events:none;position:absolute;top:0;", rtl({
-  right: 0
-})(), " svg{display:block;}" + ( true ? "" : undefined));
-//# sourceMappingURL=select-control-styles.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/select-control/index.js
-
-
-
-
-
-
-/**
- * External dependencies
- */
-
-
-/**
- * WordPress dependencies
- */
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-function select_control_useUniqueId(idProp) {
-  var instanceId = Object(use_instance_id["a" /* default */])(SelectControl);
-  var id = "inspector-select-control-".concat(instanceId);
-  return idProp || id;
-}
-
-function SelectControl(_ref, ref) {
-  var className = _ref.className,
-      _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      help = _ref.help,
-      hideLabelFromVision = _ref.hideLabelFromVision,
-      idProp = _ref.id,
-      label = _ref.label,
-      _ref$multiple = _ref.multiple,
-      multiple = _ref$multiple === void 0 ? false : _ref$multiple,
-      _ref$onBlur = _ref.onBlur,
-      onBlur = _ref$onBlur === void 0 ? external_lodash_["noop"] : _ref$onBlur,
-      _ref$onChange = _ref.onChange,
-      onChange = _ref$onChange === void 0 ? external_lodash_["noop"] : _ref$onChange,
-      _ref$onFocus = _ref.onFocus,
-      onFocus = _ref$onFocus === void 0 ? external_lodash_["noop"] : _ref$onFocus,
-      _ref$options = _ref.options,
-      options = _ref$options === void 0 ? [] : _ref$options,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 'default' : _ref$size,
-      valueProp = _ref.value,
-      _ref$labelPosition = _ref.labelPosition,
-      labelPosition = _ref$labelPosition === void 0 ? 'top' : _ref$labelPosition,
-      props = Object(objectWithoutProperties["a" /* default */])(_ref, ["className", "disabled", "help", "hideLabelFromVision", "id", "label", "multiple", "onBlur", "onChange", "onFocus", "options", "size", "value", "labelPosition"]);
-
-  var _useState = Object(external_this_wp_element_["useState"])(false),
-      _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-      isFocused = _useState2[0],
-      setIsFocused = _useState2[1];
-
-  var id = select_control_useUniqueId(idProp);
-  var helpId = help ? "".concat(id, "__help") : undefined; // Disable reason: A select with an onchange throws a warning
-
-  if (Object(external_lodash_["isEmpty"])(options)) return null;
-
-  var handleOnBlur = function handleOnBlur(event) {
-    onBlur(event);
-    setIsFocused(false);
-  };
-
-  var handleOnFocus = function handleOnFocus(event) {
-    onFocus(event);
-    setIsFocused(true);
-  };
-
-  var handleOnChange = function handleOnChange(event) {
-    if (multiple) {
-      var selectedOptions = Object(toConsumableArray["a" /* default */])(event.target.options).filter(function (_ref2) {
-        var selected = _ref2.selected;
-        return selected;
-      });
-
-      var newValues = selectedOptions.map(function (_ref3) {
-        var value = _ref3.value;
-        return value;
-      });
-      onChange(newValues);
-      return;
-    }
-
-    onChange(event.target.value, {
-      event: event
-    });
-  };
-
-  var classes = classnames_default()('components-select-control', className);
-  /* eslint-disable jsx-a11y/no-onchange */
-
-  return Object(external_this_wp_element_["createElement"])(base_control["a" /* default */], {
-    help: help
-  }, Object(external_this_wp_element_["createElement"])(input_base, {
-    className: classes,
-    disabled: disabled,
-    hideLabelFromVision: hideLabelFromVision,
-    id: id,
-    isFocused: isFocused,
-    label: label,
-    size: size,
-    suffix: Object(external_this_wp_element_["createElement"])(DownArrowWrapper, null, Object(external_this_wp_element_["createElement"])(icon["a" /* default */], {
-      icon: chevron_down,
-      size: 18
-    })),
-    labelPosition: labelPosition
-  }, Object(external_this_wp_element_["createElement"])(Select, Object(esm_extends["a" /* default */])({}, props, {
-    "aria-describedby": helpId,
-    className: "components-select-control__input",
-    disabled: disabled,
-    id: id,
-    multiple: multiple,
-    onBlur: handleOnBlur,
-    onChange: handleOnChange,
-    onFocus: handleOnFocus,
-    ref: ref,
-    size: size,
-    value: valueProp
-  }), options.map(function (option, index) {
-    var key = option.id || "".concat(option.label, "-").concat(option.value, "-").concat(index);
-    return Object(external_this_wp_element_["createElement"])("option", {
-      key: key,
-      value: option.value,
-      disabled: option.disabled
-    }, option.label);
-  }))));
-  /* eslint-enable jsx-a11y/no-onchange */
-}
-
-var ForwardedComponent = Object(external_this_wp_element_["forwardRef"])(SelectControl);
-/* harmony default export */ var select_control = __webpack_exports__["a"] = (ForwardedComponent);
-//# sourceMappingURL=index.js.map
 
 /***/ })
 
