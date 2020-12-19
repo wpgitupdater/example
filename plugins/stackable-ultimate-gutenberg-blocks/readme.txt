@@ -4,7 +4,7 @@ Tags: blocks, gutenberg, gutenberg blocks, page builder, WordPress blocks
 Requires at least: 5.4
 Tested up to: 5.6
 Requires PHP: 5.3
-Stable tag: 2.13.1
+Stable tag: 2.13.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,7 @@ All-in-one solution for creating stunning websites with Gutenberg.
 
 [Stackable](https://wpstackable.com?utm_source=wp-repo&utm_campaign=readme&utm_medium=link) is the ultimate trusted Gutenberg companion you've been waiting for. Build any website with our ready made designs, extensive block collection, UI Kits, and more. Have the confidence to easily design the fastest websites using a new page building experience for Gutenberg.
 
-[youtube https://www.youtube.com/watch?v=idv-1cDz61g]
+[youtube https://www.youtube.com/watch?v=PeR76cXLmdk]
 
 ## More than Just Blocks. Discover a whole new experience of web design with the new WordPress Editor.
 
@@ -192,6 +192,11 @@ Nope. Stackable only works with Gutenberg, the new WordPress editor.
 == Upgrade Notice ==
 
 == Changelog ==
+
+= 2.13.2 =
+* Fixed: Accordion SEO issue with heading levels
+* Fixed: Blocks didn't re-render when some props changed
+* Fixed: Don't show number spacing for some layouts
 
 = 2.13.1 =
 * Fixed: Blog posts block load more button stopped working
