@@ -3749,25 +3749,25 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
-    key: "isTrackingListUpdated",
-    value: function isTrackingListUpdated(list, subList) {
-      if (subList.length === 0) {
+    key: "shouldUpdateCompletedTasks",
+    value: function shouldUpdateCompletedTasks(tasks, completedTasks) {
+      if (completedTasks.length === 0) {
         return false;
       }
 
-      return subList.every(function (taskName) {
-        return list.indexOf(taskName) >= 0;
+      return !completedTasks.every(function (taskName) {
+        return tasks.indexOf(taskName) >= 0;
       });
     }
   }, {
-    key: "getIncludedTasks",
-    value: function getIncludedTasks(list, subList) {
-      if (!subList) {
+    key: "getTrackedCompletedTasks",
+    value: function getTrackedCompletedTasks(completedTasks, trackedTasks) {
+      if (!trackedTasks) {
         return [];
       }
 
-      return list.filter(function (taskName) {
-        return subList.includes(taskName);
+      return completedTasks.filter(function (taskName) {
+        return trackedTasks.includes(taskName);
       });
     }
   }, {
@@ -3777,9 +3777,9 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
           totalTrackedCompletedTasks = _this$props3.trackedCompletedTasks,
           updateOptions = _this$props3.updateOptions;
       var completedTaskKeys = this.getCompletedTaskKeys();
-      var trackedCompletedTasks = this.getIncludedTasks(completedTaskKeys, totalTrackedCompletedTasks);
+      var trackedCompletedTasks = this.getTrackedCompletedTasks(completedTaskKeys, totalTrackedCompletedTasks);
 
-      if (!this.isTrackingListUpdated(trackedCompletedTasks, completedTaskKeys)) {
+      if (this.shouldUpdateCompletedTasks(trackedCompletedTasks, completedTaskKeys)) {
         updateOptions({
           woocommerce_task_list_tracked_completed_tasks: completedTaskKeys
         });

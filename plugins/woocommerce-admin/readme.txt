@@ -4,7 +4,7 @@ Tags: ecommerce, e-commerce, store, sales, reports, analytics, dashboard, activi
 Requires at least: 5.3.0
 Tested up to: 5.4.2
 Requires PHP: 5.6.20
-Stable tag: 1.8.1
+Stable tag: 1.8.2
 License: GPLv3
 License URI: https://github.com/woocommerce/woocommerce-admin/blob/main/license.txt
 
@@ -72,6 +72,11 @@ Release and roadmap notes are available on the [WooCommerce Developers Blog](htt
 3. Analytics
 
 == Changelog ==
+
+== 1.8.2 12/22/2020 ==
+
+- Fix: Completed tasks tracking causing infinite loop #5941
+- Fix: Remove Navigation access #5940
 
 == 1.8.1 12/15/2020 ==
 

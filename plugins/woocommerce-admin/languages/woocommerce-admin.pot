@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WooCommerce Admin package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Admin 1.8.1\n"
+"Project-Id-Version: WooCommerce Admin 1.8.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/woocommerce-admin\n"
-"POT-Creation-Date: 2020-12-15 01:22:40+00:00\n"
+"POT-Creation-Date: 2020-12-23 01:25:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2798,30 +2798,12 @@ msgstr ""
 msgid "Shipping Label"
 msgstr ""
 
-#: src/Loader.php:250 src/Loader.php:270
-msgid "Features"
-msgstr ""
-
-#: src/Loader.php:272
-msgid ""
-"Start using new features that are being progressively rolled out to improve "
-"the store management experience."
-msgstr ""
-
-#: src/Loader.php:276
-msgid "Navigation"
-msgstr ""
-
-#: src/Loader.php:277
-msgid "Adds the new WooCommerce navigation experience to the dashboard"
-msgstr ""
-
-#: src/Loader.php:304
+#: src/Loader.php:256
 #: client/layout/controller.js:157
 msgid "Setup Wizard"
 msgstr ""
 
-#: src/Loader.php:1025
+#: src/Loader.php:977
 #. translators: %1$s: updated title, %2$s: blog info name
 msgid "%1$s &lsaquo; %2$s"
 msgstr ""
@@ -2830,27 +2812,27 @@ msgstr ""
 msgid "WooCommerce Admin"
 msgstr ""
 
-#: src/Loader.php:1193
+#: src/Loader.php:1145
 msgid "Settings for WooCommerce admin reporting."
 msgstr ""
 
-#: src/Loader.php:1212
+#: src/Loader.php:1164
 msgid "Excluded report order statuses"
 msgstr ""
 
-#: src/Loader.php:1213
+#: src/Loader.php:1165
 msgid "Statuses that should not be included when calculating report totals."
 msgstr ""
 
-#: src/Loader.php:1221
+#: src/Loader.php:1173
 msgid "Actionable order statuses"
 msgstr ""
 
-#: src/Loader.php:1222
+#: src/Loader.php:1174
 msgid "Statuses that require extra action on behalf of the store admin."
 msgstr ""
 
-#: src/Loader.php:1230 src/Loader.php:1231
+#: src/Loader.php:1182 src/Loader.php:1183
 msgid "Default Date Range"
 msgstr ""
 
@@ -5205,7 +5187,7 @@ msgstr ""
 #: client/homescreen/activity-panel/reviews/index.js:115
 #: client/homescreen/activity-panel/stock/card.js:102
 #: client/inbox-panel/action.js:90
-#: client/task-list/list.js:143
+#: client/task-list/list.js:147
 msgid "Undo"
 msgstr ""
 
@@ -5391,7 +5373,7 @@ msgid "All messages dismissed."
 msgstr ""
 
 #: client/inbox-panel/card.js:153
-#: client/task-list/list.js:328
+#: client/task-list/list.js:332
 msgid "Dismiss"
 msgstr ""
 
@@ -5546,7 +5528,7 @@ msgid "Activate"
 msgstr ""
 
 #: client/marketing/overview/installed-extensions/row.js:112
-#: client/task-list/list.js:284
+#: client/task-list/list.js:288
 msgid "Finish setup"
 msgstr ""
 
@@ -6157,19 +6139,19 @@ msgstr ""
 msgid "Tax"
 msgstr ""
 
-#: client/task-list/list.js:140
+#: client/task-list/list.js:144
 msgid "Task dismissed"
 msgstr ""
 
-#: client/task-list/list.js:253
+#: client/task-list/list.js:257
 msgid "Task List Options"
 msgstr ""
 
-#: client/task-list/list.js:264
+#: client/task-list/list.js:268
 msgid "Hide this"
 msgstr ""
 
-#: client/task-list/list.js:283
+#: client/task-list/list.js:287
 msgid "Extensions setup"
 msgstr ""
 
