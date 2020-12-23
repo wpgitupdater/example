@@ -14,7 +14,7 @@ if ( ! function_exists( 'wc_admin_get_feature_config' ) ) {
 			'marketing' => true,
 			'minified-js' => true,
 			'mobile-app-banner' => true,
-			'navigation' => true,
+			'navigation' => false,
 			'onboarding' => true,
 			'remote-inbox-notifications' => true,
 			'shipping-label-banner' => true,
