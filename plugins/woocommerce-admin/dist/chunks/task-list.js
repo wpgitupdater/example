@@ -1,15 +1,15 @@
-(window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[50],{
+(window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[49],{
 
-/***/ 246:
+/***/ 184:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getInAppPurchaseUrl; });
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
+/* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(35);
+/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(25);
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -47,78 +47,70 @@ var getInAppPurchaseUrl = function getInAppPurchaseUrl(url) {
 
 /***/ }),
 
-/***/ 589:
+/***/ 519:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckboxControl; });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(147);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(382);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(571);
-/* harmony import */ var _base_control__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(581);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return groupListOfObjectsBy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return setAllPropsToValue; });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-/**
- * WordPress dependencies
- */
-
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 /**
- * Internal dependencies
+ * Returns an object with items grouped by the sent key.
+ *
+ * @param {Array} array array of objects.
+ * @param {string} key the object prop that will be used to group elements.
+ * @param {string} defaultKey if the key is not found in the object, it will use this value.
+ * @return {Object} Object that contains the grouped elements.
+ */
+var groupListOfObjectsBy = function groupListOfObjectsBy(array, key) {
+  var defaultKey = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'undefined';
+
+  if (array && Array.isArray(array) && array.length) {
+    if (!key) {
+      return array;
+    }
+
+    return array.reduce(function (result, currentValue) {
+      if (!currentValue[key]) {
+        currentValue[key] = defaultKey;
+      }
+
+      (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue);
+      return result;
+    }, {});
+  }
+
+  return {};
+};
+/**
+ * Returns a (shallow) copy of an object with all its props set to the specified value
+ *
+ * @param {*} obj the Object to copy.
+ * @param {*} value the value to set all props on the object to.
  */
 
+var setAllPropsToValue = function setAllPropsToValue(obj, value) {
+  return Object.entries(obj).reduce(function (acc, _ref) {
+    var _ref2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default()(_ref, 1),
+        key = _ref2[0];
 
-function CheckboxControl(_ref) {
-  var label = _ref.label,
-      className = _ref.className,
-      heading = _ref.heading,
-      checked = _ref.checked,
-      help = _ref.help,
-      onChange = _ref.onChange,
-      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["label", "className", "heading", "checked", "help", "onChange"]);
-
-  var instanceId = Object(_wordpress_compose__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(CheckboxControl);
-  var id = "inspector-checkbox-control-".concat(instanceId);
-
-  var onChangeValue = function onChangeValue(event) {
-    return onChange(event.target.checked);
-  };
-
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_base_control__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"], {
-    label: heading,
-    id: id,
-    help: help,
-    className: className
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "components-checkbox-control__input-container"
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("input", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({
-    id: id,
-    className: "components-checkbox-control__input",
-    type: "checkbox",
-    value: "1",
-    onChange: onChangeValue,
-    checked: checked,
-    "aria-describedby": !!help ? id + '__help' : undefined
-  }, props)), checked ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_icons__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],
-    className: "components-checkbox-control__checked",
-    role: "presentation"
-  }) : null), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("label", {
-    className: "components-checkbox-control__label",
-    htmlFor: id
-  }, label));
-}
-//# sourceMappingURL=index.js.map
+    return _objectSpread(_objectSpread({}, acc), {}, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()({}, key, value));
+  }, {});
+};
 
 /***/ }),
 
-/***/ 597:
+/***/ 520:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -126,22 +118,22 @@ function CheckboxControl(_ref) {
 /* unused harmony export getCountryStateOptions */
 /* unused harmony export useGetCountryStateAutofill */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StoreAddress; });
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
+/* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21);
 /* harmony import */ var _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(19);
 /* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_html_entities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(76);
+/* harmony import */ var _wordpress_html_entities__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(40);
 /* harmony import */ var _wordpress_html_entities__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_html_entities__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(35);
-/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(74);
+/* harmony import */ var _woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(25);
+/* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(47);
 /* harmony import */ var _woocommerce_components__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_components__WEBPACK_IMPORTED_MODULE_8__);
 
 
@@ -173,19 +165,19 @@ var _getSetting = Object(_woocommerce_wc_admin_settings__WEBPACK_IMPORTED_MODULE
 function validateStoreAddress(values) {
   var errors = {};
 
-  if (!values.addressLine1.length) {
+  if (!values.addressLine1.trim().length) {
     errors.addressLine1 = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Please add an address', 'woocommerce-admin');
   }
 
-  if (!values.countryState.length) {
+  if (!values.countryState.trim().length) {
     errors.countryState = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Please select a country / region', 'woocommerce-admin');
   }
 
-  if (!values.city.length) {
+  if (!values.city.trim().length) {
     errors.city = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Please add a city', 'woocommerce-admin');
   }
 
-  if (!values.postCode.length) {
+  if (!values.postCode.trim().length) {
     errors.postCode = Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__["__"])('Please add a post code', 'woocommerce-admin');
   }
 
@@ -350,60 +342,7 @@ function StoreAddress(props) {
 
 /***/ }),
 
-/***/ 640:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_4__);
-
-
-
-
-/**
- * External dependencies
- */
-
-
-
-function FormToggle(_ref) {
-  var className = _ref.className,
-      checked = _ref.checked,
-      id = _ref.id,
-      _ref$onChange = _ref.onChange,
-      onChange = _ref$onChange === void 0 ? lodash__WEBPACK_IMPORTED_MODULE_4__["noop"] : _ref$onChange,
-      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["className", "checked", "id", "onChange"]);
-
-  var wrapperClasses = classnames__WEBPACK_IMPORTED_MODULE_3___default()('components-form-toggle', className, {
-    'is-checked': checked
-  });
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: wrapperClasses
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("input", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({
-    className: "components-form-toggle__input",
-    id: id,
-    type: "checkbox",
-    checked: checked,
-    onChange: onChange
-  }, props)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "components-form-toggle__track"
-  }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
-    className: "components-form-toggle__thumb"
-  }));
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (FormToggle);
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 669:
+/***/ 598:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -414,72 +353,77 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, "TaskDashboard", function() { return /* binding */ task_list_TaskDashboard; });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
-var classCallCheck = __webpack_require__(20);
+var classCallCheck = __webpack_require__(11);
 var classCallCheck_default = /*#__PURE__*/__webpack_require__.n(classCallCheck);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/createClass.js
-var createClass = __webpack_require__(15);
+var createClass = __webpack_require__(12);
 var createClass_default = /*#__PURE__*/__webpack_require__.n(createClass);
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/assertThisInitialized.js
+var assertThisInitialized = __webpack_require__(8);
+var assertThisInitialized_default = /*#__PURE__*/__webpack_require__.n(assertThisInitialized);
+
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inherits.js
-var inherits = __webpack_require__(22);
+var inherits = __webpack_require__(13);
 var inherits_default = /*#__PURE__*/__webpack_require__.n(inherits);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(23);
+var possibleConstructorReturn = __webpack_require__(14);
 var possibleConstructorReturn_default = /*#__PURE__*/__webpack_require__.n(possibleConstructorReturn);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/getPrototypeOf.js
-var getPrototypeOf = __webpack_require__(10);
+var getPrototypeOf = __webpack_require__(6);
 var getPrototypeOf_default = /*#__PURE__*/__webpack_require__.n(getPrototypeOf);
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
+var defineProperty = __webpack_require__(5);
+var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: external {"this":["wp","element"]}
 var external_this_wp_element_ = __webpack_require__(0);
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/compose/build-module/higher-order/compose.js
-var compose = __webpack_require__(181);
+// EXTERNAL MODULE: external {"this":["wp","compose"]}
+var external_this_wp_compose_ = __webpack_require__(18);
 
 // EXTERNAL MODULE: external {"this":["wp","data"]}
-var external_this_wp_data_ = __webpack_require__(25);
+var external_this_wp_data_ = __webpack_require__(15);
 
 // EXTERNAL MODULE: external {"this":["wc","data"]}
-var external_this_wc_data_ = __webpack_require__(34);
+var external_this_wc_data_ = __webpack_require__(22);
 
 // EXTERNAL MODULE: external {"this":["wc","tracks"]}
-var external_this_wc_tracks_ = __webpack_require__(50);
+var external_this_wc_tracks_ = __webpack_require__(28);
 
 // EXTERNAL MODULE: ./client/task-list/style.scss
-var style = __webpack_require__(607);
+var style = __webpack_require__(530);
 
 // EXTERNAL MODULE: external {"this":["wp","i18n"]}
-var external_this_wp_i18n_ = __webpack_require__(3);
+var external_this_wp_i18n_ = __webpack_require__(2);
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/modal/index.js + 3 modules
-var modal = __webpack_require__(546);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/button/index.js
-var build_module_button = __webpack_require__(68);
+// EXTERNAL MODULE: external {"this":["wp","components"]}
+var external_this_wp_components_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: external "lodash"
-var external_lodash_ = __webpack_require__(2);
+var external_lodash_ = __webpack_require__(3);
 
 // EXTERNAL MODULE: external {"this":["wp","htmlEntities"]}
-var external_this_wp_htmlEntities_ = __webpack_require__(76);
+var external_this_wp_htmlEntities_ = __webpack_require__(40);
 
 // EXTERNAL MODULE: ./client/settings/index.js
-var client_settings = __webpack_require__(35);
+var client_settings = __webpack_require__(25);
 
 // EXTERNAL MODULE: external {"this":["wc","components"]}
-var external_this_wc_components_ = __webpack_require__(74);
+var external_this_wc_components_ = __webpack_require__(47);
 
 // EXTERNAL MODULE: ./client/dashboard/utils.js
-var utils = __webpack_require__(143);
+var utils = __webpack_require__(92);
 
 // EXTERNAL MODULE: ./client/lib/sanitize-html/index.js
-var sanitize_html = __webpack_require__(584);
+var sanitize_html = __webpack_require__(509);
 
 // EXTERNAL MODULE: ./client/lib/in-app-purchase.js
-var in_app_purchase = __webpack_require__(246);
+var in_app_purchase = __webpack_require__(184);
 
 // CONCATENATED MODULE: ./client/dashboard/components/cart-modal.js
 
@@ -636,7 +580,7 @@ var cart_modal_CartModal = /*#__PURE__*/function (_Component) {
       var _this$state = this.state,
           purchaseNowButtonBusy = _this$state.purchaseNowButtonBusy,
           purchaseLaterButtonBusy = _this$state.purchaseLaterButtonBusy;
-      return Object(external_this_wp_element_["createElement"])(modal["a" /* default */], {
+      return Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Modal"], {
         title: Object(external_this_wp_i18n_["__"])('Would you like to add the following paid features to your store now?', 'woocommerce-admin'),
         onRequestClose: function onRequestClose() {
           return _this2.onClose();
@@ -646,13 +590,13 @@ var cart_modal_CartModal = /*#__PURE__*/function (_Component) {
         className: "woocommerce-cart-modal__help-text"
       }, Object(external_this_wp_i18n_["__"])("You won't have access to this functionality until the extensions have been purchased and installed.", 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])("div", {
         className: "woocommerce-cart-modal__actions"
-      }, Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         isLink: true,
         isBusy: purchaseLaterButtonBusy,
         onClick: function onClick() {
           return _this2.onClickPurchaseLater();
         }
-      }, Object(external_this_wp_i18n_["__"])("I'll do it later", 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      }, Object(external_this_wp_i18n_["__"])("I'll do it later", 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         isPrimary: true,
         isBusy: purchaseNowButtonBusy,
         onClick: function onClick() {
@@ -665,7 +609,7 @@ var cart_modal_CartModal = /*#__PURE__*/function (_Component) {
   return CartModal;
 }(external_this_wp_element_["Component"]);
 
-/* harmony default export */ var cart_modal = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select) {
+/* harmony default export */ var cart_modal = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select) {
   var _select = select(external_this_wc_data_["PLUGINS_STORE_NAME"]),
       getInstalledPlugins = _select.getInstalledPlugins;
 
@@ -681,29 +625,21 @@ var cart_modal_CartModal = /*#__PURE__*/function (_Component) {
   };
 }))(cart_modal_CartModal));
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
-var regenerator = __webpack_require__(14);
+var regenerator = __webpack_require__(9);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(75);
+var asyncToGenerator = __webpack_require__(43);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(5);
-var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
-
 // EXTERNAL MODULE: external {"this":["wp","hooks"]}
-var external_this_wp_hooks_ = __webpack_require__(51);
+var external_this_wp_hooks_ = __webpack_require__(42);
 
 // EXTERNAL MODULE: external {"this":["wc","navigation"]}
-var external_this_wc_navigation_ = __webpack_require__(29);
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/assertThisInitialized.js
-var assertThisInitialized = __webpack_require__(13);
-var assertThisInitialized_default = /*#__PURE__*/__webpack_require__.n(assertThisInitialized);
+var external_this_wc_navigation_ = __webpack_require__(20);
 
 // EXTERNAL MODULE: external {"this":["wp","apiFetch"]}
-var external_this_wp_apiFetch_ = __webpack_require__(44);
+var external_this_wp_apiFetch_ = __webpack_require__(27);
 var external_this_wp_apiFetch_default = /*#__PURE__*/__webpack_require__.n(external_this_wp_apiFetch_);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/appearance.js
@@ -1041,11 +977,11 @@ var appearance_Appearance = /*#__PURE__*/function (_Component) {
         key: 'import',
         label: Object(external_this_wp_i18n_["__"])('Import sample products', 'woocommerce-admin'),
         description: Object(external_this_wp_i18n_["__"])('We’ll add some products that will make it easier to see what your store looks like', 'woocommerce-admin'),
-        content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           onClick: this.importProducts,
           isBusy: isPending,
           isPrimary: true
-        }, Object(external_this_wp_i18n_["__"])('Import products', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        }, Object(external_this_wp_i18n_["__"])('Import products', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           onClick: function onClick() {
             return _this5.completeStep();
           }
@@ -1055,11 +991,11 @@ var appearance_Appearance = /*#__PURE__*/function (_Component) {
         key: 'homepage',
         label: Object(external_this_wp_i18n_["__"])('Create a custom homepage', 'woocommerce-admin'),
         description: Object(external_this_wp_i18n_["__"])('Create a new homepage and customize it to suit your needs', 'woocommerce-admin'),
-        content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           isPrimary: true,
           isBusy: isPending,
           onClick: this.createHomepage
-        }, Object(external_this_wp_i18n_["__"])('Create homepage', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        }, Object(external_this_wp_i18n_["__"])('Create homepage', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           isTertiary: true,
           onClick: function onClick() {
             Object(external_this_wc_tracks_["recordEvent"])('tasklist_appearance_create_homepage', {
@@ -1082,12 +1018,12 @@ var appearance_Appearance = /*#__PURE__*/function (_Component) {
               logo: image
             });
           }
-        }), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        }), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           disabled: !logo && !isDirty,
           onClick: this.updateLogo,
           isBusy: isUpdatingLogo,
           isPrimary: true
-        }, Object(external_this_wp_i18n_["__"])('Proceed', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        }, Object(external_this_wp_i18n_["__"])('Proceed', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           isTertiary: true,
           onClick: function onClick() {
             return _this5.completeStep();
@@ -1107,7 +1043,7 @@ var appearance_Appearance = /*#__PURE__*/function (_Component) {
               storeNoticeText: value
             });
           }
-        }), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        }), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           onClick: this.updateNotice,
           isPrimary: true
         }, Object(external_this_wp_i18n_["__"])('Complete task', 'woocommerce-admin'))),
@@ -1128,21 +1064,21 @@ var appearance_Appearance = /*#__PURE__*/function (_Component) {
       var currentStep = this.getSteps()[stepIndex].key;
       return Object(external_this_wp_element_["createElement"])("div", {
         className: "woocommerce-task-appearance"
-      }, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Card"], {
-        className: "is-narrow"
-      }, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Card"], {
+        className: "woocommerce-task-card"
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardBody"], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
         isPending: isUpdatingNotice || isUpdatingLogo || isPending,
         isVertical: true,
         currentStep: currentStep,
         steps: this.getSteps()
-      })));
+      }))));
     }
   }]);
 
   return Appearance;
 }(external_this_wp_element_["Component"]);
 
-/* harmony default export */ var appearance = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select) {
+/* harmony default export */ var appearance = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select) {
   var _select = select(external_this_wc_data_["OPTIONS_STORE_NAME"]),
       getOption = _select.getOption;
 
@@ -1188,6 +1124,7 @@ function products_isNativeReflectConstruct() { if (typeof Reflect === "undefined
 /**
  * External dependencies
  */
+
 
 
 
@@ -1260,11 +1197,13 @@ var products_Products = /*#__PURE__*/function (_Component) {
   createClass_default()(Products, [{
     key: "render",
     value: function render() {
-      return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Card"], {
+      return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Card"], {
         className: "woocommerce-task-card"
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardBody"], {
+        size: null
       }, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["List"], {
         items: subTasks
-      })));
+      }))));
     }
   }]);
 
@@ -1273,11 +1212,11 @@ var products_Products = /*#__PURE__*/function (_Component) {
 
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/extends.js
-var helpers_extends = __webpack_require__(36);
+var helpers_extends = __webpack_require__(24);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ./node_modules/interpolate-components/lib/index.js
-var lib = __webpack_require__(43);
+var lib = __webpack_require__(26);
 var lib_default = /*#__PURE__*/__webpack_require__.n(lib);
 
 // EXTERNAL MODULE: ./node_modules/prop-types/index.js
@@ -1395,19 +1334,19 @@ var connect_Connect = /*#__PURE__*/function (_Component) {
           skipText = _this$props3.skipText,
           onAbort = _this$props3.onAbort,
           abortText = _this$props3.abortText;
-      return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, hasErrors ? Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, hasErrors ? Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         isPrimary: true,
         onClick: function onClick() {
           return window.location.reload();
         }
-      }, Object(external_this_wp_i18n_["__"])('Retry', 'woocommerce-admin')) : Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      }, Object(external_this_wp_i18n_["__"])('Retry', 'woocommerce-admin')) : Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         disabled: isRequesting,
         isBusy: this.state.isConnecting,
         isPrimary: true,
         onClick: this.connectJetpack
-      }, Object(external_this_wp_i18n_["__"])('Connect', 'woocommerce-admin')), onSkip && Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      }, Object(external_this_wp_i18n_["__"])('Connect', 'woocommerce-admin')), onSkip && Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         onClick: onSkip
-      }, skipText || Object(external_this_wp_i18n_["__"])('No thanks', 'woocommerce-admin')), onAbort && Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      }, skipText || Object(external_this_wp_i18n_["__"])('No thanks', 'woocommerce-admin')), onAbort && Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         onClick: onAbort
       }, abortText || Object(external_this_wp_i18n_["__"])('Abort', 'woocommerce-admin')));
     }
@@ -1484,7 +1423,7 @@ connect_Connect.propTypes = {
 connect_Connect.defaultProps = {
   setIsPending: function setIsPending() {}
 };
-/* harmony default export */ var connect = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select, props) {
+/* harmony default export */ var connect = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select, props) {
   var _select = select(external_this_wc_data_["PLUGINS_STORE_NAME"]),
       getJetpackConnectUrl = _select.getJetpackConnectUrl,
       isPluginsRequesting = _select.isPluginsRequesting,
@@ -1510,7 +1449,7 @@ connect_Connect.defaultProps = {
   };
 }))(connect_Connect));
 // EXTERNAL MODULE: ./client/dashboard/components/settings/general/store-address.js
-var store_address = __webpack_require__(597);
+var store_address = __webpack_require__(520);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/steps/location.js
 
@@ -1640,7 +1579,7 @@ var location_StoreLocation = /*#__PURE__*/function (_Component) {
         return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(store_address["a" /* StoreAddress */], {
           getInputProps: getInputProps,
           setValue: setValue
-        }), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        }), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           isPrimary: true,
           onClick: handleSubmit
         }, Object(external_this_wp_i18n_["__"])('Continue', 'woocommerce-admin')));
@@ -1652,11 +1591,8 @@ var location_StoreLocation = /*#__PURE__*/function (_Component) {
 }(external_this_wp_element_["Component"]);
 
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/form-toggle/index.js
-var form_toggle = __webpack_require__(640);
-
 // EXTERNAL MODULE: ./client/lib/currency-context.js
-var currency_context = __webpack_require__(574);
+var currency_context = __webpack_require__(500);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/shipping/rates.js
 
@@ -1943,7 +1879,7 @@ var rates_ShippingRates = /*#__PURE__*/function (_Component) {
           }, zone.toggleable ? Object(external_this_wp_element_["createElement"])("label", {
             htmlFor: "woocommerce-shipping-rate__toggle-".concat(zone.id),
             className: "woocommerce-shipping-rate__name"
-          }, zone.name, Object(external_this_wp_element_["createElement"])(form_toggle["a" /* default */], extends_default()({
+          }, zone.name, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["FormToggle"], extends_default()({
             id: "woocommerce-shipping-rate__toggle-".concat(zone.id)
           }, getInputProps("".concat(zone.id, "_enabled"))))) : Object(external_this_wp_element_["createElement"])("div", {
             className: "woocommerce-shipping-rate__name"
@@ -1959,7 +1895,7 @@ var rates_ShippingRates = /*#__PURE__*/function (_Component) {
             suffix: _this4.renderInputSuffix(values["".concat(zone.id, "_rate")]),
             className: "muriel-input-text woocommerce-shipping-rate__control-wrapper"
           }))));
-        })), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        })), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           isPrimary: true,
           onClick: handleSubmit
         }, buttonText || Object(external_this_wp_i18n_["__"])('Update', 'woocommerce-admin')));
@@ -1996,7 +1932,7 @@ rates_ShippingRates.defaultProps = {
   shippingZones: []
 };
 rates_ShippingRates.contextType = currency_context["a" /* CurrencyContext */];
-/* harmony default export */ var shipping_rates = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withDispatch"])(function (dispatch) {
+/* harmony default export */ var shipping_rates = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withDispatch"])(function (dispatch) {
   var _dispatch = dispatch(external_this_wc_data_["ONBOARDING_STORE_NAME"]),
       invalidateResolutionForStoreSelector = _dispatch.invalidateResolutionForStoreSelector;
 
@@ -2007,7 +1943,7 @@ rates_ShippingRates.contextType = currency_context["a" /* CurrencyContext */];
   };
 }))(rates_ShippingRates));
 // EXTERNAL MODULE: ./client/lib/notices/index.js
-var notices = __webpack_require__(585);
+var notices = __webpack_require__(510);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/shipping/index.js
 
@@ -2040,10 +1976,10 @@ function shipping_isNativeReflectConstruct() { if (typeof Reflect === "undefined
 
 
 
+
 /**
  * Internal dependencies
  */
-
 
 
 
@@ -2288,7 +2224,8 @@ var shipping_Shipping = /*#__PURE__*/function (_Component) {
 
       var _this$props3 = this.props,
           countryCode = _this$props3.countryCode,
-          isJetpackConnected = _this$props3.isJetpackConnected;
+          isJetpackConnected = _this$props3.isJetpackConnected,
+          settings = _this$props3.settings;
       var pluginsToActivate = this.getPluginsToActivate();
       var requiresJetpackConnection = !isJetpackConnected && countryCode === 'US';
       var steps = [{
@@ -2315,7 +2252,7 @@ var shipping_Shipping = /*#__PURE__*/function (_Component) {
           shippingZones: this.state.shippingZones,
           onComplete: this.completeStep
         }, this.props)),
-        visible: true
+        visible: settings.woocommerce_ship_to_countries === 'disabled' ? false : true
       }, {
         key: 'label_printing',
         label: Object(external_this_wp_i18n_["__"])('Enable shipping label printing', 'woocommerce-admin'),
@@ -2379,21 +2316,20 @@ var shipping_Shipping = /*#__PURE__*/function (_Component) {
       var isUpdateSettingsRequesting = this.props.isUpdateSettingsRequesting;
       return Object(external_this_wp_element_["createElement"])("div", {
         className: "woocommerce-task-shipping"
-      }, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Card"], {
-        className: "is-narrow"
-      }, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Card"], {
+        className: "woocommerce-task-card"
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardBody"], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
         isPending: isPending || isUpdateSettingsRequesting,
         isVertical: true,
         currentStep: step,
         steps: this.getSteps()
-      })));
+      }))));
     }
   }]);
 
   return Shipping;
 }(external_this_wp_element_["Component"]);
-
-/* harmony default export */ var shipping = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select) {
+/* harmony default export */ var shipping = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select) {
   var _select = select(external_this_wc_data_["SETTINGS_STORE_NAME"]),
       getSettings = _select.getSettings,
       isUpdateSettingsRequesting = _select.isUpdateSettingsRequesting;
@@ -2437,8 +2373,8 @@ var shipping_Shipping = /*#__PURE__*/function (_Component) {
     updateAndPersistSettingsForGroup: updateAndPersistSettingsForGroup
   };
 }))(shipping_Shipping));
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/text/index.js + 3 modules
-var build_module_text = __webpack_require__(142);
+// EXTERNAL MODULE: ./packages/experimental/build-module/index.js
+var build_module = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/tax.js
 
@@ -2464,6 +2400,7 @@ function tax_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || 
 /**
  * External dependencies
  */
+
 
 
 
@@ -2663,6 +2600,16 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
           tosAccepted = _this$props5.tosAccepted,
           updateOptions = _this$props5.updateOptions;
       var cachedPluginsToActivate = this.state.cachedPluginsToActivate;
+      var step2Label, agreementText;
+
+      if (cachedPluginsToActivate.includes('woocommerce-services')) {
+        step2Label = Object(external_this_wp_i18n_["__"])('Install Jetpack and WooCommerce Tax', 'woocommerce-admin');
+        agreementText = Object(external_this_wp_i18n_["__"])('By installing Jetpack and WooCommerce Tax you agree to the {{link}}Terms of Service{{/link}}.', 'woocommerce-admin');
+      } else {
+        step2Label = Object(external_this_wp_i18n_["__"])('Install Jetpack', 'woocommerce-admin');
+        agreementText = Object(external_this_wp_i18n_["__"])('By installing Jetpack you agree to the {{link}}Terms of Service{{/link}}.', 'woocommerce-admin');
+      }
+
       var steps = [{
         key: 'store_location',
         label: Object(external_this_wp_i18n_["__"])('Set store location', 'woocommerce-admin'),
@@ -2682,7 +2629,7 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
         visible: true
       }, {
         key: 'plugins',
-        label: Object(external_this_wp_i18n_["__"])('Install Jetpack and WooCommerce Tax', 'woocommerce-admin'),
+        label: step2Label,
         description: Object(external_this_wp_i18n_["__"])('Jetpack and WooCommerce Tax allow you to automate sales tax calculations', 'woocommerce-admin'),
         content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Plugins"], {
           onComplete: function onComplete(plugins, response) {
@@ -2711,11 +2658,11 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
             return _this4.doNotChargeSalesTax();
           },
           abortText: Object(external_this_wp_i18n_["__"])("I don't charge sales tax", 'woocommerce-admin')
-        }), !tosAccepted && Object(external_this_wp_element_["createElement"])(build_module_text["a" /* default */], {
+        }), !tosAccepted && Object(external_this_wp_element_["createElement"])(build_module["f" /* Text */], {
           variant: "caption",
           className: "woocommerce-task__caption"
         }, lib_default()({
-          mixedString: Object(external_this_wp_i18n_["__"])('By installing Jetpack and WooCommerce Tax you agree to the {{link}}Terms of Service{{/link}}.', 'woocommerce-admin'),
+          mixedString: agreementText,
           components: {
             link: Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Link"], {
               href: 'https://wordpress.com/tos/',
@@ -2755,7 +2702,7 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
         key: 'manual_configuration',
         label: Object(external_this_wp_i18n_["__"])('Configure tax rates', 'woocommerce-admin'),
         description: Object(external_this_wp_i18n_["__"])('Head over to the tax rate settings screen to configure your tax rates', 'woocommerce-admin'),
-        content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        content: Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           disabled: isPending,
           isPrimary: true,
           isBusy: isPending,
@@ -2803,7 +2750,7 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
         components: {
           strong: Object(external_this_wp_element_["createElement"])("strong", null)
         }
-      })), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      })), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         disabled: isPending,
         isPrimary: true,
         isBusy: isPending,
@@ -2814,7 +2761,7 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
 
           _this5.updateAutomatedTax(true);
         }
-      }, Object(external_this_wp_i18n_["__"])('Yes please', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      }, Object(external_this_wp_i18n_["__"])('Yes please', 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         disabled: isPending,
         isTertiary: true,
         onClick: function onClick() {
@@ -2824,7 +2771,7 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
 
           _this5.updateAutomatedTax(false);
         }
-      }, Object(external_this_wp_i18n_["__"])("No thanks, I'll set up manually", 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+      }, Object(external_this_wp_i18n_["__"])("No thanks, I'll set up manually", 'woocommerce-admin')), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
         disabled: isPending,
         isTertiary: true,
         onClick: function onClick() {
@@ -2842,21 +2789,21 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
       var step = this.getSteps()[stepIndex];
       return Object(external_this_wp_element_["createElement"])("div", {
         className: "woocommerce-task-tax"
-      }, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Card"], {
-        className: "is-narrow"
-      }, this.shouldShowSuccessScreen() ? this.renderSuccessScreen() : Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Card"], {
+        className: "woocommerce-task-card"
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardBody"], null, this.shouldShowSuccessScreen() ? this.renderSuccessScreen() : Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Stepper"], {
         isPending: isPending || isResolving,
         isVertical: true,
         currentStep: step.key,
         steps: this.getSteps()
-      })));
+      }))));
     }
   }]);
 
   return Tax;
 }(external_this_wp_element_["Component"]);
 
-/* harmony default export */ var tax = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select) {
+/* harmony default export */ var tax = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select) {
   var _select = select(external_this_wc_data_["SETTINGS_STORE_NAME"]),
       getSettings = _select.getSettings,
       isUpdateSettingsRequesting = _select.isUpdateSettingsRequesting;
@@ -2928,11 +2875,11 @@ var tax_Tax = /*#__PURE__*/function (_Component) {
   };
 }))(tax_Tax));
 // EXTERNAL MODULE: ./node_modules/classnames/index.js
-var classnames = __webpack_require__(4);
+var classnames = __webpack_require__(7);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 
 // EXTERNAL MODULE: ./client/task-list/tasks/payments/methods.js + 13 modules
-var payments_methods = __webpack_require__(604);
+var payments_methods = __webpack_require__(527);
 
 // CONCATENATED MODULE: ./client/task-list/tasks/payments/index.js
 
@@ -3208,14 +3155,14 @@ var payments_Payments = /*#__PURE__*/function (_Component) {
           query = _this$props3.query;
 
       if (currentMethod) {
-        return Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Card"], {
-          className: "woocommerce-task-payment-method is-narrow"
-        }, Object(external_this_wp_element_["cloneElement"])(currentMethod.container, {
+        return Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Card"], {
+          className: "woocommerce-task-payment-method woocommerce-task-card"
+        }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardBody"], null, Object(external_this_wp_element_["cloneElement"])(currentMethod.container, {
           query: query,
           installStep: this.getInstallStep(),
           markConfigured: this.markConfigured,
           hasCbdIndustry: currentMethod.hasCbdIndustry
-        }));
+        })));
       }
 
       return Object(external_this_wp_element_["createElement"])("div", {
@@ -3233,28 +3180,26 @@ var payments_Payments = /*#__PURE__*/function (_Component) {
           return null;
         }
 
-        var classes = classnames_default()('woocommerce-task-payment', 'is-narrow', !isConfigured && 'woocommerce-task-payment-not-configured', 'woocommerce-task-payment-' + key);
+        var classes = classnames_default()('woocommerce-task-payment', 'woocommerce-task-card', !isConfigured && 'woocommerce-task-payment-not-configured', 'woocommerce-task-payment-' + key);
         var isRecommended = key === recommendedMethod && !isConfigured;
         var showRecommendedRibbon = isRecommended && key !== 'wcpay';
         var showRecommendedPill = isRecommended && key === 'wcpay';
-        return Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Card"], {
+        return Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Card"], {
           key: key,
           className: classes
-        }, Object(external_this_wp_element_["createElement"])("div", {
-          className: "woocommerce-task-payment__before"
+        }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardMedia"], {
+          isBorderless: true
         }, showRecommendedRibbon && Object(external_this_wp_element_["createElement"])("div", {
           className: "woocommerce-task-payment__recommended-ribbon"
-        }, Object(external_this_wp_element_["createElement"])("span", null, Object(external_this_wp_i18n_["__"])('Recommended', 'woocommerce-admin'))), before), Object(external_this_wp_element_["createElement"])("div", {
-          className: "woocommerce-task-payment__text"
-        }, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["H"], {
+        }, Object(external_this_wp_element_["createElement"])("span", null, Object(external_this_wp_i18n_["__"])('Recommended', 'woocommerce-admin'))), before), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardBody"], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["H"], {
           className: "woocommerce-task-payment__title"
         }, title, showRecommendedPill && Object(external_this_wp_element_["createElement"])("span", {
           className: "woocommerce-task-payment__recommended-pill"
         }, Object(external_this_wp_i18n_["__"])('Recommended', 'woocommerce-admin'))), Object(external_this_wp_element_["createElement"])("div", {
           className: "woocommerce-task-payment__content"
-        }, content)), Object(external_this_wp_element_["createElement"])("div", {
-          className: "woocommerce-task-payment__after"
-        }, container && !isConfigured ? Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+        }, content)), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardFooter"], {
+          isBorderless: true
+        }, container && !isConfigured ? Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
           isPrimary: key === recommendedMethod,
           isSecondary: key !== recommendedMethod,
           isBusy: busyMethod === key,
@@ -3262,7 +3207,7 @@ var payments_Payments = /*#__PURE__*/function (_Component) {
           onClick: function onClick() {
             return _this3.handleClick(method);
           }
-        }, Object(external_this_wp_i18n_["__"])('Set up', 'woocommerce-admin')) : Object(external_this_wp_element_["createElement"])(form_toggle["a" /* default */], {
+        }, Object(external_this_wp_i18n_["__"])('Set up', 'woocommerce-admin')) : Object(external_this_wp_element_["createElement"])(external_this_wp_components_["FormToggle"], {
           checked: enabledMethods[key],
           onChange: function onChange() {
             return _this3.toggleMethod(key);
@@ -3278,7 +3223,7 @@ var payments_Payments = /*#__PURE__*/function (_Component) {
   return Payments;
 }(external_this_wp_element_["Component"]);
 
-/* harmony default export */ var payments = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withDispatch"])(function (dispatch) {
+/* harmony default export */ var payments = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withDispatch"])(function (dispatch) {
   var _dispatch = dispatch('core/notices'),
       createNotice = _dispatch.createNotice;
 
@@ -3353,6 +3298,9 @@ var payments_Payments = /*#__PURE__*/function (_Component) {
     methods: methods
   };
 }))(payments_Payments));
+// EXTERNAL MODULE: ./client/lib/collections/index.js
+var collections = __webpack_require__(519);
+
 // CONCATENATED MODULE: ./client/task-list/tasks.js
 
 
@@ -3382,6 +3330,7 @@ function tasks_objectSpread(target) { for (var i = 1; i < arguments.length; i++)
 
 
 
+
 function recordTaskViewEvent(taskName, isJetpackConnected, activePlugins, installedPlugins) {
   Object(external_this_wc_tracks_["recordEvent"])('task_view', {
     task_name: taskName,
@@ -3402,7 +3351,8 @@ function tasks_getAllTasks(_ref) {
       onboardingStatus = _ref.onboardingStatus,
       profileItems = _ref.profileItems,
       query = _ref.query,
-      toggleCartModal = _ref.toggleCartModal;
+      toggleCartModal = _ref.toggleCartModal,
+      onTaskSelect = _ref.onTaskSelect;
 
   var _hasPaymentGateway$ha = tasks_objectSpread({
     hasPaymentGateway: false,
@@ -3429,7 +3379,7 @@ function tasks_getAllTasks(_ref) {
   var profilerCompleted = profileItems.completed,
       productTypes = profileItems.product_types;
 
-  var purchaseAndInstallText = Object(external_this_wp_i18n_["__"])('Add paid extensions to my store');
+  var purchaseAndInstallText = Object(external_this_wp_i18n_["__"])('Add paid extensions to my store', 'woocommerce-admin');
 
   if (uniqueItemsList.length === 1) {
     var itemName = uniqueItemsList[0].name;
@@ -3444,9 +3394,7 @@ function tasks_getAllTasks(_ref) {
     title: Object(external_this_wp_i18n_["__"])('Store details', 'woocommerce-admin'),
     container: null,
     onClick: function onClick() {
-      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-        task_name: 'store_details'
-      });
+      onTaskSelect('store_details');
       Object(external_this_wc_navigation_["getHistory"])().push(Object(external_this_wc_navigation_["getNewPath"])({}, '/setup-wizard', {}));
     },
     completed: profilerCompleted,
@@ -3458,9 +3406,7 @@ function tasks_getAllTasks(_ref) {
     title: purchaseAndInstallText,
     container: null,
     onClick: function onClick() {
-      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-        task_name: 'purchase'
-      });
+      onTaskSelect('purchase');
       return remainingProducts.length ? toggleCartModal() : null;
     },
     visible: products.length,
@@ -3473,9 +3419,7 @@ function tasks_getAllTasks(_ref) {
     title: Object(external_this_wp_i18n_["__"])('Add my products', 'woocommerce-admin'),
     container: Object(external_this_wp_element_["createElement"])(products_Products, null),
     onClick: function onClick() {
-      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-        task_name: 'products'
-      });
+      onTaskSelect('products');
       Object(external_this_wc_navigation_["updateQueryString"])({
         task: 'products'
       });
@@ -3509,9 +3453,7 @@ function tasks_getAllTasks(_ref) {
                   // in TaskDashboard.recordTaskView() is never called. So
                   // record it here.
                   recordTaskViewEvent('wcpay', isJetpackConnected, activePlugins, installedPlugins);
-                  Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-                    task_name: 'woocommerce-payments'
-                  });
+                  onTaskSelect('woocommerce-payments');
                   return Object(payments_methods["b" /* installActivateAndConnectWcpay */])(resolve, reject, createNotice, installAndActivatePlugins);
                 });
 
@@ -3539,9 +3481,7 @@ function tasks_getAllTasks(_ref) {
     container: Object(external_this_wp_element_["createElement"])(payments, null),
     completed: hasPaymentGateway,
     onClick: function onClick() {
-      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-        task_name: 'payments'
-      });
+      onTaskSelect('payments');
       Object(external_this_wc_navigation_["updateQueryString"])({
         task: 'payments'
       });
@@ -3554,9 +3494,7 @@ function tasks_getAllTasks(_ref) {
     title: Object(external_this_wp_i18n_["__"])('Set up tax', 'woocommerce-admin'),
     container: Object(external_this_wp_element_["createElement"])(tax, null),
     onClick: function onClick() {
-      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-        task_name: 'tax'
-      });
+      onTaskSelect('tax');
       Object(external_this_wc_navigation_["updateQueryString"])({
         task: 'tax'
       });
@@ -3570,9 +3508,7 @@ function tasks_getAllTasks(_ref) {
     title: Object(external_this_wp_i18n_["__"])('Set up shipping', 'woocommerce-admin'),
     container: Object(external_this_wp_element_["createElement"])(shipping, null),
     onClick: function onClick() {
-      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-        task_name: 'shipping'
-      });
+      onTaskSelect('shipping');
       Object(external_this_wc_navigation_["updateQueryString"])({
         task: 'shipping'
       });
@@ -3586,9 +3522,7 @@ function tasks_getAllTasks(_ref) {
     title: Object(external_this_wp_i18n_["__"])('Personalize my store', 'woocommerce-admin'),
     container: Object(external_this_wp_element_["createElement"])(appearance, null),
     onClick: function onClick() {
-      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
-        task_name: 'appearance'
-      });
+      onTaskSelect('appearance');
       Object(external_this_wc_navigation_["updateQueryString"])({
         task: 'appearance'
       });
@@ -3598,26 +3532,17 @@ function tasks_getAllTasks(_ref) {
     time: Object(external_this_wp_i18n_["__"])('2 minutes', 'woocommerce-admin'),
     type: 'setup'
   }];
-  return Object(external_this_wp_hooks_["applyFilters"])('woocommerce_admin_onboarding_task_list', tasks, query);
+  return Object(collections["a" /* groupListOfObjectsBy */])(Object(external_this_wp_hooks_["applyFilters"])('woocommerce_admin_onboarding_task_list', tasks, query), 'type', 'extension');
 }
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/toConsumableArray.js
-var toConsumableArray = __webpack_require__(28);
+var toConsumableArray = __webpack_require__(19);
 var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
 
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/card/index.js
-var card = __webpack_require__(532);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/card/header.js
-var header = __webpack_require__(364);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/card/body.js
-var body = __webpack_require__(533);
-
 // EXTERNAL MODULE: ./node_modules/@wordpress/icons/build-module/icon/index.js
-var icon = __webpack_require__(377);
+var icon = __webpack_require__(306);
 
 // EXTERNAL MODULE: ./node_modules/@wordpress/primitives/build-module/svg/index.js
-var svg = __webpack_require__(78);
+var svg = __webpack_require__(196);
 
 // CONCATENATED MODULE: ./node_modules/@wordpress/icons/build-module/library/check.js
 
@@ -3626,10 +3551,10 @@ var svg = __webpack_require__(78);
  * WordPress dependencies
  */
 
-var check = Object(external_this_wp_element_["createElement"])(svg["c" /* SVG */], {
+var check = Object(external_this_wp_element_["createElement"])(svg["b" /* SVG */], {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24"
-}, Object(external_this_wp_element_["createElement"])(svg["b" /* Path */], {
+}, Object(external_this_wp_element_["createElement"])(svg["a" /* Path */], {
   d: "M9 18.6L3.5 13l1-1L9 16.4l9.5-9.9 1 1z"
 }));
 /* harmony default export */ var library_check = (check);
@@ -3655,6 +3580,7 @@ function list_isNativeReflectConstruct() { if (typeof Reflect === "undefined" ||
 /**
  * External dependencies
  */
+
 
 
 
@@ -3709,15 +3635,38 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
       this.possiblyTrackCompletedTasks();
     }
   }, {
-    key: "possiblyCompleteTaskList",
-    value: function possiblyCompleteTaskList() {
+    key: "getUngroupedTasks",
+    value: function getUngroupedTasks() {
+      var groupedTasks = this.props.tasks;
+      return Object.values(groupedTasks).reduce(function (acc, task) {
+        return acc.concat(task);
+      }, []);
+    }
+  }, {
+    key: "getSpecificTasks",
+    value: function getSpecificTasks() {
       var _this$props = this.props,
           isExtended = _this$props.isExtended,
-          isTaskListComplete = _this$props.isTaskListComplete,
-          isExtendedTaskListComplete = _this$props.isExtendedTaskListComplete,
-          updateOptions = _this$props.updateOptions;
-      var isSetupTaskListInComplete = !isExtended && !isTaskListComplete;
-      var isExtendedTaskListInComplete = isExtended && !isExtendedTaskListComplete;
+          groupedTasks = _this$props.tasks;
+      var extension = groupedTasks.extension,
+          setup = groupedTasks.setup;
+
+      if (isExtended) {
+        return extension;
+      }
+
+      return setup;
+    }
+  }, {
+    key: "possiblyCompleteTaskList",
+    value: function possiblyCompleteTaskList() {
+      var _this$props2 = this.props,
+          isExtended = _this$props2.isExtended,
+          isTaskListComplete = _this$props2.isTaskListComplete,
+          isExtendedTaskListComplete = _this$props2.isExtendedTaskListComplete,
+          updateOptions = _this$props2.updateOptions;
+      var isSetupTaskListIncomplete = !isExtended && !isTaskListComplete;
+      var isExtendedTaskListIncomplete = isExtended && !isExtendedTaskListComplete;
       var taskListToComplete = isExtended ? {
         woocommerce_extended_task_list_complete: 'yes'
       } : {
@@ -3725,7 +3674,7 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
         woocommerce_default_homepage_layout: 'two_columns'
       };
 
-      if (!this.getIncompleteTasks().length && (isSetupTaskListInComplete || isExtendedTaskListInComplete)) {
+      if (!this.getIncompleteTasks().length && (isSetupTaskListIncomplete || isExtendedTaskListIncomplete)) {
         updateOptions(list_objectSpread({}, taskListToComplete));
       }
     }
@@ -3741,10 +3690,8 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
   }, {
     key: "getIncompleteTasks",
     value: function getIncompleteTasks() {
-      var _this$props2 = this.props,
-          dismissedTasks = _this$props2.dismissedTasks,
-          specificTasks = _this$props2.specificTasks;
-      return specificTasks.filter(function (task) {
+      var dismissedTasks = this.props.dismissedTasks;
+      return this.getSpecificTasks().filter(function (task) {
         return task.visible && !task.completed && !dismissedTasks.includes(task.key);
       });
     }
@@ -3831,11 +3778,8 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
   }, {
     key: "getVisibleTasks",
     value: function getVisibleTasks(type) {
-      var _this$props6 = this.props,
-          allTasks = _this$props6.allTasks,
-          specificTasks = _this$props6.specificTasks,
-          dismissedTasks = _this$props6.dismissedTasks;
-      var tasks = type === 'all' ? allTasks : specificTasks;
+      var dismissedTasks = this.props.dismissedTasks;
+      var tasks = type === 'all' ? this.getUngroupedTasks() : this.getSpecificTasks();
       return tasks.filter(function (task) {
         return task.visible && !dismissedTasks.includes(task.key);
       });
@@ -3843,11 +3787,11 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
   }, {
     key: "recordTaskView",
     value: function recordTaskView() {
-      var _this$props7 = this.props,
-          isJetpackConnected = _this$props7.isJetpackConnected,
-          activePlugins = _this$props7.activePlugins,
-          installedPlugins = _this$props7.installedPlugins,
-          query = _this$props7.query;
+      var _this$props6 = this.props,
+          isJetpackConnected = _this$props6.isJetpackConnected,
+          activePlugins = _this$props6.activePlugins,
+          installedPlugins = _this$props6.installedPlugins,
+          query = _this$props6.query;
       var taskName = query.task;
 
       if (!taskName) {
@@ -3891,11 +3835,9 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
   }, {
     key: "getCurrentTask",
     value: function getCurrentTask() {
-      var _this$props8 = this.props,
-          specificTasks = _this$props8.specificTasks,
-          query = _this$props8.query;
+      var query = this.props.query;
       var task = query.task;
-      var currentTask = specificTasks.find(function (s) {
+      var currentTask = this.getSpecificTasks().find(function (s) {
         return s.key === task;
       });
 
@@ -3917,7 +3859,7 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
         renderContent: function renderContent() {
           return Object(external_this_wp_element_["createElement"])("div", {
             className: "woocommerce-task-card__section-controls"
-          }, Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+          }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
             onClick: function onClick() {
               return _this2.hideTaskCard('remove_card', isExtended);
             }
@@ -3930,9 +3872,9 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var _this$props9 = this.props,
-          isExtended = _this$props9.isExtended,
-          query = _this$props9.query;
+      var _this$props7 = this.props,
+          isExtended = _this$props7.isExtended,
+          query = _this$props7.query;
       var theTask = query.task;
       var currentTask = this.getCurrentTask();
 
@@ -3948,7 +3890,7 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
         }, task.completed && Object(external_this_wp_element_["createElement"])(icon["a" /* default */], {
           icon: library_check
         }));
-        task.title = Object(external_this_wp_element_["createElement"])(build_module_text["a" /* default */], {
+        task.title = Object(external_this_wp_element_["createElement"])(build_module["f" /* Text */], {
           as: "div",
           variant: task.completed ? 'body.small' : 'button'
         }, task.title, task.additionalInfo && Object(external_this_wp_element_["createElement"])("div", {
@@ -3959,7 +3901,7 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
         }, task.time));
 
         if (!task.completed && task.isDismissable) {
-          task.after = Object(external_this_wp_element_["createElement"])(build_module_button["a" /* default */], {
+          task.after = Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Button"], {
             "data-testid": "".concat(task.key, "-dismiss-button"),
             isTertiary: true,
             onClick: function onClick(event) {
@@ -3996,18 +3938,18 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
         className: "woocommerce-task-dashboard__container"
       }, currentTask ? Object(external_this_wp_element_["cloneElement"])(currentTask.container, {
         query: query
-      }) : Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(card["a" /* default */], {
+      }) : Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["Card"], {
         size: "large",
         className: "woocommerce-task-card woocommerce-homescreen-card"
-      }, Object(external_this_wp_element_["createElement"])(header["a" /* default */], {
+      }, Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardHeader"], {
         size: "medium"
       }, Object(external_this_wp_element_["createElement"])("div", {
         className: "wooocommerce-task-card__header"
-      }, Object(external_this_wp_element_["createElement"])(build_module_text["a" /* default */], {
+      }, Object(external_this_wp_element_["createElement"])(build_module["f" /* Text */], {
         variant: "title.small"
       }, listTitle), Object(external_this_wp_element_["createElement"])(external_this_wc_components_["Badge"], {
         count: this.getIncompleteTasks().length
-      })), this.renderMenu(isExtended)), Object(external_this_wp_element_["createElement"])(body["a" /* default */], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["List"], {
+      })), this.renderMenu(isExtended)), Object(external_this_wp_element_["createElement"])(external_this_wp_components_["CardBody"], null, Object(external_this_wp_element_["createElement"])(external_this_wc_components_["List"], {
         items: listTasks
       }))))));
     }
@@ -4015,7 +3957,7 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
 
   return TaskList;
 }(external_this_wp_element_["Component"]);
-/* harmony default export */ var list = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select) {
+/* harmony default export */ var list = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select) {
   var _select = select(external_this_wc_data_["ONBOARDING_STORE_NAME"]),
       getProfileItems = _select.getProfileItems,
       getTasksStatus = _select.getTasksStatus;
@@ -4070,6 +4012,12 @@ var list_TaskList = /*#__PURE__*/function (_Component) {
 
 
 
+
+
+function task_list_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function task_list_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { task_list_ownKeys(Object(source), true).forEach(function (key) { defineProperty_default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { task_list_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
 function task_list_createSuper(Derived) { var hasNativeReflectConstruct = task_list_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = getPrototypeOf_default()(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = getPrototypeOf_default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return possibleConstructorReturn_default()(this, result); }; }
 
 function task_list_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
@@ -4102,6 +4050,48 @@ var task_list_TaskDashboard = /*#__PURE__*/function (_Component) {
     classCallCheck_default()(this, TaskDashboard);
 
     _this = _super.call(this, props);
+
+    defineProperty_default()(assertThisInitialized_default()(_this), "getTaskStartedCount", function (taskName) {
+      var userPreferences = _this.props.userPreferences;
+      var trackedStartedTasks = userPreferences.task_list_tracked_started_tasks;
+
+      if (!trackedStartedTasks || !trackedStartedTasks[taskName]) {
+        return 0;
+      }
+
+      return trackedStartedTasks[taskName];
+    });
+
+    defineProperty_default()(assertThisInitialized_default()(_this), "updateTrackStartedCount", function (taskName, newCount) {
+      var userPreferences = _this.props.userPreferences;
+      var trackedStartedTasks = userPreferences.task_list_tracked_started_tasks || {};
+      userPreferences.updateUserPreferences({
+        task_list_tracked_started_tasks: task_list_objectSpread(task_list_objectSpread({}, trackedStartedTasks || {}), {}, defineProperty_default()({}, taskName, newCount))
+      });
+    });
+
+    defineProperty_default()(assertThisInitialized_default()(_this), "isTaskCompleted", function (taskName) {
+      var trackedCompletedTasks = _this.props.trackedCompletedTasks;
+
+      if (!trackedCompletedTasks) {
+        return false;
+      }
+
+      return trackedCompletedTasks.includes(taskName);
+    });
+
+    defineProperty_default()(assertThisInitialized_default()(_this), "onTaskSelect", function (taskName) {
+      var trackStartedCount = _this.getTaskStartedCount(taskName);
+
+      Object(external_this_wc_tracks_["recordEvent"])('tasklist_click', {
+        task_name: taskName
+      });
+
+      if (!_this.isTaskCompleted(taskName)) {
+        _this.updateTrackStartedCount(taskName, trackStartedCount + 1);
+      }
+    });
+
     _this.state = {
       isCartModalOpen: false
     };
@@ -4137,16 +4127,9 @@ var task_list_TaskDashboard = /*#__PURE__*/function (_Component) {
         onboardingStatus: onboardingStatus,
         profileItems: profileItems,
         query: query,
-        toggleCartModal: this.toggleCartModal.bind(this)
+        toggleCartModal: this.toggleCartModal.bind(this),
+        onTaskSelect: this.onTaskSelect
       });
-    }
-  }, {
-    key: "groupBy",
-    value: function groupBy(array, key) {
-      return array.reduce(function (result, currentValue) {
-        (result[currentValue[key]] = result[currentValue[key]] || []).push(currentValue);
-        return result;
-      }, {});
     }
   }, {
     key: "toggleCartModal",
@@ -4170,33 +4153,27 @@ var task_list_TaskDashboard = /*#__PURE__*/function (_Component) {
           dismissedTasks = _this$props2.dismissedTasks,
           isExtendedTaskListComplete = _this$props2.isExtendedTaskListComplete,
           isExtendedTaskListHidden = _this$props2.isExtendedTaskListHidden,
-          isSetupTaskListHidden = _this$props2.isSetupTaskListHidden,
           isTaskListComplete = _this$props2.isTaskListComplete,
           query = _this$props2.query,
           trackedCompletedTasks = _this$props2.trackedCompletedTasks;
       var isCartModalOpen = this.state.isCartModalOpen;
       var allTasks = this.getAllTasks();
-
-      var _this$groupBy = this.groupBy(allTasks, 'type'),
-          extensionTasks = _this$groupBy.extension,
-          setupTasks = _this$groupBy.setup;
-
-      return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, setupTasks && !isSetupTaskListHidden && Object(external_this_wp_element_["createElement"])(list, {
-        allTasks: allTasks,
-        dismissedTasks: dismissedTasks,
+      var extensionTasks = allTasks.extension,
+          setupTasks = allTasks.setup;
+      return Object(external_this_wp_element_["createElement"])(external_this_wp_element_["Fragment"], null, setupTasks && Object(external_this_wp_element_["createElement"])(list, {
+        dismissedTasks: dismissedTasks || [],
         isTaskListComplete: isTaskListComplete,
         isExtended: false,
         query: query,
-        specificTasks: setupTasks,
-        trackedCompletedTasks: trackedCompletedTasks
+        tasks: allTasks,
+        trackedCompletedTasks: trackedCompletedTasks || []
       }), extensionTasks && !isExtendedTaskListHidden && Object(external_this_wp_element_["createElement"])(list, {
-        allTasks: allTasks,
-        dismissedTasks: dismissedTasks,
+        dismissedTasks: dismissedTasks || [],
         isExtendedTaskListComplete: isExtendedTaskListComplete,
         isExtended: true,
         query: query,
-        specificTasks: extensionTasks,
-        trackedCompletedTasks: trackedCompletedTasks
+        tasks: allTasks,
+        trackedCompletedTasks: trackedCompletedTasks || []
       }), isCartModalOpen && Object(external_this_wp_element_["createElement"])(cart_modal, {
         onClose: function onClose() {
           return _this2.toggleCartModal();
@@ -4210,7 +4187,7 @@ var task_list_TaskDashboard = /*#__PURE__*/function (_Component) {
 
   return TaskDashboard;
 }(external_this_wp_element_["Component"]);
-/* harmony default export */ var task_list = __webpack_exports__["default"] = (Object(compose["a" /* default */])(Object(external_this_wp_data_["withSelect"])(function (select) {
+/* harmony default export */ var task_list = __webpack_exports__["default"] = (Object(external_this_wp_compose_["compose"])(Object(external_this_wp_data_["withSelect"])(function (select) {
   var _select = select(external_this_wc_data_["ONBOARDING_STORE_NAME"]),
       getProfileItems = _select.getProfileItems,
       getTasksStatus = _select.getTasksStatus;
@@ -4227,6 +4204,7 @@ var task_list_TaskDashboard = /*#__PURE__*/function (_Component) {
       isJetpackConnected = _select4.isJetpackConnected;
 
   var profileItems = getProfileItems();
+  var trackedCompletedTasks = getOption('woocommerce_task_list_tracked_completed_tasks') || [];
 
   var _getSettings = getSettings('general'),
       _getSettings$general = _getSettings.general,
@@ -4239,7 +4217,7 @@ var task_list_TaskDashboard = /*#__PURE__*/function (_Component) {
   return {
     activePlugins: activePlugins,
     countryCode: countryCode,
-    dismissedTasks: getOption('woocommerce_task_list_dismissed_tasks') || [],
+    dismissedTasks: getOption('woocommerce_task_list_dismissed_tasks'),
     isExtendedTaskListComplete: getOption('woocommerce_extended_task_list_complete') === 'yes',
     isExtendedTaskListHidden: getOption('woocommerce_extended_task_list_hidden') === 'yes',
     isJetpackConnected: isJetpackConnected(),
@@ -4248,7 +4226,7 @@ var task_list_TaskDashboard = /*#__PURE__*/function (_Component) {
     installedPlugins: installedPlugins,
     onboardingStatus: onboardingStatus,
     profileItems: profileItems,
-    trackedCompletedTasks: getOption('woocommerce_task_list_tracked_completed_tasks') || []
+    trackedCompletedTasks: trackedCompletedTasks
   };
 }), Object(external_this_wp_data_["withDispatch"])(function (dispatch) {
   var _dispatch = dispatch('core/notices'),
