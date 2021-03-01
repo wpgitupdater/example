@@ -18,6 +18,7 @@ registerBlockType( 'ugb/accordion', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 
 	deprecated,
 	edit,
@@ -61,6 +62,7 @@ registerBlockType( 'ugb/blockquote', {
 		anchor: true,
 	},
 	attributes: schema,
+	example,
 
 	deprecated,
 	edit,
@@ -100,6 +102,7 @@ registerBlockType( 'ugb/blog-posts', {
 		anchor: true,
 	},
 	attributes: schema,
+	example,
 
 	save,
 	edit,
@@ -135,6 +138,7 @@ registerBlockType( 'ugb/button', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
 		anchor: true,
@@ -201,6 +205,7 @@ registerBlockType( 'ugb/cta', {
 		__( 'CTA', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -240,6 +245,7 @@ registerBlockType( 'ugb/card', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
 		anchor: true,
@@ -282,6 +288,7 @@ registerBlockType( 'ugb/columns', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 
 	supports: {
 		html: false,
@@ -358,6 +365,7 @@ registerBlockType( 'ugb/container', {
 	edit,
 	save,
 	attributes: schema,
+	example,
 
 	// Stackable modules.
 	modules: {
@@ -391,6 +399,7 @@ registerBlockType( 'ugb/count-up', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
@@ -432,6 +441,11 @@ registerBlockType( 'ugb/design-library', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example: {
+		attributes: {
+			previewMode: true,
+		},
+	},
 
 	supports: {
 		customClassName: false,
@@ -490,6 +504,7 @@ registerBlockType( 'ugb/divider', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -541,6 +556,7 @@ registerBlockType( 'ugb/expand', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
 		anchor: true,
@@ -580,6 +596,7 @@ registerBlockType( 'ugb/feature-grid', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'wide' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -696,6 +713,7 @@ registerBlockType( 'ugb/feature', {
 	save,
 
 	attributes: schema,
+	example,
 
 	// Stackable modules.
 	modules: {
@@ -729,6 +747,7 @@ registerBlockType( 'ugb/header', {
 		anchor: true,
 	},
 	attributes: schema,
+	example,
 
 	deprecated,
 	edit,
@@ -764,6 +783,7 @@ registerBlockType( 'ugb/heading', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -795,6 +815,7 @@ registerBlockType( 'ugb/icon-list', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
 		anchor: true,
@@ -846,6 +867,7 @@ registerBlockType( 'ugb/icon', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -866,7 +888,9 @@ registerBlockType( 'ugb/icon', {
 		'advanced-responsive': true,
 		'block-background': true,
 		'block-separators': true,
-		'block-title': true,
+		'block-title': {
+			marginBottomImportant: true,
+		},
 		'content-align': true,
 		'block-designs': true,
 		'custom-css': {
@@ -889,6 +913,7 @@ registerBlockType( 'ugb/image-box', {
 		anchor: true,
 	},
 	attributes: schema,
+	example,
 
 	deprecated,
 	edit,
@@ -938,6 +963,7 @@ registerBlockType( 'ugb/notification', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
 		anchor: true,
@@ -1023,6 +1049,7 @@ registerBlockType( 'ugb/number-box', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -1061,6 +1088,7 @@ registerBlockType( 'ugb/pricing-box', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'wide' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -1160,6 +1188,7 @@ registerBlockType( 'ugb/separator', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -1183,6 +1212,7 @@ registerBlockType( 'ugb/separator', {
 			horizontalContentAlign: false,
 			verticalContentAlign: false,
 			modifyStyles: false,
+			paddingUnits: [ 'px', 'em' ],
 		},
 		'custom-css': {
 			default: applyFilters( 'stackable.separator.custom-css.default', '' ),
@@ -1199,6 +1229,7 @@ registerBlockType( 'ugb/spacer', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -1263,6 +1294,7 @@ registerBlockType( 'ugb/team-member', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'wide' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -1360,6 +1392,7 @@ registerBlockType( 'ugb/testimonial', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'wide' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -1459,6 +1492,7 @@ registerBlockType( 'ugb/text', {
 		__( 'Stackable', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
@@ -1514,6 +1548,7 @@ registerBlockType( 'ugb/video-popup', {
 		__( 'YouTube Vimeo mp4', i18n ),
 	],
 	attributes: schema,
+	example,
 	supports: {
 		align: [ 'center', 'wide', 'full' ],
 		inserter: ! disabledBlocks.includes( name ), // Hide if disabled.
