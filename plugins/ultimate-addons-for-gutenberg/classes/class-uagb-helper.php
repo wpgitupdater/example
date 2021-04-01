@@ -95,7 +95,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @since 1.13.4
 		 * @var stylesheet
 		 */
-		public static $stylesheet;
+		public static $stylesheet = '';
 
 		/**
 		 * Script
@@ -103,7 +103,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @since 1.13.4
 		 * @var script
 		 */
-		public static $script;
+		public static $script = '';
 
 		/**
 		 * Store Json variable
@@ -127,6 +127,13 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 * @var array
 		 */
 		public static $gfonts = array();
+
+		/**
+		 * Table of Contents Present on a Page.
+		 *
+		 * @var bool
+		 */
+		public static $table_of_contents_flag = false;
 
 		/**
 		 *  Initiator
@@ -164,6 +171,8 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			add_action( 'wp_head', array( $this, 'print_stylesheet' ), 80 );
 			add_action( 'wp_footer', array( $this, 'print_script' ), 1000 );
 			add_filter( 'redirect_canonical', array( $this, 'override_canonical' ), 1, 2 );
+			add_filter( 'the_content', array( $this, 'add_table_of_contents_wrapper' ) );
+
 		}
 
 		/**
@@ -263,6 +272,14 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 		 */
 		public function print_stylesheet() {
 
+			$conditional_block_css = UAGB_Block_Helper::get_condition_block_css();
+
+			ob_start();
+			?>
+				<style id="uagb-style-conditional-extension"><?php echo $conditional_block_css; //phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?></style>
+			<?php
+			ob_end_flush();
+
 			if ( 'enabled' === self::$file_generation && ! self::$fallback_css ) {
 				return;
 			}
@@ -271,11 +288,11 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				return;
 			}
 
-			ob_start();
+				ob_start();
 			?>
-			<style id="uagb-style-frontend"><?php echo self::$stylesheet; //phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?></style>
-			<?php
-			ob_end_flush();
+				<style id="uagb-style-frontend"><?php echo self::$stylesheet; //phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?></style>
+				<?php
+				ob_end_flush();
 		}
 
 		/**
@@ -414,7 +431,13 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			}
 
 			if ( isset( $block['attrs'] ) && is_array( $block['attrs'] ) ) {
-				$blockattr = $block['attrs'];
+				/**
+				 * Filters the block attributes for CSS and JS generation.
+				 *
+				 * @param array  $block_attributes The block attributes to be filtered.
+				 * @param string $name             The block name.
+				 */
+				$blockattr = apply_filters( 'uagb_block_attributes_for_css_and_js', $block['attrs'], $name );
 				if ( isset( $blockattr['block_id'] ) ) {
 					$block_id = $blockattr['block_id'];
 				}
@@ -470,6 +493,10 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					$css += UAGB_Block_Helper::get_blockquote_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_blockquote_gfont( $blockattr );
 					$js .= UAGB_Block_JS::get_blockquote_js( $blockattr, $block_id );
+					break;
+
+				case 'uagb/tabs':
+					$css += UAGB_Block_Helper::get_tabs_css( $blockattr, $block_id );
 					break;
 
 				case 'uagb/testimonial':
@@ -564,7 +591,8 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				case 'uagb/table-of-contents':
 					$css += UAGB_Block_Helper::get_table_of_contents_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_table_of_contents_gfont( $blockattr );
-					$js .= UAGB_Block_JS::get_table_of_contents_js( $blockattr, $block_id );
+					$js                          .= UAGB_Block_JS::get_table_of_contents_js( $blockattr, $block_id );
+					self::$table_of_contents_flag = true;
 					break;
 
 				case 'uagb/faq':
@@ -580,9 +608,20 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					UAGB_Block_JS::blocks_wp_search_gfont( $blockattr );
 					break;
 
+				case 'uagb/forms':
+					$css += UAGB_Block_Helper::get_forms_css( $blockattr, $block_id );
+					$js  .= UAGB_Block_JS::get_forms_js( $blockattr, $block_id );
+					UAGB_Block_JS::blocks_forms_gfont( $blockattr );
+					break;
+
 				case 'uagb/taxonomy-list':
 					$css += UAGB_Block_Helper::get_taxonomy_list_css( $blockattr, $block_id );
 					UAGB_Block_JS::blocks_taxonomy_list_gfont( $blockattr );
+					break;
+
+				case 'uagb/lottie':
+					$css += UAGB_Block_Helper::get_lottie_css( $blockattr, $block_id );
+					$js  .= UAGB_Block_JS::get_lottie_js( $blockattr, $block_id );
 					break;
 
 				default:
@@ -803,6 +842,7 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					if ( '' === $block['blockName'] ) {
 						continue;
 					}
+
 					if ( 'core/block' === $block['blockName'] ) {
 						$id = ( isset( $block['attrs']['ref'] ) ) ? $block['attrs']['ref'] : 0;
 
@@ -828,7 +868,6 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 							$tablet  .= $css['tablet'];
 							$mobile  .= $css['mobile'];
 						}
-
 						$js .= $block_assets['js'];
 					}
 				}
@@ -937,6 +976,19 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			?>
 			<svg xmlns="https://www.w3.org/2000/svg" viewBox= "<?php echo esc_html( $view ); ?>"><path d="<?php echo esc_html( $path ); ?>"></path></svg>
 			<?php
+		}
+
+		/**
+		 *  Check MIME Type
+		 *
+		 *  @since 1.20.0
+		 */
+		public static function get_mime_type() {
+
+			$allowed_types = get_allowed_mime_types();
+
+			return ( array_key_exists( 'json', $allowed_types ) ) ? true : false;
+
 		}
 
 		/**
@@ -1116,16 +1168,17 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 					if ( ! empty( $terms ) ) {
 						foreach ( $terms as $t_index => $t_obj ) {
 							$related_tax[] = array(
-								'id'   => $t_obj->term_id,
-								'name' => $t_obj->name,
+								'id'    => $t_obj->term_id,
+								'name'  => $t_obj->name,
+								'child' => get_term_children( $t_obj->term_id, $tax_slug ),
 							);
 						}
-
 						$return_array[ $post_type ]['terms'][ $tax_slug ] = $related_tax;
 					}
 				}
 
 				$return_array[ $post_type ]['taxonomy'] = $data;
+
 			}
 
 			return apply_filters( 'uagb_post_loop_taxonomies', $return_array );
@@ -1808,6 +1861,23 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 				'tablet'  => self::generate_css( $combined_selectors['tablet'], $id ),
 				'mobile'  => self::generate_css( $combined_selectors['mobile'], $id ),
 			);
+		}
+
+		/**
+		 * Add Wrapper to all the Blocks for fetching the Table of Contents Headings.
+		 *
+		 * @param string $content Post Content.
+		 *
+		 * @since 1.22.1
+		 */
+		public function add_table_of_contents_wrapper( $content ) {
+
+			if ( true === self::$table_of_contents_flag ) {
+
+				return '<div class="uag-toc__entry-content">' . $content . '</div>';
+			}
+
+			return $content;
 		}
 	}
 
