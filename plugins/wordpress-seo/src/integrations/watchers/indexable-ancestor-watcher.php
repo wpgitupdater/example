@@ -81,10 +81,11 @@ class Indexable_Ancestor_Watcher implements Integration_Interface {
 	 */
 	public function register_hooks() {
 		\add_action( 'wpseo_save_indexable', [ $this, 'reset_children' ], \PHP_INT_MAX, 2 );
+		\add_action( 'set_object_terms', [ $this, 'build_post_hierarchy' ], \PHP_INT_MAX );
 	}
 
 	/**
-	 * Returns the conditionals based in which this loadable should be active.
+	 * Returns the conditionals based on which this loadable should be active.
 	 *
 	 * @return array
 	 */
@@ -161,6 +162,17 @@ class Indexable_Ancestor_Watcher implements Integration_Interface {
 
 		// Merges all fetched indexables.
 		return \array_merge( $post_indexables, $additional_indexables );
+	}
+
+	/**
+	 * Builds the hierarchy for a post.
+	 *
+	 * @param int $object_id The post id.
+	 */
+	public function build_post_hierarchy( $object_id ) {
+		$indexable = $this->indexable_repository->find_by_id_and_type( $object_id, 'post' );
+
+		$this->indexable_hierarchy_builder->build( $indexable );
 	}
 
 	/**
