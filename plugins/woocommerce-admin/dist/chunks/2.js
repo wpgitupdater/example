@@ -1,951 +1,1097 @@
 (window["__wcAdmin_webpackJsonp"] = window["__wcAdmin_webpackJsonp"] || []).push([[2],{
 
-/***/ 202:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export Flex */
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(243);
-
-
-
-
-/**
- * External dependencies
- */
-
-/**
- * WordPress dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-function FlexComponent(_ref, ref) {
-  var _ref$align = _ref.align,
-      align = _ref$align === void 0 ? 'center' : _ref$align,
-      className = _ref.className,
-      _ref$gap = _ref.gap,
-      gap = _ref$gap === void 0 ? 2 : _ref$gap,
-      _ref$justify = _ref.justify,
-      justify = _ref$justify === void 0 ? 'space-between' : _ref$justify,
-      _ref$isReversed = _ref.isReversed,
-      isReversed = _ref$isReversed === void 0 ? false : _ref$isReversed,
-      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["align", "className", "gap", "justify", "isReversed"]);
-
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()('components-flex', className);
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__[/* Flex */ "a"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, props, {
-    align: align,
-    className: classes,
-    ref: ref,
-    gap: gap,
-    justify: justify,
-    isReversed: isReversed
-  }));
-}
-
-var Flex = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(FlexComponent);
-/* harmony default export */ __webpack_exports__["a"] = (Flex);
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 243:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Flex; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Item; });
-/* unused harmony export Block */
-/* harmony import */ var _emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
-/* harmony import */ var _emotion_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48);
-
-
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
-
-/**
- * External dependencies
- */
-
-
-var alignStyle = function alignStyle(_ref2) {
-  var align = _ref2.align;
-  var aligns = {
-    top: 'flex-start',
-    bottom: 'flex-end'
-  };
-  var value = aligns[align] || align;
-  return /*#__PURE__*/Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__[/* css */ "b"])({
-    alignItems: value
-  },  true ? "" : undefined);
-};
-
-var justifyStyle = function justifyStyle(_ref3) {
-  var justify = _ref3.justify,
-      isReversed = _ref3.isReversed;
-  var justifies = {
-    left: 'flex-start',
-    right: 'flex-end'
-  };
-  var value = justifies[justify] || justify;
-
-  if (isReversed && justifies[justify]) {
-    value = justify === 'left' ? justifies.right : justifies.left;
-  }
-
-  return /*#__PURE__*/Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__[/* css */ "b"])({
-    justifyContent: value
-  },  true ? "" : undefined);
-};
-
-var gapStyle = function gapStyle(_ref4) {
-  var gap = _ref4.gap,
-      isReversed = _ref4.isReversed;
-  var base = 4;
-  var value = typeof gap === 'number' ? base * gap : base;
-  var dir = isReversed ? 'left' : 'right';
-  var margin = "margin-".concat(dir);
-  return /*#__PURE__*/Object(_emotion_core__WEBPACK_IMPORTED_MODULE_1__[/* css */ "b"])("> *{", margin, ":", value, "px;&:last-child{", margin, ":0;}}" + ( true ? "" : undefined));
-};
-
-var _ref =  true ? {
-  name: "8kj89b",
-  styles: "flex-direction:row-reverse;"
-} : undefined;
-
-var reversedStyles = function reversedStyles(_ref5) {
-  var isReversed = _ref5.isReversed;
-  if (!isReversed) return '';
-  return _ref;
-};
-
-var Flex = Object(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])("div", {
-  target: "eboqfv50",
-  label: "Flex"
-})("box-sizing:border-box;display:flex;", alignStyle, ";", justifyStyle, ";", gapStyle, ";", reversedStyles, ";" + ( true ? "" : undefined));
-var Item = Object(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])("div", {
-  target: "eboqfv51",
-  label: "Item"
-})( true ? {
-  name: "13luw5d",
-  styles: "box-sizing:border-box;min-width:0;max-width:100%;"
-} : undefined);
-var Block = /*#__PURE__*/Object(_emotion_styled_base__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(Item, {
-  target: "eboqfv52",
-  label: "Block"
-})( true ? {
-  name: "1rr4qq7",
-  styles: "flex:1;"
-} : undefined);
-//# sourceMappingURL=flex-styles.js.map
-
-/***/ }),
-
-/***/ 351:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(243);
-
-
-
-
-/**
- * External dependencies
- */
-
-/**
- * Internal dependencies
- */
-
-
-/**
- * WordPress dependencies
- */
-
-
-
-function FlexItem(_ref, ref) {
-  var className = _ref.className,
-      props = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])(_ref, ["className"]);
-
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_3___default()('components-flex__item', className);
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_styles_flex_styles__WEBPACK_IMPORTED_MODULE_4__[/* Item */ "b"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, props, {
-    className: classes,
-    ref: ref
-  }));
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(FlexItem));
-//# sourceMappingURL=item.js.map
-
-/***/ }),
-
-/***/ 671:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(7);
+var esm_extends = __webpack_require__(32);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 3 modules
-var toConsumableArray = __webpack_require__(26);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(41);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
-var slicedToArray = __webpack_require__(24);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+var inheritsLoose = __webpack_require__(38);
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
-var objectWithoutProperties = __webpack_require__(11);
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
 
-// EXTERNAL MODULE: external {"this":["wp","element"]}
-var external_this_wp_element_ = __webpack_require__(0);
-
-// EXTERNAL MODULE: external "lodash"
-var external_lodash_ = __webpack_require__(2);
-
-// EXTERNAL MODULE: ./node_modules/classnames/index.js
-var classnames = __webpack_require__(4);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/compose/build-module/hooks/use-instance-id/index.js
-var use_instance_id = __webpack_require__(147);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/node_modules/@wordpress/icons/build-module/icon/index.js
-var icon = __webpack_require__(382);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/primitives/build-module/svg/index.js
-var svg = __webpack_require__(78);
-
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/node_modules/@wordpress/icons/build-module/library/chevron-down.js
-
-
-/**
- * WordPress dependencies
- */
-
-var chevronDown = Object(external_this_wp_element_["createElement"])(svg["c" /* SVG */], {
-  viewBox: "0 0 24 24",
-  xmlns: "http://www.w3.org/2000/svg"
-}, Object(external_this_wp_element_["createElement"])(svg["b" /* Path */], {
-  d: "M17.5 11.6L12 16l-5.5-4.4.9-1.2L12 14l4.5-3.6 1 1.2z"
-}));
-/* harmony default export */ var chevron_down = (chevronDown);
-//# sourceMappingURL=chevron-down.js.map
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/base-control/index.js
-var base_control = __webpack_require__(581);
-
-// EXTERNAL MODULE: ./node_modules/@emotion/styled-base/dist/styled-base.browser.esm.js + 1 modules
-var styled_base_browser_esm = __webpack_require__(32);
-
-// EXTERNAL MODULE: ./node_modules/@emotion/core/dist/core.browser.esm.js + 6 modules
-var core_browser_esm = __webpack_require__(48);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/flex/index.js
-var flex = __webpack_require__(202);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/flex/item.js
-var item = __webpack_require__(351);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/text/index.js + 3 modules
-var build_module_text = __webpack_require__(142);
-
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/utils/colors.js
-var colors = __webpack_require__(30);
-
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/utils/rtl.js
-/**
- * External dependencies
- */
-
-
-var LOWER_LEFT_REGEXP = new RegExp(/-left/g);
-var LOWER_RIGHT_REGEXP = new RegExp(/-right/g);
-var UPPER_LEFT_REGEXP = new RegExp(/Left/g);
-var UPPER_RIGHT_REGEXP = new RegExp(/Right/g);
-/**
- * Checks to see whether the document is set to rtl.
- *
- * @return {boolean} Whether document is RTL.
- */
-
-function getRTL() {
-  return !!(document && document.documentElement.dir === 'rtl');
+// CONCATENATED MODULE: ./node_modules/dom-helpers/esm/hasClass.js
+function hasClass(element, className) {
+  if (element.classList) return !!className && element.classList.contains(className);
+  return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
 }
-/**
- * Simple hook to retrieve RTL direction value
- *
- * @return {boolean} Whether document is RTL.
- */
+// CONCATENATED MODULE: ./node_modules/dom-helpers/esm/addClass.js
 
-function useRTL() {
-  return getRTL();
+function addClass_addClass(element, className) {
+  if (element.classList) element.classList.add(className);else if (!hasClass(element, className)) if (typeof element.className === 'string') element.className = element.className + " " + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + " " + className);
 }
-/**
- * Flips a CSS property from left <-> right.
- *
- * @param {string} key The CSS property name.
- *
- * @return {string} The flipped CSS property name, if applicable.
- */
-
-function getConvertedKey(key) {
-  if (key === 'left') {
-    return 'right';
-  }
-
-  if (key === 'right') {
-    return 'left';
-  }
-
-  if (LOWER_LEFT_REGEXP.test(key)) {
-    return key.replace(LOWER_LEFT_REGEXP, '-right');
-  }
-
-  if (LOWER_RIGHT_REGEXP.test(key)) {
-    return key.replace(LOWER_RIGHT_REGEXP, '-left');
-  }
-
-  if (UPPER_LEFT_REGEXP.test(key)) {
-    return key.replace(UPPER_LEFT_REGEXP, 'Right');
-  }
-
-  if (UPPER_RIGHT_REGEXP.test(key)) {
-    return key.replace(UPPER_RIGHT_REGEXP, 'Left');
-  }
-
-  return key;
+// CONCATENATED MODULE: ./node_modules/dom-helpers/esm/removeClass.js
+function replaceClassName(origClass, classToRemove) {
+  return origClass.replace(new RegExp("(^|\\s)" + classToRemove + "(?:\\s|$)", 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
 }
+
+function removeClass_removeClass(element, className) {
+  if (element.classList) {
+    element.classList.remove(className);
+  } else if (typeof element.className === 'string') {
+    ;
+    element.className = replaceClassName(element.className, className);
+  } else {
+    element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
+  }
+}
+// EXTERNAL MODULE: external "React"
+var external_React_ = __webpack_require__(10);
+var external_React_default = /*#__PURE__*/__webpack_require__.n(external_React_);
+
+// EXTERNAL MODULE: external "ReactDOM"
+var external_ReactDOM_ = __webpack_require__(48);
+var external_ReactDOM_default = /*#__PURE__*/__webpack_require__.n(external_ReactDOM_);
+
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/config.js
+/* harmony default export */ var config = ({
+  disabled: false
+});
+// EXTERNAL MODULE: ./node_modules/react-transition-group/esm/TransitionGroupContext.js
+var TransitionGroupContext = __webpack_require__(64);
+
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/Transition.js
+
+
+
+
+
+
+
+
+var UNMOUNTED = 'unmounted';
+var EXITED = 'exited';
+var ENTERING = 'entering';
+var ENTERED = 'entered';
+var EXITING = 'exiting';
 /**
- * An incredibly basic ltr -> rtl converter for style properties
+ * The Transition component lets you describe a transition from one component
+ * state to another _over time_ with a simple declarative API. Most commonly
+ * it's used to animate the mounting and unmounting of a component, but can also
+ * be used to describe in-place transition states as well.
  *
- * @param {Object} ltrStyles
+ * ---
  *
- * @return {Object} Converted ltr -> rtl styles
+ * **Note**: `Transition` is a platform-agnostic base component. If you're using
+ * transitions in CSS, you'll probably want to use
+ * [`CSSTransition`](https://reactcommunity.org/react-transition-group/css-transition)
+ * instead. It inherits all the features of `Transition`, but contains
+ * additional features necessary to play nice with CSS transitions (hence the
+ * name of the component).
+ *
+ * ---
+ *
+ * By default the `Transition` component does not alter the behavior of the
+ * component it renders, it only tracks "enter" and "exit" states for the
+ * components. It's up to you to give meaning and effect to those states. For
+ * example we can add styles to a component when it enters or exits:
+ *
+ * ```jsx
+ * import { Transition } from 'react-transition-group';
+ *
+ * const duration = 300;
+ *
+ * const defaultStyle = {
+ *   transition: `opacity ${duration}ms ease-in-out`,
+ *   opacity: 0,
+ * }
+ *
+ * const transitionStyles = {
+ *   entering: { opacity: 1 },
+ *   entered:  { opacity: 1 },
+ *   exiting:  { opacity: 0 },
+ *   exited:  { opacity: 0 },
+ * };
+ *
+ * const Fade = ({ in: inProp }) => (
+ *   <Transition in={inProp} timeout={duration}>
+ *     {state => (
+ *       <div style={{
+ *         ...defaultStyle,
+ *         ...transitionStyles[state]
+ *       }}>
+ *         I'm a fade Transition!
+ *       </div>
+ *     )}
+ *   </Transition>
+ * );
+ * ```
+ *
+ * There are 4 main states a Transition can be in:
+ *  - `'entering'`
+ *  - `'entered'`
+ *  - `'exiting'`
+ *  - `'exited'`
+ *
+ * Transition state is toggled via the `in` prop. When `true` the component
+ * begins the "Enter" stage. During this stage, the component will shift from
+ * its current transition state, to `'entering'` for the duration of the
+ * transition and then to the `'entered'` stage once it's complete. Let's take
+ * the following example (we'll use the
+ * [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook):
+ *
+ * ```jsx
+ * function App() {
+ *   const [inProp, setInProp] = useState(false);
+ *   return (
+ *     <div>
+ *       <Transition in={inProp} timeout={500}>
+ *         {state => (
+ *           // ...
+ *         )}
+ *       </Transition>
+ *       <button onClick={() => setInProp(true)}>
+ *         Click to Enter
+ *       </button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the button is clicked the component will shift to the `'entering'` state
+ * and stay there for 500ms (the value of `timeout`) before it finally switches
+ * to `'entered'`.
+ *
+ * When `in` is `false` the same thing happens except the state moves from
+ * `'exiting'` to `'exited'`.
  */
 
+var Transition_Transition = /*#__PURE__*/function (_React$Component) {
+  Object(inheritsLoose["a" /* default */])(Transition, _React$Component);
 
-var rtl_convertLTRToRTL = function convertLTRToRTL() {
-  var ltrStyles = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(external_lodash_["mapKeys"])(ltrStyles, function (_value, key) {
-    return getConvertedKey(key);
-  });
-};
-/**
- * A higher-order function that create an incredibly basic ltr -> rtl style converter for CSS objects.
- *
- * @param {Object} ltrStyles Ltr styles. Converts and renders from ltr -> rtl styles, if applicable.
- * @param {null|Object} rtlStyles Rtl styles. Renders if provided.
- *
- * @return {Function} A function to output CSS styles for Emotion's renderer
- */
+  function Transition(props, context) {
+    var _this;
 
-function rtl() {
-  var ltrStyles = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var rtlStyles = arguments.length > 1 ? arguments[1] : undefined;
-  return function () {
-    var isRTL = getRTL();
+    _this = _React$Component.call(this, props, context) || this;
+    var parentGroup = context; // In the context of a TransitionGroup all enters are really appears
 
-    if (rtlStyles) {
-      return isRTL ? /*#__PURE__*/Object(core_browser_esm["b" /* css */])(rtlStyles,  true ? "" : undefined) : /*#__PURE__*/Object(core_browser_esm["b" /* css */])(ltrStyles,  true ? "" : undefined);
+    var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
+    var initialStatus;
+    _this.appearStatus = null;
+
+    if (props.in) {
+      if (appear) {
+        initialStatus = EXITED;
+        _this.appearStatus = ENTERING;
+      } else {
+        initialStatus = ENTERED;
+      }
+    } else {
+      if (props.unmountOnExit || props.mountOnEnter) {
+        initialStatus = UNMOUNTED;
+      } else {
+        initialStatus = EXITED;
+      }
     }
 
-    return isRTL ? /*#__PURE__*/Object(core_browser_esm["b" /* css */])(rtl_convertLTRToRTL(ltrStyles),  true ? "" : undefined) : /*#__PURE__*/Object(core_browser_esm["b" /* css */])(ltrStyles,  true ? "" : undefined);
-  };
-}
-//# sourceMappingURL=rtl.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/styles/input-control-styles.js
-
-
-
-
-function _EMOTION_STRINGIFIED_CSS_ERROR__() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
-
-/**
- * External dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-var input_control_styles_ref =  true ? {
-  name: "1dacand",
-  styles: "padding-top:0;"
-} : undefined;
-
-var rootFloatLabelStyles = function rootFloatLabelStyles() {
-  return input_control_styles_ref;
-};
-
-var input_control_styles_ref2 =  true ? {
-  name: "r6z5ec",
-  styles: "z-index:1;"
-} : undefined;
-
-var rootFocusedStyles = function rootFocusedStyles(_ref8) {
-  var isFocused = _ref8.isFocused;
-  if (!isFocused) return '';
-  return input_control_styles_ref2;
-};
-
-var input_control_styles_ref3 =  true ? {
-  name: "uz6002",
-  styles: "align-items:flex-start;flex-direction:column;"
-} : undefined;
-
-var _ref4 =  true ? {
-  name: "53hdd7",
-  styles: "align-items:flex-start;flex-direction:column-reverse;"
-} : undefined;
-
-var rootLabelPositionStyles = function rootLabelPositionStyles(_ref9) {
-  var labelPosition = _ref9.labelPosition;
-
-  switch (labelPosition) {
-    case 'top':
-      return input_control_styles_ref3;
-
-    case 'bottom':
-      return _ref4;
-
-    default:
-      return '';
+    _this.state = {
+      status: initialStatus
+    };
+    _this.nextCallback = null;
+    return _this;
   }
-};
 
-var Root = /*#__PURE__*/Object(styled_base_browser_esm["a" /* default */])(flex["a" /* default */], {
-  target: "e1cr7zh10",
-  label: "Root"
-})("position:relative;border-radius:2px;", rootFloatLabelStyles, ";", rootFocusedStyles, ";", rootLabelPositionStyles, ";" + ( true ? "" : undefined));
+  Transition.getDerivedStateFromProps = function getDerivedStateFromProps(_ref, prevState) {
+    var nextIn = _ref.in;
 
-var input_control_styles_containerDisabledStyles = function containerDisabledStyles(_ref10) {
-  var disabled = _ref10.disabled;
-  var backgroundColor = disabled ? Object(colors["a" /* color */])('ui.backgroundDisabled') : Object(colors["a" /* color */])('ui.background');
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    backgroundColor: backgroundColor
-  },  true ? "" : undefined);
-};
-
-var _ref5 =  true ? {
-  name: "8atqhb",
-  styles: "width:100%;"
-} : undefined;
-
-var containerWidthStyles = function containerWidthStyles(_ref11) {
-  var labelPosition = _ref11.labelPosition;
-  if (labelPosition === 'side') return '';
-  return _ref5;
-};
-
-var Container = Object(styled_base_browser_esm["a" /* default */])("div", {
-  target: "e1cr7zh11",
-  label: "Container"
-})("align-items:center;box-sizing:border-box;border-radius:inherit;display:flex;flex:1;position:relative;", input_control_styles_containerDisabledStyles, ";", containerWidthStyles, ";" + ( true ? "" : undefined));
-
-var input_control_styles_disabledStyles = function disabledStyles(_ref12) {
-  var disabled = _ref12.disabled;
-  if (!disabled) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    color: Object(colors["a" /* color */])('ui.textDisabled')
-  },  true ? "" : undefined);
-};
-
-var input_control_styles_fontSizeStyles = function fontSizeStyles(_ref13) {
-  var size = _ref13.size;
-  var sizes = {
-    default: '13px',
-    small: '11px'
-  };
-  var fontSize = sizes[size];
-  var fontSizeMobile = '16px';
-  if (!fontSize) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])("font-size:", fontSizeMobile, ";@media ( min-width:600px ){font-size:", fontSize, ";}" + ( true ? "" : undefined));
-};
-
-var input_control_styles_sizeStyles = function sizeStyles(_ref14) {
-  var size = _ref14.size;
-  var sizes = {
-    default: {
-      height: 30,
-      lineHeight: 1,
-      minHeight: 30
-    },
-    small: {
-      height: 24,
-      lineHeight: 1,
-      minHeight: 24
+    if (nextIn && prevState.status === UNMOUNTED) {
+      return {
+        status: EXITED
+      };
     }
+
+    return null;
+  } // getSnapshotBeforeUpdate(prevProps) {
+  //   let nextStatus = null
+  //   if (prevProps !== this.props) {
+  //     const { status } = this.state
+  //     if (this.props.in) {
+  //       if (status !== ENTERING && status !== ENTERED) {
+  //         nextStatus = ENTERING
+  //       }
+  //     } else {
+  //       if (status === ENTERING || status === ENTERED) {
+  //         nextStatus = EXITING
+  //       }
+  //     }
+  //   }
+  //   return { nextStatus }
+  // }
+  ;
+
+  var _proto = Transition.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.updateStatus(true, this.appearStatus);
   };
-  var style = sizes[size] || sizes.default;
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])(style,  true ? "" : undefined);
-};
 
-var _ref6 =  true ? {
-  name: "103r1kr",
-  styles: "&::-webkit-input-placeholder{line-height:normal;}"
-} : undefined;
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    var nextStatus = null;
 
-var placeholderStyles = function placeholderStyles() {
-  return _ref6;
-};
+    if (prevProps !== this.props) {
+      var status = this.state.status;
 
-var input_control_styles_dragStyles = function dragStyles(_ref15) {
-  var isDragging = _ref15.isDragging,
-      dragCursor = _ref15.dragCursor;
-  var defaultArrowStyles = '';
-  var activeDragCursorStyles = '';
-
-  if (isDragging) {
-    defaultArrowStyles = /*#__PURE__*/Object(core_browser_esm["b" /* css */])("cursor:", dragCursor, ";user-select:none;&::-webkit-outer-spin-button,&::-webkit-inner-spin-button{-webkit-appearance:none !important;margin:0 !important;}" + ( true ? "" : undefined));
-  }
-
-  if (isDragging && dragCursor) {
-    activeDragCursorStyles = /*#__PURE__*/Object(core_browser_esm["b" /* css */])("&:active{cursor:", dragCursor, ";}" + ( true ? "" : undefined));
-  }
-
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])(defaultArrowStyles, ";", activeDragCursorStyles, ";" + ( true ? "" : undefined));
-}; // TODO: Resolve need to use &&& to increase specificity
-// https://github.com/WordPress/gutenberg/issues/18483
-
-
-var Input = Object(styled_base_browser_esm["a" /* default */])("input", {
-  target: "e1cr7zh12",
-  label: "Input"
-})("&&&{background-color:transparent;box-sizing:border-box;border:none;box-shadow:none !important;color:", Object(colors["a" /* color */])('black'), ";display:block;margin:0;outline:none;padding-left:8px;padding-right:8px;width:100%;", input_control_styles_dragStyles, ";", input_control_styles_disabledStyles, ";", input_control_styles_fontSizeStyles, ";", input_control_styles_sizeStyles, ";", placeholderStyles, ";}" + ( true ? "" : undefined));
-
-var _ref7 =  true ? {
-  name: "8uhtka",
-  styles: "overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"
-} : undefined;
-
-var labelTruncation = function labelTruncation() {
-  return _ref7;
-};
-
-var BaseLabel = /*#__PURE__*/Object(styled_base_browser_esm["a" /* default */])(build_module_text["a" /* default */], {
-  target: "e1cr7zh13",
-  label: "BaseLabel"
-})("&&&{box-sizing:border-box;color:currentColor;display:block;margin:0;max-width:100%;padding-bottom:4px;padding-top:0;z-index:1;", labelTruncation, ";}" + ( true ? "" : undefined));
-
-var input_control_styles_Label = function Label(props) {
-  return Object(external_this_wp_element_["createElement"])(BaseLabel, Object(esm_extends["a" /* default */])({}, props, {
-    as: "label"
-  }));
-};
-var LabelWrapper = /*#__PURE__*/Object(styled_base_browser_esm["a" /* default */])(item["a" /* default */], {
-  target: "e1cr7zh14",
-  label: "LabelWrapper"
-})( true ? {
-  name: "120o8im",
-  styles: "max-width:calc( 100% - 10px );"
-} : undefined);
-
-var input_control_styles_backdropFocusedStyles = function backdropFocusedStyles(_ref16) {
-  var disabled = _ref16.disabled,
-      isFocused = _ref16.isFocused;
-  var borderColor = isFocused ? Object(colors["a" /* color */])('ui.borderFocus') : Object(colors["a" /* color */])('ui.border');
-  var boxShadow = null;
-
-  if (isFocused) {
-    boxShadow = "0 0 0 1px ".concat(Object(colors["a" /* color */])('ui.borderFocus'), " inset");
-  }
-
-  if (disabled) {
-    borderColor = Object(colors["a" /* color */])('ui.borderDisabled');
-  }
-
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    boxShadow: boxShadow,
-    borderColor: borderColor,
-    borderStyle: 'solid',
-    borderWidth: 1
-  },  true ? "" : undefined);
-};
-
-var BackdropUI = Object(styled_base_browser_esm["a" /* default */])("div", {
-  target: "e1cr7zh15",
-  label: "BackdropUI"
-})("&&&{box-sizing:border-box;border-radius:inherit;bottom:0;left:0;margin:0;padding:0;pointer-events:none;position:absolute;right:0;top:0;", input_control_styles_backdropFocusedStyles, ";", rtl({
-  paddingLeft: 2
-}), "}" + ( true ? "" : undefined));
-var Prefix = Object(styled_base_browser_esm["a" /* default */])("span", {
-  target: "e1cr7zh16",
-  label: "Prefix"
-})( true ? {
-  name: "1pxuk39",
-  styles: "box-sizing:border-box;display:block;"
-} : undefined);
-var Suffix = Object(styled_base_browser_esm["a" /* default */])("span", {
-  target: "e1cr7zh17",
-  label: "Suffix"
-})( true ? {
-  name: "1pxuk39",
-  styles: "box-sizing:border-box;display:block;"
-} : undefined);
-//# sourceMappingURL=input-control-styles.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/backdrop.js
-
-
-/**
- * WordPress dependencies
- */
-
-/**
- * Internal dependencies
- */
-
-
-
-function Backdrop(_ref) {
-  var _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      _ref$isFocused = _ref.isFocused,
-      isFocused = _ref$isFocused === void 0 ? false : _ref$isFocused;
-  return Object(external_this_wp_element_["createElement"])(BackdropUI, {
-    "aria-hidden": "true",
-    className: "components-input-control__backdrop",
-    disabled: disabled,
-    isFocused: isFocused
-  });
-}
-
-var MemoizedBackdrop = Object(external_this_wp_element_["memo"])(Backdrop);
-/* harmony default export */ var backdrop = (MemoizedBackdrop);
-//# sourceMappingURL=backdrop.js.map
-// EXTERNAL MODULE: ./node_modules/@wordpress/components/build-module/visually-hidden/index.js + 1 modules
-var visually_hidden = __webpack_require__(241);
-
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/label.js
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-function label_Label(_ref) {
-  var children = _ref.children,
-      hideLabelFromVision = _ref.hideLabelFromVision,
-      htmlFor = _ref.htmlFor,
-      props = Object(objectWithoutProperties["a" /* default */])(_ref, ["children", "hideLabelFromVision", "htmlFor"]);
-
-  if (!children) return null;
-
-  if (hideLabelFromVision) {
-    return Object(external_this_wp_element_["createElement"])(visually_hidden["a" /* default */], {
-      as: "label",
-      htmlFor: htmlFor
-    }, children);
-  }
-
-  return Object(external_this_wp_element_["createElement"])(input_control_styles_Label, Object(esm_extends["a" /* default */])({
-    htmlFor: htmlFor
-  }, props), children);
-}
-//# sourceMappingURL=label.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/input-control/input-base.js
-
-
-
-
-/**
- * WordPress dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-function useUniqueId(idProp) {
-  var instanceId = Object(use_instance_id["a" /* default */])(InputBase);
-  var id = "input-base-control-".concat(instanceId);
-  return idProp || id;
-}
-
-function InputBase(_ref, ref) {
-  var children = _ref.children,
-      className = _ref.className,
-      _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      _ref$hideLabelFromVis = _ref.hideLabelFromVision,
-      hideLabelFromVision = _ref$hideLabelFromVis === void 0 ? false : _ref$hideLabelFromVis,
-      idProp = _ref.id,
-      _ref$isFocused = _ref.isFocused,
-      isFocused = _ref$isFocused === void 0 ? false : _ref$isFocused,
-      label = _ref.label,
-      prefix = _ref.prefix,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 'default' : _ref$size,
-      suffix = _ref.suffix,
-      props = Object(objectWithoutProperties["a" /* default */])(_ref, ["children", "className", "disabled", "hideLabelFromVision", "id", "isFocused", "label", "prefix", "size", "suffix"]);
-
-  var id = useUniqueId(idProp);
-  return Object(external_this_wp_element_["createElement"])(Root, Object(esm_extends["a" /* default */])({}, props, {
-    className: className,
-    isFocused: isFocused,
-    ref: ref
-  }), Object(external_this_wp_element_["createElement"])(LabelWrapper, null, Object(external_this_wp_element_["createElement"])(label_Label, {
-    className: "components-input-control__label",
-    hideLabelFromVision: hideLabelFromVision,
-    htmlFor: id,
-    size: size
-  }, label)), Object(external_this_wp_element_["createElement"])(Container, {
-    className: "components-input-control__container",
-    disabled: disabled,
-    isFocused: isFocused
-  }, prefix && Object(external_this_wp_element_["createElement"])(Prefix, {
-    className: "components-input-control__prefix"
-  }, prefix), children, suffix && Object(external_this_wp_element_["createElement"])(Suffix, {
-    className: "components-input-control__suffix"
-  }, suffix), Object(external_this_wp_element_["createElement"])(backdrop, {
-    "aria-hidden": "true",
-    disabled: disabled,
-    isFocused: isFocused,
-    label: label,
-    size: size
-  })));
-}
-/* harmony default export */ var input_base = (Object(external_this_wp_element_["forwardRef"])(InputBase));
-//# sourceMappingURL=input-base.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/select-control/styles/select-control-styles.js
-
-
-/**
- * External dependencies
- */
-
-
-/**
- * Internal dependencies
- */
-
-
-var select_control_styles_disabledStyles = function disabledStyles(_ref) {
-  var disabled = _ref.disabled;
-  if (!disabled) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])({
-    color: Object(colors["a" /* color */])('ui.textDisabled')
-  },  true ? "" : undefined);
-};
-
-var select_control_styles_fontSizeStyles = function fontSizeStyles(_ref2) {
-  var size = _ref2.size;
-  var sizes = {
-    default: '13px',
-    small: '11px'
-  };
-  var fontSize = sizes[size];
-  var fontSizeMobile = '16px';
-  if (!fontSize) return '';
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])("font-size:", fontSizeMobile, ";@media ( min-width:600px ){font-size:", fontSize, ";}" + ( true ? "" : undefined));
-};
-
-var select_control_styles_sizeStyles = function sizeStyles(_ref3) {
-  var size = _ref3.size;
-  var sizes = {
-    default: {
-      height: 30,
-      lineHeight: 1,
-      minHeight: 30
-    },
-    small: {
-      height: 24,
-      lineHeight: 1,
-      minHeight: 24
+      if (this.props.in) {
+        if (status !== ENTERING && status !== ENTERED) {
+          nextStatus = ENTERING;
+        }
+      } else {
+        if (status === ENTERING || status === ENTERED) {
+          nextStatus = EXITING;
+        }
+      }
     }
-  };
-  var style = sizes[size] || sizes.default;
-  return /*#__PURE__*/Object(core_browser_esm["b" /* css */])(style,  true ? "" : undefined);
-}; // TODO: Resolve need to use &&& to increase specificity
-// https://github.com/WordPress/gutenberg/issues/18483
 
-
-var Select = Object(styled_base_browser_esm["a" /* default */])("select", {
-  target: "e12x0a390",
-  label: "Select"
-})("&&&{appearance:none;background:transparent;box-sizing:border-box;border:none;box-shadow:none !important;color:", Object(colors["a" /* color */])('black'), ";display:block;margin:0;outline:none;width:100%;", select_control_styles_disabledStyles, ";", select_control_styles_fontSizeStyles, ";", select_control_styles_sizeStyles, ";", rtl({
-  paddingLeft: 8,
-  paddingRight: 24
-})(), "}" + ( true ? "" : undefined));
-var DownArrowWrapper = Object(styled_base_browser_esm["a" /* default */])("div", {
-  target: "e12x0a391",
-  label: "DownArrowWrapper"
-})("align-items:center;bottom:0;box-sizing:border-box;display:flex;padding:0 4px;pointer-events:none;position:absolute;top:0;", rtl({
-  right: 0
-})(), " svg{display:block;}" + ( true ? "" : undefined));
-//# sourceMappingURL=select-control-styles.js.map
-// CONCATENATED MODULE: ./node_modules/@wordpress/components/build-module/select-control/index.js
-
-
-
-
-
-
-/**
- * External dependencies
- */
-
-
-/**
- * WordPress dependencies
- */
-
-
-
-
-/**
- * Internal dependencies
- */
-
-
-
-
-
-function select_control_useUniqueId(idProp) {
-  var instanceId = Object(use_instance_id["a" /* default */])(SelectControl);
-  var id = "inspector-select-control-".concat(instanceId);
-  return idProp || id;
-}
-
-function SelectControl(_ref, ref) {
-  var className = _ref.className,
-      _ref$disabled = _ref.disabled,
-      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
-      help = _ref.help,
-      hideLabelFromVision = _ref.hideLabelFromVision,
-      idProp = _ref.id,
-      label = _ref.label,
-      _ref$multiple = _ref.multiple,
-      multiple = _ref$multiple === void 0 ? false : _ref$multiple,
-      _ref$onBlur = _ref.onBlur,
-      onBlur = _ref$onBlur === void 0 ? external_lodash_["noop"] : _ref$onBlur,
-      _ref$onChange = _ref.onChange,
-      onChange = _ref$onChange === void 0 ? external_lodash_["noop"] : _ref$onChange,
-      _ref$onFocus = _ref.onFocus,
-      onFocus = _ref$onFocus === void 0 ? external_lodash_["noop"] : _ref$onFocus,
-      _ref$options = _ref.options,
-      options = _ref$options === void 0 ? [] : _ref$options,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 'default' : _ref$size,
-      valueProp = _ref.value,
-      _ref$labelPosition = _ref.labelPosition,
-      labelPosition = _ref$labelPosition === void 0 ? 'top' : _ref$labelPosition,
-      props = Object(objectWithoutProperties["a" /* default */])(_ref, ["className", "disabled", "help", "hideLabelFromVision", "id", "label", "multiple", "onBlur", "onChange", "onFocus", "options", "size", "value", "labelPosition"]);
-
-  var _useState = Object(external_this_wp_element_["useState"])(false),
-      _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-      isFocused = _useState2[0],
-      setIsFocused = _useState2[1];
-
-  var id = select_control_useUniqueId(idProp);
-  var helpId = help ? "".concat(id, "__help") : undefined; // Disable reason: A select with an onchange throws a warning
-
-  if (Object(external_lodash_["isEmpty"])(options)) return null;
-
-  var handleOnBlur = function handleOnBlur(event) {
-    onBlur(event);
-    setIsFocused(false);
+    this.updateStatus(false, nextStatus);
   };
 
-  var handleOnFocus = function handleOnFocus(event) {
-    onFocus(event);
-    setIsFocused(true);
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.cancelNextCallback();
   };
 
-  var handleOnChange = function handleOnChange(event) {
-    if (multiple) {
-      var selectedOptions = Object(toConsumableArray["a" /* default */])(event.target.options).filter(function (_ref2) {
-        var selected = _ref2.selected;
-        return selected;
+  _proto.getTimeouts = function getTimeouts() {
+    var timeout = this.props.timeout;
+    var exit, enter, appear;
+    exit = enter = appear = timeout;
+
+    if (timeout != null && typeof timeout !== 'number') {
+      exit = timeout.exit;
+      enter = timeout.enter; // TODO: remove fallback for next major
+
+      appear = timeout.appear !== undefined ? timeout.appear : enter;
+    }
+
+    return {
+      exit: exit,
+      enter: enter,
+      appear: appear
+    };
+  };
+
+  _proto.updateStatus = function updateStatus(mounting, nextStatus) {
+    if (mounting === void 0) {
+      mounting = false;
+    }
+
+    if (nextStatus !== null) {
+      // nextStatus will always be ENTERING or EXITING.
+      this.cancelNextCallback();
+
+      if (nextStatus === ENTERING) {
+        this.performEnter(mounting);
+      } else {
+        this.performExit();
+      }
+    } else if (this.props.unmountOnExit && this.state.status === EXITED) {
+      this.setState({
+        status: UNMOUNTED
       });
+    }
+  };
 
-      var newValues = selectedOptions.map(function (_ref3) {
-        var value = _ref3.value;
-        return value;
+  _proto.performEnter = function performEnter(mounting) {
+    var _this2 = this;
+
+    var enter = this.props.enter;
+    var appearing = this.context ? this.context.isMounting : mounting;
+
+    var _ref2 = this.props.nodeRef ? [appearing] : [external_ReactDOM_default.a.findDOMNode(this), appearing],
+        maybeNode = _ref2[0],
+        maybeAppearing = _ref2[1];
+
+    var timeouts = this.getTimeouts();
+    var enterTimeout = appearing ? timeouts.appear : timeouts.enter; // no enter animation skip right to ENTERED
+    // if we are mounting and running this it means appear _must_ be set
+
+    if (!mounting && !enter || config.disabled) {
+      this.safeSetState({
+        status: ENTERED
+      }, function () {
+        _this2.props.onEntered(maybeNode);
       });
-      onChange(newValues);
       return;
     }
 
-    onChange(event.target.value, {
-      event: event
+    this.props.onEnter(maybeNode, maybeAppearing);
+    this.safeSetState({
+      status: ENTERING
+    }, function () {
+      _this2.props.onEntering(maybeNode, maybeAppearing);
+
+      _this2.onTransitionEnd(enterTimeout, function () {
+        _this2.safeSetState({
+          status: ENTERED
+        }, function () {
+          _this2.props.onEntered(maybeNode, maybeAppearing);
+        });
+      });
     });
   };
 
-  var classes = classnames_default()('components-select-control', className);
-  /* eslint-disable jsx-a11y/no-onchange */
+  _proto.performExit = function performExit() {
+    var _this3 = this;
 
-  return Object(external_this_wp_element_["createElement"])(base_control["a" /* default */], {
-    help: help
-  }, Object(external_this_wp_element_["createElement"])(input_base, {
-    className: classes,
-    disabled: disabled,
-    hideLabelFromVision: hideLabelFromVision,
-    id: id,
-    isFocused: isFocused,
-    label: label,
-    size: size,
-    suffix: Object(external_this_wp_element_["createElement"])(DownArrowWrapper, null, Object(external_this_wp_element_["createElement"])(icon["a" /* default */], {
-      icon: chevron_down,
-      size: 18
-    })),
-    labelPosition: labelPosition
-  }, Object(external_this_wp_element_["createElement"])(Select, Object(esm_extends["a" /* default */])({}, props, {
-    "aria-describedby": helpId,
-    className: "components-select-control__input",
-    disabled: disabled,
-    id: id,
-    multiple: multiple,
-    onBlur: handleOnBlur,
-    onChange: handleOnChange,
-    onFocus: handleOnFocus,
-    ref: ref,
-    size: size,
-    value: valueProp
-  }), options.map(function (option, index) {
-    var key = option.id || "".concat(option.label, "-").concat(option.value, "-").concat(index);
-    return Object(external_this_wp_element_["createElement"])("option", {
-      key: key,
-      value: option.value,
-      disabled: option.disabled
-    }, option.label);
-  }))));
-  /* eslint-enable jsx-a11y/no-onchange */
+    var exit = this.props.exit;
+    var timeouts = this.getTimeouts();
+    var maybeNode = this.props.nodeRef ? undefined : external_ReactDOM_default.a.findDOMNode(this); // no exit animation skip right to EXITED
+
+    if (!exit || config.disabled) {
+      this.safeSetState({
+        status: EXITED
+      }, function () {
+        _this3.props.onExited(maybeNode);
+      });
+      return;
+    }
+
+    this.props.onExit(maybeNode);
+    this.safeSetState({
+      status: EXITING
+    }, function () {
+      _this3.props.onExiting(maybeNode);
+
+      _this3.onTransitionEnd(timeouts.exit, function () {
+        _this3.safeSetState({
+          status: EXITED
+        }, function () {
+          _this3.props.onExited(maybeNode);
+        });
+      });
+    });
+  };
+
+  _proto.cancelNextCallback = function cancelNextCallback() {
+    if (this.nextCallback !== null) {
+      this.nextCallback.cancel();
+      this.nextCallback = null;
+    }
+  };
+
+  _proto.safeSetState = function safeSetState(nextState, callback) {
+    // This shouldn't be necessary, but there are weird race conditions with
+    // setState callbacks and unmounting in testing, so always make sure that
+    // we can cancel any pending setState callbacks after we unmount.
+    callback = this.setNextCallback(callback);
+    this.setState(nextState, callback);
+  };
+
+  _proto.setNextCallback = function setNextCallback(callback) {
+    var _this4 = this;
+
+    var active = true;
+
+    this.nextCallback = function (event) {
+      if (active) {
+        active = false;
+        _this4.nextCallback = null;
+        callback(event);
+      }
+    };
+
+    this.nextCallback.cancel = function () {
+      active = false;
+    };
+
+    return this.nextCallback;
+  };
+
+  _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
+    this.setNextCallback(handler);
+    var node = this.props.nodeRef ? this.props.nodeRef.current : external_ReactDOM_default.a.findDOMNode(this);
+    var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
+
+    if (!node || doesNotHaveTimeoutOrListener) {
+      setTimeout(this.nextCallback, 0);
+      return;
+    }
+
+    if (this.props.addEndListener) {
+      var _ref3 = this.props.nodeRef ? [this.nextCallback] : [node, this.nextCallback],
+          maybeNode = _ref3[0],
+          maybeNextCallback = _ref3[1];
+
+      this.props.addEndListener(maybeNode, maybeNextCallback);
+    }
+
+    if (timeout != null) {
+      setTimeout(this.nextCallback, timeout);
+    }
+  };
+
+  _proto.render = function render() {
+    var status = this.state.status;
+
+    if (status === UNMOUNTED) {
+      return null;
+    }
+
+    var _this$props = this.props,
+        children = _this$props.children,
+        _in = _this$props.in,
+        _mountOnEnter = _this$props.mountOnEnter,
+        _unmountOnExit = _this$props.unmountOnExit,
+        _appear = _this$props.appear,
+        _enter = _this$props.enter,
+        _exit = _this$props.exit,
+        _timeout = _this$props.timeout,
+        _addEndListener = _this$props.addEndListener,
+        _onEnter = _this$props.onEnter,
+        _onEntering = _this$props.onEntering,
+        _onEntered = _this$props.onEntered,
+        _onExit = _this$props.onExit,
+        _onExiting = _this$props.onExiting,
+        _onExited = _this$props.onExited,
+        _nodeRef = _this$props.nodeRef,
+        childProps = Object(objectWithoutPropertiesLoose["a" /* default */])(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
+
+    return (
+      /*#__PURE__*/
+      // allows for nested Transitions
+      external_React_default.a.createElement(TransitionGroupContext["a" /* default */].Provider, {
+        value: null
+      }, typeof children === 'function' ? children(status, childProps) : external_React_default.a.cloneElement(external_React_default.a.Children.only(children), childProps))
+    );
+  };
+
+  return Transition;
+}(external_React_default.a.Component);
+
+Transition_Transition.contextType = TransitionGroupContext["a" /* default */];
+Transition_Transition.propTypes =  false ? undefined : {}; // Name the function so it is clearer in the documentation
+
+function noop() {}
+
+Transition_Transition.defaultProps = {
+  in: false,
+  mountOnEnter: false,
+  unmountOnExit: false,
+  appear: false,
+  enter: true,
+  exit: true,
+  onEnter: noop,
+  onEntering: noop,
+  onEntered: noop,
+  onExit: noop,
+  onExiting: noop,
+  onExited: noop
+};
+Transition_Transition.UNMOUNTED = UNMOUNTED;
+Transition_Transition.EXITED = EXITED;
+Transition_Transition.ENTERING = ENTERING;
+Transition_Transition.ENTERED = ENTERED;
+Transition_Transition.EXITING = EXITING;
+/* harmony default export */ var esm_Transition = (Transition_Transition);
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/CSSTransition.js
+
+
+
+
+
+
+
+
+
+
+var _addClass = function addClass(node, classes) {
+  return node && classes && classes.split(' ').forEach(function (c) {
+    return addClass_addClass(node, c);
+  });
+};
+
+var CSSTransition_removeClass = function removeClass(node, classes) {
+  return node && classes && classes.split(' ').forEach(function (c) {
+    return removeClass_removeClass(node, c);
+  });
+};
+/**
+ * A transition component inspired by the excellent
+ * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
+ * use it if you're using CSS transitions or animations. It's built upon the
+ * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
+ * component, so it inherits all of its props.
+ *
+ * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
+ * and `exit` states of the transition. The first class is applied and then a
+ * second `*-active` class in order to activate the CSS transition. After the
+ * transition, matching `*-done` class names are applied to persist the
+ * transition state.
+ *
+ * ```jsx
+ * function App() {
+ *   const [inProp, setInProp] = useState(false);
+ *   return (
+ *     <div>
+ *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
+ *         <div>
+ *           {"I'll receive my-node-* classes"}
+ *         </div>
+ *       </CSSTransition>
+ *       <button type="button" onClick={() => setInProp(true)}>
+ *         Click to Enter
+ *       </button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the `in` prop is set to `true`, the child component will first receive
+ * the class `example-enter`, then the `example-enter-active` will be added in
+ * the next tick. `CSSTransition` [forces a
+ * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
+ * between before adding the `example-enter-active`. This is an important trick
+ * because it allows us to transition between `example-enter` and
+ * `example-enter-active` even though they were added immediately one after
+ * another. Most notably, this is what makes it possible for us to animate
+ * _appearance_.
+ *
+ * ```css
+ * .my-node-enter {
+ *   opacity: 0;
+ * }
+ * .my-node-enter-active {
+ *   opacity: 1;
+ *   transition: opacity 200ms;
+ * }
+ * .my-node-exit {
+ *   opacity: 1;
+ * }
+ * .my-node-exit-active {
+ *   opacity: 0;
+ *   transition: opacity 200ms;
+ * }
+ * ```
+ *
+ * `*-active` classes represent which styles you want to animate **to**, so it's
+ * important to add `transition` declaration only to them, otherwise transitions
+ * might not behave as intended! This might not be obvious when the transitions
+ * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
+ * the example above (minus `transition`), but it becomes apparent in more
+ * complex transitions.
+ *
+ * **Note**: If you're using the
+ * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
+ * prop, make sure to define styles for `.appear-*` classes as well.
+ */
+
+
+var CSSTransition_CSSTransition = /*#__PURE__*/function (_React$Component) {
+  Object(inheritsLoose["a" /* default */])(CSSTransition, _React$Component);
+
+  function CSSTransition() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+    _this.appliedClasses = {
+      appear: {},
+      enter: {},
+      exit: {}
+    };
+
+    _this.onEnter = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument[0],
+          appearing = _this$resolveArgument[1];
+
+      _this.removeClasses(node, 'exit');
+
+      _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
+
+      if (_this.props.onEnter) {
+        _this.props.onEnter(maybeNode, maybeAppearing);
+      }
+    };
+
+    _this.onEntering = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument2[0],
+          appearing = _this$resolveArgument2[1];
+
+      var type = appearing ? 'appear' : 'enter';
+
+      _this.addClass(node, type, 'active');
+
+      if (_this.props.onEntering) {
+        _this.props.onEntering(maybeNode, maybeAppearing);
+      }
+    };
+
+    _this.onEntered = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument3[0],
+          appearing = _this$resolveArgument3[1];
+
+      var type = appearing ? 'appear' : 'enter';
+
+      _this.removeClasses(node, type);
+
+      _this.addClass(node, type, 'done');
+
+      if (_this.props.onEntered) {
+        _this.props.onEntered(maybeNode, maybeAppearing);
+      }
+    };
+
+    _this.onExit = function (maybeNode) {
+      var _this$resolveArgument4 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument4[0];
+
+      _this.removeClasses(node, 'appear');
+
+      _this.removeClasses(node, 'enter');
+
+      _this.addClass(node, 'exit', 'base');
+
+      if (_this.props.onExit) {
+        _this.props.onExit(maybeNode);
+      }
+    };
+
+    _this.onExiting = function (maybeNode) {
+      var _this$resolveArgument5 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument5[0];
+
+      _this.addClass(node, 'exit', 'active');
+
+      if (_this.props.onExiting) {
+        _this.props.onExiting(maybeNode);
+      }
+    };
+
+    _this.onExited = function (maybeNode) {
+      var _this$resolveArgument6 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument6[0];
+
+      _this.removeClasses(node, 'exit');
+
+      _this.addClass(node, 'exit', 'done');
+
+      if (_this.props.onExited) {
+        _this.props.onExited(maybeNode);
+      }
+    };
+
+    _this.resolveArguments = function (maybeNode, maybeAppearing) {
+      return _this.props.nodeRef ? [_this.props.nodeRef.current, maybeNode] // here `maybeNode` is actually `appearing`
+      : [maybeNode, maybeAppearing];
+    };
+
+    _this.getClassNames = function (type) {
+      var classNames = _this.props.classNames;
+      var isStringClassNames = typeof classNames === 'string';
+      var prefix = isStringClassNames && classNames ? classNames + "-" : '';
+      var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
+      var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
+      var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
+      return {
+        baseClassName: baseClassName,
+        activeClassName: activeClassName,
+        doneClassName: doneClassName
+      };
+    };
+
+    return _this;
+  }
+
+  var _proto = CSSTransition.prototype;
+
+  _proto.addClass = function addClass(node, type, phase) {
+    var className = this.getClassNames(type)[phase + "ClassName"];
+
+    var _this$getClassNames = this.getClassNames('enter'),
+        doneClassName = _this$getClassNames.doneClassName;
+
+    if (type === 'appear' && phase === 'done' && doneClassName) {
+      className += " " + doneClassName;
+    } // This is for to force a repaint,
+    // which is necessary in order to transition styles when adding a class name.
+
+
+    if (phase === 'active') {
+      /* eslint-disable no-unused-expressions */
+      node && node.scrollTop;
+    }
+
+    if (className) {
+      this.appliedClasses[type][phase] = className;
+
+      _addClass(node, className);
+    }
+  };
+
+  _proto.removeClasses = function removeClasses(node, type) {
+    var _this$appliedClasses$ = this.appliedClasses[type],
+        baseClassName = _this$appliedClasses$.base,
+        activeClassName = _this$appliedClasses$.active,
+        doneClassName = _this$appliedClasses$.done;
+    this.appliedClasses[type] = {};
+
+    if (baseClassName) {
+      CSSTransition_removeClass(node, baseClassName);
+    }
+
+    if (activeClassName) {
+      CSSTransition_removeClass(node, activeClassName);
+    }
+
+    if (doneClassName) {
+      CSSTransition_removeClass(node, doneClassName);
+    }
+  };
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        _ = _this$props.classNames,
+        props = Object(objectWithoutPropertiesLoose["a" /* default */])(_this$props, ["classNames"]);
+
+    return /*#__PURE__*/external_React_default.a.createElement(esm_Transition, Object(esm_extends["a" /* default */])({}, props, {
+      onEnter: this.onEnter,
+      onEntered: this.onEntered,
+      onEntering: this.onEntering,
+      onExit: this.onExit,
+      onExiting: this.onExiting,
+      onExited: this.onExited
+    }));
+  };
+
+  return CSSTransition;
+}(external_React_default.a.Component);
+
+CSSTransition_CSSTransition.defaultProps = {
+  classNames: ''
+};
+CSSTransition_CSSTransition.propTypes =  false ? undefined : {};
+/* harmony default export */ var esm_CSSTransition = __webpack_exports__["a"] = (CSSTransition_CSSTransition);
+
+/***/ }),
+
+/***/ 297:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(41);
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(32);
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+var inheritsLoose = __webpack_require__(38);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
+
+// EXTERNAL MODULE: external "React"
+var external_React_ = __webpack_require__(10);
+var external_React_default = /*#__PURE__*/__webpack_require__.n(external_React_);
+
+// EXTERNAL MODULE: ./node_modules/react-transition-group/esm/TransitionGroupContext.js
+var TransitionGroupContext = __webpack_require__(64);
+
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/utils/ChildMapping.js
+
+/**
+ * Given `this.props.children`, return an object mapping key to child.
+ *
+ * @param {*} children `this.props.children`
+ * @return {object} Mapping of key to child
+ */
+
+function getChildMapping(children, mapFn) {
+  var mapper = function mapper(child) {
+    return mapFn && Object(external_React_["isValidElement"])(child) ? mapFn(child) : child;
+  };
+
+  var result = Object.create(null);
+  if (children) external_React_["Children"].map(children, function (c) {
+    return c;
+  }).forEach(function (child) {
+    // run the map function here instead so that the key is the computed one
+    result[child.key] = mapper(child);
+  });
+  return result;
+}
+/**
+ * When you're adding or removing children some may be added or removed in the
+ * same render pass. We want to show *both* since we want to simultaneously
+ * animate elements in and out. This function takes a previous set of keys
+ * and a new set of keys and merges them with its best guess of the correct
+ * ordering. In the future we may expose some of the utilities in
+ * ReactMultiChild to make this easy, but for now React itself does not
+ * directly have this concept of the union of prevChildren and nextChildren
+ * so we implement it here.
+ *
+ * @param {object} prev prev children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @param {object} next next children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @return {object} a key set that contains all keys in `prev` and all keys
+ * in `next` in a reasonable order.
+ */
+
+function mergeChildMappings(prev, next) {
+  prev = prev || {};
+  next = next || {};
+
+  function getValueForKey(key) {
+    return key in next ? next[key] : prev[key];
+  } // For each key of `next`, the list of keys to insert before that key in
+  // the combined list
+
+
+  var nextKeysPending = Object.create(null);
+  var pendingKeys = [];
+
+  for (var prevKey in prev) {
+    if (prevKey in next) {
+      if (pendingKeys.length) {
+        nextKeysPending[prevKey] = pendingKeys;
+        pendingKeys = [];
+      }
+    } else {
+      pendingKeys.push(prevKey);
+    }
+  }
+
+  var i;
+  var childMapping = {};
+
+  for (var nextKey in next) {
+    if (nextKeysPending[nextKey]) {
+      for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+        var pendingNextKey = nextKeysPending[nextKey][i];
+        childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+      }
+    }
+
+    childMapping[nextKey] = getValueForKey(nextKey);
+  } // Finally, add the keys which didn't appear before any key in `next`
+
+
+  for (i = 0; i < pendingKeys.length; i++) {
+    childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+  }
+
+  return childMapping;
 }
 
-var ForwardedComponent = Object(external_this_wp_element_["forwardRef"])(SelectControl);
-/* harmony default export */ var select_control = __webpack_exports__["a"] = (ForwardedComponent);
-//# sourceMappingURL=index.js.map
+function getProp(child, prop, props) {
+  return props[prop] != null ? props[prop] : child.props[prop];
+}
+
+function getInitialChildMapping(props, onExited) {
+  return getChildMapping(props.children, function (child) {
+    return Object(external_React_["cloneElement"])(child, {
+      onExited: onExited.bind(null, child),
+      in: true,
+      appear: getProp(child, 'appear', props),
+      enter: getProp(child, 'enter', props),
+      exit: getProp(child, 'exit', props)
+    });
+  });
+}
+function getNextChildMapping(nextProps, prevChildMapping, onExited) {
+  var nextChildMapping = getChildMapping(nextProps.children);
+  var children = mergeChildMappings(prevChildMapping, nextChildMapping);
+  Object.keys(children).forEach(function (key) {
+    var child = children[key];
+    if (!Object(external_React_["isValidElement"])(child)) return;
+    var hasPrev = (key in prevChildMapping);
+    var hasNext = (key in nextChildMapping);
+    var prevChild = prevChildMapping[key];
+    var isLeaving = Object(external_React_["isValidElement"])(prevChild) && !prevChild.props.in; // item is new (entering)
+
+    if (hasNext && (!hasPrev || isLeaving)) {
+      // console.log('entering', key)
+      children[key] = Object(external_React_["cloneElement"])(child, {
+        onExited: onExited.bind(null, child),
+        in: true,
+        exit: getProp(child, 'exit', nextProps),
+        enter: getProp(child, 'enter', nextProps)
+      });
+    } else if (!hasNext && hasPrev && !isLeaving) {
+      // item is old (exiting)
+      // console.log('leaving', key)
+      children[key] = Object(external_React_["cloneElement"])(child, {
+        in: false
+      });
+    } else if (hasNext && hasPrev && Object(external_React_["isValidElement"])(prevChild)) {
+      // item hasn't changed transition states
+      // copy over the last transition props;
+      // console.log('unchanged', key)
+      children[key] = Object(external_React_["cloneElement"])(child, {
+        onExited: onExited.bind(null, child),
+        in: prevChild.props.in,
+        exit: getProp(child, 'exit', nextProps),
+        enter: getProp(child, 'enter', nextProps)
+      });
+    }
+  });
+  return children;
+}
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/TransitionGroup.js
+
+
+
+
+
+
+
+
+
+var values = Object.values || function (obj) {
+  return Object.keys(obj).map(function (k) {
+    return obj[k];
+  });
+};
+
+var defaultProps = {
+  component: 'div',
+  childFactory: function childFactory(child) {
+    return child;
+  }
+};
+/**
+ * The `<TransitionGroup>` component manages a set of transition components
+ * (`<Transition>` and `<CSSTransition>`) in a list. Like with the transition
+ * components, `<TransitionGroup>` is a state machine for managing the mounting
+ * and unmounting of components over time.
+ *
+ * Consider the example below. As items are removed or added to the TodoList the
+ * `in` prop is toggled automatically by the `<TransitionGroup>`.
+ *
+ * Note that `<TransitionGroup>`  does not define any animation behavior!
+ * Exactly _how_ a list item animates is up to the individual transition
+ * component. This means you can mix and match animations across different list
+ * items.
+ */
+
+var TransitionGroup_TransitionGroup = /*#__PURE__*/function (_React$Component) {
+  Object(inheritsLoose["a" /* default */])(TransitionGroup, _React$Component);
+
+  function TransitionGroup(props, context) {
+    var _this;
+
+    _this = _React$Component.call(this, props, context) || this;
+
+    var handleExited = _this.handleExited.bind(_assertThisInitialized(_this)); // Initial children should all be entering, dependent on appear
+
+
+    _this.state = {
+      contextValue: {
+        isMounting: true
+      },
+      handleExited: handleExited,
+      firstRender: true
+    };
+    return _this;
+  }
+
+  var _proto = TransitionGroup.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.mounted = true;
+    this.setState({
+      contextValue: {
+        isMounting: false
+      }
+    });
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.mounted = false;
+  };
+
+  TransitionGroup.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
+    var prevChildMapping = _ref.children,
+        handleExited = _ref.handleExited,
+        firstRender = _ref.firstRender;
+    return {
+      children: firstRender ? getInitialChildMapping(nextProps, handleExited) : getNextChildMapping(nextProps, prevChildMapping, handleExited),
+      firstRender: false
+    };
+  } // node is `undefined` when user provided `nodeRef` prop
+  ;
+
+  _proto.handleExited = function handleExited(child, node) {
+    var currentChildMapping = getChildMapping(this.props.children);
+    if (child.key in currentChildMapping) return;
+
+    if (child.props.onExited) {
+      child.props.onExited(node);
+    }
+
+    if (this.mounted) {
+      this.setState(function (state) {
+        var children = Object(esm_extends["a" /* default */])({}, state.children);
+
+        delete children[child.key];
+        return {
+          children: children
+        };
+      });
+    }
+  };
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        Component = _this$props.component,
+        childFactory = _this$props.childFactory,
+        props = Object(objectWithoutPropertiesLoose["a" /* default */])(_this$props, ["component", "childFactory"]);
+
+    var contextValue = this.state.contextValue;
+    var children = values(this.state.children).map(childFactory);
+    delete props.appear;
+    delete props.enter;
+    delete props.exit;
+
+    if (Component === null) {
+      return /*#__PURE__*/external_React_default.a.createElement(TransitionGroupContext["a" /* default */].Provider, {
+        value: contextValue
+      }, children);
+    }
+
+    return /*#__PURE__*/external_React_default.a.createElement(TransitionGroupContext["a" /* default */].Provider, {
+      value: contextValue
+    }, /*#__PURE__*/external_React_default.a.createElement(Component, props, children));
+  };
+
+  return TransitionGroup;
+}(external_React_default.a.Component);
+
+TransitionGroup_TransitionGroup.propTypes =  false ? undefined : {};
+TransitionGroup_TransitionGroup.defaultProps = defaultProps;
+/* harmony default export */ var esm_TransitionGroup = __webpack_exports__["a"] = (TransitionGroup_TransitionGroup);
+
+/***/ }),
+
+/***/ 64:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["a"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext(null));
 
 /***/ })
 
