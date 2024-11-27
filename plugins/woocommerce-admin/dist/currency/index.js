@@ -82,7 +82,7 @@ this["wc"] = this["wc"] || {}; this["wc"]["currency"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 524);
+/******/ 	return __webpack_require__(__webpack_require__.s = 453);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -94,136 +94,35 @@ this["wc"] = this["wc"] || {}; this["wc"]["currency"] =
 
 /***/ }),
 
-/***/ 199:
+/***/ 143:
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wc"]["number"]; }());
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["i18n"]; }());
 
 /***/ }),
 
-/***/ 47:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export logged */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return deprecated; });
-/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(51);
-/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * WordPress dependencies
- */
-
-/**
- * Object map tracking messages which have been logged, for use in ensuring a
- * message is only logged once.
- *
- * @type {Object}
- */
-
-var logged = Object.create(null);
-/**
- * Logs a message to notify developers about a deprecated feature.
- *
- * @param {string}  feature             Name of the deprecated feature.
- * @param {?Object} options             Personalisation options
- * @param {?string} options.version     Version in which the feature will be removed.
- * @param {?string} options.alternative Feature to use instead
- * @param {?string} options.plugin      Plugin name if it's a plugin feature
- * @param {?string} options.link        Link to documentation
- * @param {?string} options.hint        Additional message to help transition away from the deprecated feature.
- *
- * @example
- * ```js
- * import deprecated from '@wordpress/deprecated';
- *
- * deprecated( 'Eating meat', {
- * 	version: 'the future',
- * 	alternative: 'vegetables',
- * 	plugin: 'the earth',
- * 	hint: 'You may find it beneficial to transition gradually.',
- * } );
- *
- * // Logs: 'Eating meat is deprecated and will be removed from the earth in the future. Please use vegetables instead. Note: You may find it beneficial to transition gradually.'
- * ```
- */
-
-function deprecated(feature) {
-  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var version = options.version,
-      alternative = options.alternative,
-      plugin = options.plugin,
-      link = options.link,
-      hint = options.hint;
-  var pluginMessage = plugin ? " from ".concat(plugin) : '';
-  var versionMessage = version ? " and will be removed".concat(pluginMessage, " in version ").concat(version) : '';
-  var useInsteadMessage = alternative ? " Please use ".concat(alternative, " instead.") : '';
-  var linkMessage = link ? " See: ".concat(link) : '';
-  var hintMessage = hint ? " Note: ".concat(hint) : '';
-  var message = "".concat(feature, " is deprecated").concat(versionMessage, ".").concat(useInsteadMessage).concat(linkMessage).concat(hintMessage); // Skip if already logged.
-
-  if (message in logged) {
-    return;
-  }
-  /**
-   * Fires whenever a deprecated feature is encountered
-   *
-   * @param {string}  feature             Name of the deprecated feature.
-   * @param {?Object} options             Personalisation options
-   * @param {?string} options.version     Version in which the feature will be removed.
-   * @param {?string} options.alternative Feature to use instead
-   * @param {?string} options.plugin      Plugin name if it's a plugin feature
-   * @param {?string} options.link        Link to documentation
-   * @param {?string} options.hint        Additional message to help transition away from the deprecated feature.
-   * @param {?string} message             Message sent to console.warn
-   */
-
-
-  Object(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__["doAction"])('deprecated', feature, options, message); // eslint-disable-next-line no-console
-
-  console.warn(message);
-  logged[message] = true;
-}
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 5:
+/***/ 40:
 /***/ (function(module, exports) {
 
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-module.exports = _defineProperty;
+(function() { module.exports = this["wp"]["htmlEntities"]; }());
 
 /***/ }),
 
-/***/ 51:
+/***/ 42:
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["hooks"]; }());
 
 /***/ }),
 
-/***/ 524:
+/***/ 453:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -233,11 +132,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(199);
-/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_number__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_deprecated__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(47);
+/* harmony import */ var _wordpress_html_entities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(40);
+/* harmony import */ var _wordpress_html_entities__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_html_entities__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(143);
+/* harmony import */ var _woocommerce_number__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_woocommerce_number__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_deprecated__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(85);
 
 
 
@@ -283,12 +184,20 @@ function _objectSpread(target) {
 
 
 
+
 var CurrencyFactory = function CurrencyFactory(currencySetting) {
   var currency;
   setCurrency(currencySetting);
 
   function setCurrency(setting) {
-    var defaultCurrency = getCurrencyData().US;
+    var defaultCurrency = {
+      code: 'USD',
+      symbol: '$',
+      symbolPosition: 'left',
+      thousandSeparator: ',',
+      decimalSeparator: '.',
+      precision: 2
+    };
 
     var config = _objectSpread(_objectSpread({}, defaultCurrency), setting);
 
@@ -317,7 +226,7 @@ var CurrencyFactory = function CurrencyFactory(currencySetting) {
 
 
   function formatAmount(number) {
-    var formattedNumber = Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_3__["numberFormat"])(currency, number);
+    var formattedNumber = Object(_woocommerce_number__WEBPACK_IMPORTED_MODULE_4__["numberFormat"])(currency, number);
 
     if (formattedNumber === '') {
       return formattedNumber;
@@ -327,7 +236,7 @@ var CurrencyFactory = function CurrencyFactory(currencySetting) {
         priceFormat = _currency.priceFormat,
         symbol = _currency.symbol; // eslint-disable-next-line @wordpress/valid-sprintf
 
-    return Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["sprintf"])(priceFormat, symbol, formattedNumber);
+    return Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["sprintf"])(priceFormat, symbol, formattedNumber);
   }
   /**
    * Formats money value.
@@ -340,7 +249,7 @@ var CurrencyFactory = function CurrencyFactory(currencySetting) {
 
 
   function formatCurrency(number) {
-    Object(_wordpress_deprecated__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])('Currency().formatCurrency', {
+    Object(_wordpress_deprecated__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('Currency().formatCurrency', {
       version: '5.0.0',
       alternative: 'Currency().formatAmount',
       plugin: 'WooCommerce',
@@ -369,19 +278,49 @@ var CurrencyFactory = function CurrencyFactory(currencySetting) {
         return '%2$s%1$s';
 
       case 'left_space':
-        return '%1$s&nbsp;%2$s';
+        return '%1$s %2$s';
 
       case 'right_space':
-        return '%2$s&nbsp;%1$s';
+        return '%2$s %1$s';
     }
 
     return '%1$s%2$s';
+  }
+  /**
+   * Get formatted data for a country from supplied locale and symbol info.
+   *
+   * @param {string} countryCode Country code.
+   * @param {Object} localeInfo Locale info by country code.
+   * @param {Object} currencySymbols Currency symbols by symbol code.
+   * @return {Object} Formatted currency data for country.
+   */
+
+
+  function getDataForCountry(countryCode) {
+    var localeInfo = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var currencySymbols = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    var countryInfo = localeInfo[countryCode] || {};
+    var symbol = currencySymbols[countryInfo.currency_code];
+
+    if (!symbol) {
+      return {};
+    }
+
+    return {
+      code: countryInfo.currency_code,
+      symbol: Object(_wordpress_html_entities__WEBPACK_IMPORTED_MODULE_2__["decodeEntities"])(symbol),
+      symbolPosition: countryInfo.currency_pos,
+      thousandSeparator: countryInfo.thousand_sep,
+      decimalSeparator: countryInfo.decimal_sep,
+      precision: countryInfo.num_decimals
+    };
   }
 
   return {
     getCurrencyConfig: function getCurrencyConfig() {
       return _objectSpread({}, currency);
     },
+    getDataForCountry: getDataForCountry,
     setCurrency: setCurrency,
     formatAmount: formatAmount,
     formatCurrency: formatCurrency,
@@ -457,11 +396,19 @@ var CurrencyFactory = function CurrencyFactory(currencySetting) {
  *
  * Dev Note: When adding new currencies below, the exchange rate array should also be updated in WooCommerce Admin's `business-details.js`.
  *
+ * @deprecated
+ *
  * @return {Object} Curreny data.
  */
 
 function getCurrencyData() {
-  // See https://github.com/woocommerce/woocommerce-admin/issues/3101.
+  Object(_wordpress_deprecated__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])('getCurrencyData', {
+    version: '3.1.0',
+    alternative: 'CurrencyFactory.getDataForCountry',
+    plugin: 'WooCommerce Admin',
+    hint: 'Pass in the country, locale data, and symbol info to use getDataForCountry'
+  }); // See https://github.com/woocommerce/woocommerce-admin/issues/3101.
+
   return {
     US: {
       code: 'USD',
@@ -569,6 +516,114 @@ function getCurrencyData() {
     }
   };
 }
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+
+/***/ }),
+
+/***/ 85:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export logged */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return deprecated; });
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
+/**
+ * WordPress dependencies
+ */
+
+/**
+ * Object map tracking messages which have been logged, for use in ensuring a
+ * message is only logged once.
+ *
+ * @type {Record<string,true|undefined>}
+ */
+
+var logged = Object.create(null);
+/**
+ * Logs a message to notify developers about a deprecated feature.
+ *
+ * @param {string} feature               Name of the deprecated feature.
+ * @param {Object} [options]             Personalisation options
+ * @param {string} [options.version]     Version in which the feature will be removed.
+ * @param {string} [options.alternative] Feature to use instead
+ * @param {string} [options.plugin]      Plugin name if it's a plugin feature
+ * @param {string} [options.link]        Link to documentation
+ * @param {string} [options.hint]        Additional message to help transition away from the deprecated feature.
+ *
+ * @example
+ * ```js
+ * import deprecated from '@wordpress/deprecated';
+ *
+ * deprecated( 'Eating meat', {
+ * 	version: 'the future',
+ * 	alternative: 'vegetables',
+ * 	plugin: 'the earth',
+ * 	hint: 'You may find it beneficial to transition gradually.',
+ * } );
+ *
+ * // Logs: 'Eating meat is deprecated and will be removed from the earth in the future. Please use vegetables instead. Note: You may find it beneficial to transition gradually.'
+ * ```
+ */
+
+function deprecated(feature) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var version = options.version,
+      alternative = options.alternative,
+      plugin = options.plugin,
+      link = options.link,
+      hint = options.hint;
+  var pluginMessage = plugin ? " from ".concat(plugin) : '';
+  var versionMessage = version ? " and will be removed".concat(pluginMessage, " in version ").concat(version) : '';
+  var useInsteadMessage = alternative ? " Please use ".concat(alternative, " instead.") : '';
+  var linkMessage = link ? " See: ".concat(link) : '';
+  var hintMessage = hint ? " Note: ".concat(hint) : '';
+  var message = "".concat(feature, " is deprecated").concat(versionMessage, ".").concat(useInsteadMessage).concat(linkMessage).concat(hintMessage); // Skip if already logged.
+
+  if (message in logged) {
+    return;
+  }
+  /**
+   * Fires whenever a deprecated feature is encountered
+   *
+   * @param {string}  feature             Name of the deprecated feature.
+   * @param {?Object} options             Personalisation options
+   * @param {?string} options.version     Version in which the feature will be removed.
+   * @param {?string} options.alternative Feature to use instead
+   * @param {?string} options.plugin      Plugin name if it's a plugin feature
+   * @param {?string} options.link        Link to documentation
+   * @param {?string} options.hint        Additional message to help transition away from the deprecated feature.
+   * @param {?string} message             Message sent to console.warn
+   */
+
+
+  Object(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__["doAction"])('deprecated', feature, options, message); // eslint-disable-next-line no-console
+
+  console.warn(message);
+  logged[message] = true;
+}
+//# sourceMappingURL=index.js.map
 
 /***/ })
 
